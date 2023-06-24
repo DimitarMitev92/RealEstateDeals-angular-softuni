@@ -1,3 +1,12 @@
+/* Fontawesome ICONS */
+@import url(https://use.fontawesome.com/releases/v6.4.0/css/all.css);
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    font-family: "Montserrat", sans-serif;
+  }
+}

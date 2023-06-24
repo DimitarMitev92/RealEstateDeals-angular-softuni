@@ -4,7 +4,11 @@ module.exports = {
     "./src/app/components/header/header.component.html",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        montserrat: ['Montserrat', 'sans-serif'],
+      }
+    },
   },
   plugins: [],
 }
