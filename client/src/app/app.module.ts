@@ -7,9 +7,10 @@ import { HeaderComponent } from './components/header/header.component';
 import { HeroSectionComponent } from './components/hero-section/hero-section.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { CatalogComponent } from './components/catalog/catalog.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, HeroSectionComponent, AboutUsComponent, CatalogComponent],
+  declarations: [AppComponent, HeaderComponent, HeroSectionComponent, AboutUsComponent, CatalogComponent, FooterComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
