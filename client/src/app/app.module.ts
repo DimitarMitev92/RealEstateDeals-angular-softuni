@@ -13,6 +13,7 @@ import { LoginComponent } from './components/login/login.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { CreateComponent } from './components/create/create.component';
 import { EditComponent } from './components/edit/edit.component';
+import { DetailsComponent } from './components/details/details.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { EditComponent } from './components/edit/edit.component';
     ContactUsComponent,
     CreateComponent,
     EditComponent,
+    DetailsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
