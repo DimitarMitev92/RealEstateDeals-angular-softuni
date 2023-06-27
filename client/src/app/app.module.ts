@@ -11,6 +11,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { CreateComponent } from './components/create/create.component';
+import { EditComponent } from './components/edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { ContactUsComponent } from './components/contact-us/contact-us.component
     RegisterComponent,
     LoginComponent,
     ContactUsComponent,
+    CreateComponent,
+    EditComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
