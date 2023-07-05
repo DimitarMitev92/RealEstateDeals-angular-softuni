@@ -3,16 +3,21 @@
     <div class="bg-white flex flex-col justify-center items-center w-5/12 shadow-lg">
         <h1 class="text-4xl font-bold text-sky-800 mb-4">Edit an offer</h1>
         <div class="w-2/3 text-center">
-            <input type="text" name="title" placeholder="Title" autocomplete="off"
+            <label for="edit-title" class="text-sky-800 self-start text-lg">Title</label>
+            <input id="edit-title" type="text" name="title" autocomplete="off"
                 class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 rounded">
-            <input type="text" name="location" placeholder="Location" autocomplete="off"
+            <label for="edit-location" class="text-sky-800 self-start text-lg">Location</label>
+            <input id="edit-location" type="text" name="location" autocomplete="off"
                 class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 rounded">
-            <input type="text" name="imageUrl" placeholder="Image Link" autocomplete="off"
+            <label for="edit-imageLink" class="text-sky-800 self-start text-lg">Image Link</label>
+            <input id="edit-imageLink" type="text" name="imageUrl" autocomplete="off"
                 class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 rounded">
-            <input type="number" name="Price" placeholder="Price" autocomplete="off"
+            <label for="edit-price" class="text-sky-800 self-start text-lg">Price</label>
+            <input id="edit-price" type="number" name="Price" autocomplete="off"
                 class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 rounded">
-            <textarea name="information" rows="4" cols="50"
-                class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 rounded">Information about the offer</textarea>
+            <label for="edit-information" class="text-sky-800 self-start text-lg">Information about the offer</label>
+            <textarea id="edit-information" name="information" rows="4" cols="50"
+                class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 rounded"></textarea>
             <button class="btn btn-blue my-4">Edit</button>
 
         </div>
