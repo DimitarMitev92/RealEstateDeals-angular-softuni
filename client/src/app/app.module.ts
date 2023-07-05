@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 
@@ -7,7 +8,7 @@ import { CoreModule } from './core/core.module';
 import { MainModule } from './main/main.module';
 import { SharedModule } from './shared/shared.module';
 import { AuthModule } from './auth/auth.module';
-import { RouterModule, Routes } from '@angular/router';
+import { UserModule } from './user/user.module';
 
 import { HeroSectionComponent } from './main/hero-section/hero-section.component';
 import { CatalogComponent } from './main/catalog/catalog.component';
@@ -28,9 +29,9 @@ const appRoutes: Routes = [
   { path: 'contact-us', component: ContactUsComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: ':id/details', component: DetailsComponent },
+  { path: ':id/details', pathMatch: 'full', component: DetailsComponent },
   { path: 'create', component: CreateComponent },
-  { path: 'edit', component: EditComponent },
+  { path: ':id/edit', pathMatch: 'full', component: EditComponent },
   { path: 'profile', component: ProfileComponent },
   { path: '**', component: NotFoundComponent },
 ];
@@ -43,6 +44,7 @@ const appRoutes: Routes = [
     MainModule,
     SharedModule,
     AuthModule,
+    UserModule,
     RouterModule.forRoot(appRoutes),
   ],
   providers: [],
