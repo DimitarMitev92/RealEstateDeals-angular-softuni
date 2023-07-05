@@ -24,3 +24,7 @@
 .btn-blue:hover {
   @apply bg-sky-700 text-amber-300;
 }
+
+.active {
+  @apply text-amber-300 font-bold;
+}
