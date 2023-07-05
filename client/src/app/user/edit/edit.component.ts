@@ -6,4 +6,8 @@ import { Router } from '@angular/router';
   templateUrl: './edit.component.html',
   styleUrls: ['./edit.component.css'],
 })
-export class EditComponent {}
+export class EditComponent {
+  logger() {
+    console.log('LOGGED');
+  }
+}
