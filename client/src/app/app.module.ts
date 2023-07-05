@@ -19,6 +19,7 @@ import { DetailsComponent } from './main/details/details.component';
 import { CreateComponent } from './user/create/create.component';
 import { EditComponent } from './user/edit/edit.component';
 import { ProfileComponent } from './user/profile/profile.component';
+import { NotFoundComponent } from './shared/not-found/not-found.component';
 
 const appRoutes: Routes = [
   { path: '', pathMatch: 'full', component: HeroSectionComponent },
@@ -31,6 +32,7 @@ const appRoutes: Routes = [
   { path: 'create', component: CreateComponent },
   { path: 'edit', component: EditComponent },
   { path: 'profile', component: ProfileComponent },
+  { path: '**', component: NotFoundComponent },
 ];
 
 @NgModule({
