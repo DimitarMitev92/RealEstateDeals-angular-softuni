@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { heroConstants } from 'src/app/constants/hero-constants';
+import { heroConstants } from 'src/app/constants/heroConstants';
 
 @Component({
   selector: 'app-hero-section',
