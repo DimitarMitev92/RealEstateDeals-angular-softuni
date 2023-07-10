@@ -1,24 +1,24 @@
 <div class="w-full h-screen flex">
     <img src="../../../assets/images/edit.jpg" alt="background" class="object-cover object-center h-screen w-7/12">
     <div class="bg-white flex flex-col justify-center items-center w-5/12 shadow-lg">
-        <h1 class="text-4xl font-bold text-sky-800 mb-4">Edit an offer</h1>
+        <h1 class="text-4xl font-bold text-sky-800 mb-4">{{editConstants.heading}}</h1>
         <div class="w-2/3 text-center">
-            <label for="edit-title" class="text-sky-800 self-start text-lg">Title</label>
+            <label for="edit-title" class="text-sky-800 self-start text-lg">{{editConstants.title}}</label>
             <input id="edit-title" type="text" name="title" autocomplete="off"
                 class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 rounded">
-            <label for="edit-location" class="text-sky-800 self-start text-lg">Location</label>
+            <label for="edit-location" class="text-sky-800 self-start text-lg">{{editConstants.location}}</label>
             <input id="edit-location" type="text" name="location" autocomplete="off"
                 class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 rounded">
-            <label for="edit-imageLink" class="text-sky-800 self-start text-lg">Image Link</label>
+            <label for="edit-imageLink" class="text-sky-800 self-start text-lg">{{editConstants.image}}</label>
             <input id="edit-imageLink" type="text" name="imageUrl" autocomplete="off"
                 class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 rounded">
-            <label for="edit-price" class="text-sky-800 self-start text-lg">Price</label>
+            <label for="edit-price" class="text-sky-800 self-start text-lg">{{editConstants.price}}</label>
             <input id="edit-price" type="number" name="Price" autocomplete="off"
                 class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 rounded">
-            <label for="edit-information" class="text-sky-800 self-start text-lg">Information about the offer</label>
+            <label for="edit-information" class="text-sky-800 self-start text-lg">{{editConstants.information}}</label>
             <textarea id="edit-information" name="information" rows="4" cols="50"
                 class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 rounded"></textarea>
-            <button class="btn btn-blue my-4">Edit</button>
+            <button class="btn btn-blue my-4">{{editConstants.btnText}}</button>
         </div>
     </div>
 

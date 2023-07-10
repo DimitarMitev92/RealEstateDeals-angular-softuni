@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+
+import { editConstants } from 'src/app/constants/editConstants';
 
 @Component({
   selector: 'app-edit',
@@ -7,7 +8,5 @@ import { Router } from '@angular/router';
   styleUrls: ['./edit.component.css'],
 })
 export class EditComponent {
-  logger() {
-    console.log('LOGGED');
-  }
+  editConstants = editConstants;
 }
