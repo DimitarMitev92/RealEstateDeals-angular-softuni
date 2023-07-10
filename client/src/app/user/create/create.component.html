@@ -1,25 +1,29 @@
 <div class="w-full h-screen flex">
     <img src="../../../assets/images/create.jpg" alt="background" class="object-cover object-center h-screen w-7/12">
     <div class="bg-white flex flex-col justify-center items-center w-5/12 shadow-lg">
-        <h1 class="text-4xl font-bold text-sky-800 mb-4">Create an offer</h1>
+        <h1 class="text-4xl font-bold text-sky-800 mb-4">{{createConstants.heading}}</h1>
         <div class="w-2/3 text-center">
-            <label for="create-title" class="text-sky-800 self-start text-lg">Title</label>
-            <input id="create-title" type="text" name="title" placeholder="Luxury villa with pool" autocomplete="off"
-                class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 rounded">
-            <label for="create-location" class="text-sky-800 self-start text-lg">Location</label>
-            <input id="create-location" type="text" name="location" placeholder="USA, New York 1234 AU"
+            <label for="create-title" class="text-sky-800 self-start text-lg">{{createConstants.title}}</label>
+            <input id="create-title" type="text" name="title" placeholder={{createConstants.titlePlaceholder}}
                 autocomplete="off"
                 class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 rounded">
-            <label for="create-imageLink" class="text-sky-800 self-start text-lg">Image Link</label>
-            <input id="create-imageLink" type="text" name="imageUrl" placeholder="https://..." autocomplete="off"
+            <label for="create-location" class="text-sky-800 self-start text-lg">{{createConstants.location}}</label>
+            <input id="create-location" type="text" name="location" placeholder={{createConstants.locationPlaceholder}}
+                autocomplete="off"
                 class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 rounded">
-            <label for="create-price" class="text-sky-800 self-start text-lg">Price</label>
-            <input id="create-price" type="number" name="Price" placeholder="1000000.00" autocomplete="off"
+            <label for="create-imageLink" class="text-sky-800 self-start text-lg">{{createConstants.image}}</label>
+            <input id="create-imageLink" type="text" name="imageUrl" placeholder={{createConstants.imagePlaceholder}}
+                autocomplete="off"
                 class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 rounded">
-            <label for="create-information" class="text-sky-800 self-start text-lg">Information about the offer</label>
+            <label for="create-price" class="text-sky-800 self-start text-lg">{{createConstants.price}}</label>
+            <input id="create-price" type="number" name="Price" placeholder={{createConstants.pricePlaceholder}}
+                autocomplete="off"
+                class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 rounded">
+            <label for="create-information"
+                class="text-sky-800 self-start text-lg">{{createConstants.information}}</label>
             <textarea id="create-information" name="information" rows="4" cols="50"
                 class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 rounded"></textarea>
-            <button class="btn btn-blue my-4">Create</button>
+            <button class="btn btn-blue my-4">{{createConstants.btnText}}</button>
 
         </div>
     </div>
