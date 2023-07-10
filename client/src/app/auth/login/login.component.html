@@ -1,18 +1,20 @@
 <div class="w-full h-screen flex">
     <img src="../../../assets/images/login.jpg" alt="background" class="object-cover object-center h-screen w-7/12">
     <div class="bg-white flex flex-col justify-center items-center w-5/12 shadow-lg">
-        <h1 class="text-4xl font-bold text-sky-800 mb-4">Login</h1>
+        <h1 class="text-4xl font-bold text-sky-800 mb-4">{{loginConstant.heading}}</h1>
         <div class="w-2/3 text-center">
-            <label for="login-email" class="text-sky-800 self-start text-lg">Email</label>
-            <input id="login-email" type="email" name="email" placeholder="dmitev@gmail.com" autocomplete="off"
+            <label for="login-email" class="text-sky-800 self-start text-lg">{{loginConstant.email}}</label>
+            <input id="login-email" type="email" name="email" placeholder={{loginConstant.emailPlaceholder}}
+                autocomplete="off"
                 class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 rounded">
-            <label for="login-password" class="text-sky-800 self-start text-lg">Password</label>
-            <input id="login-password" type="password" name="password" placeholder="******" autocomplete="off"
+            <label for="login-password" class="text-sky-800 self-start text-lg">{{loginConstant.password}}</label>
+            <input id="login-password" type="password" name="password" placeholder={{loginConstant.passwordPlaceholder}}
+                autocomplete="off"
                 class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 rounded">
 
-            <button class="btn btn-blue my-4">Login</button>
-            <p>Don't have an account? <a class="font-bold underline text-sky-800" routerLink="/register">Register
-                    here</a></p>
+            <button class="btn btn-blue my-4">{{loginConstant.btnText}}</button>
+            <p>{{loginConstant.account}} <a class="font-bold underline text-sky-800"
+                    routerLink="/register">{{loginConstant.btnAccount}}</a></p>
         </div>
     </div>
 </div>
