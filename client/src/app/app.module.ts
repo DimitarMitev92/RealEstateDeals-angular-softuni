@@ -5,18 +5,17 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 
 import { CoreModule } from './core/core.module';
-import { MainModule } from './main/main.module';
 import { SharedModule } from './shared/shared.module';
 import { AuthModule } from './auth/auth.module';
 import { UserModule } from './user/user.module';
 
-import { HeroSectionComponent } from './main/hero-section/hero-section.component';
-import { CatalogComponent } from './main/catalog/catalog.component';
-import { AboutUsComponent } from './main/about-us/about-us.component';
-import { ContactUsComponent } from './main/contact-us/contact-us.component';
+import { HeroSectionComponent } from './core/hero-section/hero-section.component';
+import { CatalogComponent } from './core/catalog/catalog.component';
+import { AboutUsComponent } from './core/about-us/about-us.component';
+import { ContactUsComponent } from './core/contact-us/contact-us.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
-import { DetailsComponent } from './main/details/details.component';
+import { DetailsComponent } from './user/details/details.component';
 import { CreateComponent } from './user/create/create.component';
 import { EditComponent } from './user/edit/edit.component';
 import { ProfileComponent } from './user/profile/profile.component';
@@ -41,7 +40,6 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     CoreModule,
-    MainModule,
     SharedModule,
     AuthModule,
     UserModule,
