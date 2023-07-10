@@ -1,0 +1,18 @@
+export const registerConstants = {
+  heading: 'Register',
+  fullName: 'Full name',
+  fullNamePlaceholder: 'Dimitar Mitev',
+  username: 'Username',
+  usernamePlaceholder: 'dmitev',
+  email: 'Email',
+  emailPlaceholder: 'd.mitev@gmail.com',
+  password: 'Password',
+  passwordPlaceholder: '******',
+  rePassword: 'Repeat password',
+  rePasswordPlaceholder: '******',
+  termsText: 'By creating an account you agree to our',
+  termsTextAnch: 'Terms & Privacy.',
+  btnText: 'Register',
+  account: 'Have already an account?',
+  btnAccount: 'Login here',
+};
