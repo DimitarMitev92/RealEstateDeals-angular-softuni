@@ -34,7 +34,6 @@ export class RegisterComponent {
     if (password?.value !== rePassword?.value) {
       return { passwordMismatch: true };
     }
-
     return null;
   }
 
@@ -53,10 +52,15 @@ export class RegisterComponent {
         email: this.registerForm.value.email,
         password: this.registerForm.value.password,
       })
-      .subscribe((userData: any) => {
-        console.log('registerComponent', userData);
-        this.authService.setUserData(userData);
-        this.router.navigate(['']);
-      });
+      .subscribe(
+        (response) => {
+          console.log('registerComponent', response);
+          this.authService.setUserData(response);
+          this.router.navigate(['']);
+        },
+        (error) => {
+          confirm(error.message);
+        }
+      );
   }
 }

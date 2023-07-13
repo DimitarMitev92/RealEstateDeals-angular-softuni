@@ -9,7 +9,7 @@ import {
 } from '../interfaces/authInterfaces';
 
 import { serverUrl } from '../constants/serverConstants';
-import { Observable, catchError } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -21,7 +21,7 @@ export class AuthService {
     return localStorage.getItem('userData');
   }
 
-  setUserData(userData: ILoginReturnData | IRegisterReturnData) {
+  setUserData(userData: ILoginData | IRegisterData) {
     localStorage.setItem('userData', JSON.stringify(userData));
   }
 
@@ -33,7 +33,7 @@ export class AuthService {
     return this.http.post<ILoginData>(serverUrl.login, userData);
   }
 
-  register(userData: IRegisterData) {
+  register(userData: IRegisterData): Observable<IRegisterData> {
     return this.http.post<IRegisterData>(serverUrl.register, userData);
   }
 
