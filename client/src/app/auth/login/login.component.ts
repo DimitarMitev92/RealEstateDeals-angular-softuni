@@ -35,7 +35,6 @@ export class LoginComponent {
         password: this.loginForm.value.password,
       })
       .subscribe((userData: any) => {
-        console.log(userData);
         this.authService.setUserData(userData);
         this.router.navigate(['']);
       });

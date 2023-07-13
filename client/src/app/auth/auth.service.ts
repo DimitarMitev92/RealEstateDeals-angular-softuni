@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import {
   ILoginData,
@@ -17,6 +17,10 @@ import { Observable, catchError } from 'rxjs';
 export class AuthService {
   constructor(private http: HttpClient) {}
 
+  getUserData(): string | null {
+    return localStorage.getItem('userData');
+  }
+
   setUserData(userData: ILoginReturnData | IRegisterReturnData) {
     localStorage.setItem('userData', JSON.stringify(userData));
   }
@@ -33,8 +37,9 @@ export class AuthService {
     return this.http.post<IRegisterData>(serverUrl.register, userData);
   }
 
-  logout(): void {
+  logout(accessToken: string): void {
     this.clearUserData();
-    this.http.get<any>(serverUrl.logout);
+    const headers = new HttpHeaders().set('X-Authorization', accessToken);
+    this.http.get<any>(serverUrl.logout, { headers });
   }
 }
