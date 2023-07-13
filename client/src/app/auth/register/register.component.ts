@@ -3,6 +3,7 @@ import { AbstractControl, FormBuilder, Validators } from '@angular/forms';
 import { registerConstants } from 'src/app/constants/registerConstants';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
+import { IRegisterData } from 'src/app/interfaces/authInterfaces';
 
 @Component({
   selector: 'app-register',
@@ -53,12 +54,12 @@ export class RegisterComponent {
         password: this.registerForm.value.password,
       })
       .subscribe(
-        (response) => {
+        (response: IRegisterData): void => {
           console.log('registerComponent', response);
           this.authService.setUserData(response);
           this.router.navigate(['']);
         },
-        (error) => {
+        (error: any): void => {
           confirm(error.message);
         }
       );

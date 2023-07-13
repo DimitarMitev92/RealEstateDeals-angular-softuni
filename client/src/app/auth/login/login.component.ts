@@ -34,9 +34,14 @@ export class LoginComponent {
         email: this.loginForm.value.email,
         password: this.loginForm.value.password,
       })
-      .subscribe((userData: any) => {
-        this.authService.setUserData(userData);
-        this.router.navigate(['']);
-      });
+      .subscribe(
+        (response: ILoginData): void => {
+          this.authService.setUserData(response);
+          this.router.navigate(['']);
+        },
+        (error: any): void => {
+          confirm(error.message);
+        }
+      );
   }
 }
