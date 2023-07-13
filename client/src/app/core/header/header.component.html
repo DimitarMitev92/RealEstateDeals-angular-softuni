@@ -18,6 +18,8 @@
         <div class="flex justify-between gap-6 mx-5">
             <a routerLink="register" routerLinkActive="active" class="hover:text-amber-300">Register</a>
             <a routerLink="login" routerLinkActive="active" class="hover:text-amber-300">Login</a>
+            <a (click)="onLogoutHandler()" routerLinkActive="active"
+                class="hover:text-amber-300 cursor-pointer">Logout</a>
         </div>
     </div>
 

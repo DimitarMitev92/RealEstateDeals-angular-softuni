@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
@@ -20,6 +21,7 @@ import { CreateComponent } from './user/create/create.component';
 import { EditComponent } from './user/edit/edit.component';
 import { ProfileComponent } from './user/profile/profile.component';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
+import { AuthService } from './auth/auth.service';
 
 const appRoutes: Routes = [
   { path: '', pathMatch: 'full', component: HeroSectionComponent },
@@ -43,9 +45,12 @@ const appRoutes: Routes = [
     SharedModule,
     AuthModule,
     UserModule,
+    HttpClientModule,
     RouterModule.forRoot(appRoutes),
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+  constructor() {}
+}

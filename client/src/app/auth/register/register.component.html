@@ -2,37 +2,37 @@
     <img src="../../../assets/images/register.png" alt="background" class="object-cover object-center h-screen w-7/12">
     <div class="bg-white flex flex-col justify-center items-center w-5/12 shadow-lg">
         <h1 class="text-4xl font-bold text-sky-800 mb-4">{{registerConstants.heading}}</h1>
-        <div class="w-2/3 text-center">
+        <form class="w-2/3 text-center">
             <label for="register-fullName"
                 class="text-sky-800 self-start text-lg">{{registerConstants.fullName}}</label>
             <input id="register-fullName" type="text" name="fullName"
                 placeholder={{registerConstants.fullNamePlaceholder}} autocomplete="off"
-                class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 rounded">
+                class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 ">
             <label for="register-username"
                 class="text-sky-800 self-start text-lg">{{registerConstants.username}}</label>
             <input type="text" name="username" placeholder={{registerConstants.usernamePlaceholder}} autocomplete="off"
-                class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 rounded">
+                class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 ">
             <label for="register-email" class="text-sky-800 self-start text-lg">{{registerConstants.email}}</label>
 
             <input id="register-email" type="email" name="email" placeholder={{registerConstants.emailPlaceholder}}
                 autocomplete="off"
-                class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 rounded">
+                class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 ">
             <label for="register-password"
                 class="text-sky-800 self-start text-lg">{{registerConstants.password}}</label>
             <input id="register-password" type="password" name="password"
                 placeholder={{registerConstants.passwordPlaceholder}} autocomplete="off"
-                class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 rounded">
+                class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 ">
             <label for="register-repeatPassword"
                 class="text-sky-800 self-start text-lg">{{registerConstants.rePassword}}</label>
             <input id="register-repeatPassword" type="password" name="rePassword"
                 placeholder={{registerConstants.rePasswordPlaceholder}} autocomplete="off"
-                class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 rounded">
+                class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 ">
             <p>{{registerConstants.termsText}} <a class="font-medium underline text-sky-800"
                     href="#">{{registerConstants.termsTextAnch}}</a></p>
             <button class="btn btn-blue my-4">{{registerConstants.btnText}}</button>
             <p>{{registerConstants.account}} <a class="font-bold underline text-sky-800"
                     routerLink="/login">{{registerConstants.btnAccount}}</a>
             </p>
-        </div>
+        </form>
     </div>
 </div>
