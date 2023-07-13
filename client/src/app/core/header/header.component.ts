@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { AuthService } from 'src/app/auth/auth.service';
 
@@ -7,21 +7,26 @@ import { AuthService } from 'src/app/auth/auth.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
 })
-export class HeaderComponent implements OnInit {
-  userData!: any;
+export class HeaderComponent {
+  userData: any = null;
+  isLoggedIn: boolean = false;
 
   constructor(private authService: AuthService) {}
 
-  ngOnInit(): void {
+  ngDoCheck(): void {
     const userDataString = this.authService.getUserData();
     if (userDataString !== null) {
+      this.isLoggedIn = true;
       this.userData = JSON.parse(userDataString);
-      console.log(this.userData);
+    } else {
+      this.isLoggedIn = false;
+      this.userData = null;
     }
   }
 
   onLogoutHandler() {
-    console.log(this.userData);
-    this.authService.logout(this.userData.accessToken);
+    if (this.userData !== null) {
+      this.authService.logout(this.userData.accessToken);
+    }
   }
 }

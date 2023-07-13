@@ -54,7 +54,7 @@ export class RegisterComponent {
         password: this.registerForm.value.password,
       })
       .subscribe((userData: any) => {
-        console.log(userData);
+        console.log('registerComponent', userData);
         this.authService.setUserData(userData);
         this.router.navigate(['']);
       });

@@ -9,16 +9,19 @@
         <div class="flex justify-between gap-6 mx-5">
             <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
                 class="hover:text-amber-300">Home</a>
-            <a routerLink="/create" routerLinkActive="active" class="hover:text-amber-300">Create</a>
-            <a routerLink="/profile" routerLinkActive="active" class="hover:text-amber-300">Profile</a>
+            <a *ngIf="isLoggedIn" routerLink="/create" routerLinkActive="active" class="hover:text-amber-300">Create</a>
+            <a *ngIf="isLoggedIn" routerLink="/profile" routerLinkActive="active"
+                class="hover:text-amber-300">Profile</a>
             <a routerLink="/catalog" routerLinkActive="active" class="hover:text-amber-300">Catalog</a>
-            <a routerLink="/about-us" routerLinkActive="active" class="hover:text-amber-300">About Us</a>
+            <a routerLink="/about-us" routerLinkActive="active" class="hover:text-amber-300">About
+                Us</a>
             <a routerLink="/contact-us" routerLinkActive="active" class="hover:text-amber-300">Contact Us</a>
         </div>
         <div class="flex justify-between gap-6 mx-5">
-            <a routerLink="register" routerLinkActive="active" class="hover:text-amber-300">Register</a>
-            <a routerLink="login" routerLinkActive="active" class="hover:text-amber-300">Login</a>
-            <a (click)="onLogoutHandler()" routerLinkActive="active"
+            <a *ngIf="!isLoggedIn" routerLink="register" routerLinkActive="active"
+                class="hover:text-amber-300">Register</a>
+            <a *ngIf="!isLoggedIn" routerLink="login" routerLinkActive="active" class="hover:text-amber-300">Login</a>
+            <a *ngIf="isLoggedIn" (click)="onLogoutHandler()" routerLinkActive="active"
                 class="hover:text-amber-300 cursor-pointer">Logout</a>
         </div>
     </div>
