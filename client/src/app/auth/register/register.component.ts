@@ -58,6 +58,7 @@ export class RegisterComponent {
         (response: IRegisterData): void => {
           console.log('registerComponent', response);
           this.authService.setUserData(response);
+          this.registerForm.reset();
           this.router.navigate(['']);
         },
         (error: any): void => {

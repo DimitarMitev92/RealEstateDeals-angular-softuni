@@ -41,6 +41,7 @@ export class LoginComponent {
       .subscribe(
         (response: ILoginData): void => {
           this.authService.setUserData(response);
+          this.loginForm.reset();
           this.router.navigate(['']);
         },
         (error: any): void => {
