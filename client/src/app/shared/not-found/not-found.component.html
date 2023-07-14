@@ -1,16 +1,16 @@
 <section class="bg-white dark:bg-sky-800 ">
     <div class="container flex justify-center items-center min-h-screen px-6 py-12 mx-auto">
         <div class="flex flex-col items-center">
-            <p class="text-9xl font-medium text-amber-300">404 ERROR</p>
-            <h1 class="mt-3 text-2xl font-semibold text-gray-800 dark:text-white md:text-3xl">We can’t find that page
+            <p class="text-9xl font-medium text-amber-300">{{notFoundConstants.mainHeading}}</p>
+            <h1 class="mt-3 text-2xl font-semibold text-gray-800 dark:text-white md:text-3xl">
+                {{notFoundConstants.firstSubHeading}}
             </h1>
-            <p class="mt-4 text-gray-500 dark:text-gray-400">Sorry, the page you are looking for doesn't exist or has
-                been moved.</p>
+            <p class="mt-4 text-gray-500 dark:text-gray-400">{{notFoundConstants.secondSubHeading}}</p>
 
             <div class="flex items-center mt-6 gap-x-3">
-                <button class="btn btn-blue btn-blue:hover">
-                    Take me home
-                </button>
+                <a routerLink="" class="btn btn-blue btn-blue:hover">
+                    {{notFoundConstants.btnText}}
+                </a>
             </div>
         </div>
     </div>
