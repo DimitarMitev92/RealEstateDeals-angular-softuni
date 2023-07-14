@@ -15,6 +15,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class AuthService {
+  isLoggedIn: boolean = false;
+
   constructor(private http: HttpClient) {}
 
   getUserData(): string | null {
@@ -23,6 +25,14 @@ export class AuthService {
 
   setUserData(userData: ILoginData | IRegisterData) {
     localStorage.setItem('userData', JSON.stringify(userData));
+  }
+
+  getIsLoggedIn(): boolean {
+    return this.isLoggedIn;
+  }
+
+  setIsLoggedIn(state: boolean): void {
+    this.isLoggedIn = state;
   }
 
   clearUserData() {

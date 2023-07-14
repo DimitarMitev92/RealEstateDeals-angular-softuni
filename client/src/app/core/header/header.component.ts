@@ -16,10 +16,12 @@ export class HeaderComponent {
   ngDoCheck(): void {
     const userDataString = this.authService.getUserData();
     if (userDataString !== null) {
-      this.isLoggedIn = true;
+      this.authService.setIsLoggedIn(true);
+      this.isLoggedIn = this.authService.getIsLoggedIn();
       this.userData = JSON.parse(userDataString);
     } else {
-      this.isLoggedIn = false;
+      this.authService.setIsLoggedIn(false);
+      this.isLoggedIn = this.authService.getIsLoggedIn();
       this.userData = null;
     }
   }
