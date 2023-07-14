@@ -5,6 +5,7 @@ import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
 import { IRegisterData } from 'src/app/interfaces/authInterfaces';
 
+import { emailValidator } from 'src/app/validators/emailValidator';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -19,7 +20,7 @@ export class RegisterComponent {
     {
       fullName: ['', [Validators.required]],
       username: ['', [Validators.required]],
-      email: ['', [Validators.required, Validators.email]],
+      email: ['', [Validators.required, emailValidator()]],
       password: ['', [Validators.required, Validators.minLength(6)]],
       rePassword: ['', [Validators.required, Validators.minLength(6)]],
     },

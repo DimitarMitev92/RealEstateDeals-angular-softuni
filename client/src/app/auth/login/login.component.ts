@@ -3,8 +3,12 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { loginConstants } from 'src/app/constants/loginConstants';
+
 import { AuthService } from '../auth.service';
+
 import { ILoginData } from 'src/app/interfaces/authInterfaces';
+
+import { emailValidator } from 'src/app/validators/emailValidator';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +21,7 @@ export class LoginComponent {
   isSubmitted = false;
 
   loginForm = this.fb.group({
-    email: ['', [Validators.required, Validators.email]],
+    email: ['', [Validators.required, emailValidator()]],
     password: ['', [Validators.required, Validators.minLength(6)]],
   });
 
