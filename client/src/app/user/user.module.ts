@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { CreateComponent } from './create/create.component';
 import { DetailsComponent } from './details/details.component';
@@ -15,7 +16,7 @@ import { ProfileComponent } from './profile/profile.component';
     ProfileComponent,
     DetailsComponent,
   ],
-  imports: [CommonModule, RouterModule, SharedModule],
+  imports: [CommonModule, RouterModule, SharedModule, ReactiveFormsModule],
   exports: [CreateComponent, EditComponent, ProfileComponent, DetailsComponent],
 })
 export class UserModule {}

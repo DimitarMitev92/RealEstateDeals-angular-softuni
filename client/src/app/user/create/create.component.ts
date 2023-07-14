@@ -14,14 +14,20 @@ import { createConstants } from 'src/app/constants/createConstants';
 export class CreateComponent {
   createConstants = createConstants;
 
-  isSubmitted = true;
+  isSubmitted = false;
 
   createForm = this.fb.group({
     title: ['', Validators.required],
     location: ['', Validators.required],
-    imageLink: ['', Validators.required, httpsValidator()],
-    price: ['', Validators.required],
+    imageUrl: ['', [Validators.required, httpsValidator()]],
+    price: ['', [Validators.required, Validators.minLength(1)]],
+    information: ['', [Validators.required, Validators.minLength(20)]],
   });
 
   constructor(private fb: FormBuilder) {}
+
+  onSubmit(): void {
+    this.isSubmitted = true;
+    console.log(this.createForm.value);
+  }
 }

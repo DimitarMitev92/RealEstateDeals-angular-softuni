@@ -2,7 +2,7 @@ export const loginConstants = {
   heading: 'Login',
   email: 'Email',
   emailPlaceholder: 'd.mitev@gmail.com',
-  emailInvalidText: 'Enter a valid email.',
+  emailInvalidText: 'Email is required.',
   password: 'Password',
   passwordPlaceholder: '******',
   passwordInvalidText: 'Password must be at least 6 characters long.',
