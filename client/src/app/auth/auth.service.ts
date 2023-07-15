@@ -1,12 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import {
-  ILoginData,
-  ILoginReturnData,
-  IRegisterData,
-  IRegisterReturnData,
-} from '../interfaces/authInterfaces';
+import { ILoginData, IRegisterData } from '../interfaces/authInterfaces';
 
 import { serverUrl } from '../constants/serverConstants';
 import { Observable } from 'rxjs';
@@ -21,6 +16,10 @@ export class AuthService {
 
   getUserData(): string | null {
     return localStorage.getItem('userData');
+  }
+
+  getUserAccessToken(): string | string[] {
+    return JSON.parse(localStorage.getItem('userData') || '{}').accessToken;
   }
 
   setUserData(userData: ILoginData | IRegisterData) {

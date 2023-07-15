@@ -1,10 +1,17 @@
 import { Component } from '@angular/core';
-
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { httpsValidator } from 'src/app/validators/httpsValidator';
 
 import { createConstants } from 'src/app/constants/createConstants';
+
+import { UserCRUDService } from '../user-crud.service';
+import { AuthService } from 'src/app/auth/auth.service';
+import {
+  IOfferData,
+  IOfferReturnData,
+} from 'src/app/interfaces/offertInterfaces';
 
 @Component({
   selector: 'app-create',
@@ -24,10 +31,26 @@ export class CreateComponent {
     information: ['', [Validators.required, Validators.minLength(20)]],
   });
 
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    private userCRUD: UserCRUDService,
+    private authService: AuthService,
+    private router: Router
+  ) {}
 
   onSubmit(): void {
     this.isSubmitted = true;
-    console.log(this.createForm.value);
+
+    const offerData = this.createForm.value;
+    const accessToken = this.authService.getUserAccessToken();
+    this.userCRUD.createOffer(offerData, accessToken).subscribe({
+      next: (response) => {
+        console.log('Current Position: ', response);
+        this.router.navigate([`${response._id}/details`]);
+      },
+      error: (msg) => {
+        console.log('Error Getting Location: ', msg);
+      },
+    });
   }
 }

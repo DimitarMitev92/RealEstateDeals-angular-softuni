@@ -38,15 +38,15 @@ export class LoginComponent {
         email: this.loginForm.value.email,
         password: this.loginForm.value.password,
       })
-      .subscribe(
-        (response: ILoginData): void => {
+      .subscribe({
+        next: (response) => {
           this.authService.setUserData(response);
           this.loginForm.reset();
           this.router.navigate(['']);
         },
-        (error: any): void => {
-          confirm(error.message);
-        }
-      );
+        error: (msg) => {
+          confirm(msg.message);
+        },
+      });
   }
 }

@@ -55,7 +55,8 @@
                 createForm.get('information')?.touched || 
                 isSubmitted)" class="text-red-500 text-xs italic">{{createConstants.informationInvalidText}}</p>
 
-            <button type="submit" class="btn btn-blue my-4">{{createConstants.btnText}}</button>
+            <button [disabled]="!this.createForm.valid" type="submit"
+                class="btn btn-blue my-4">{{createConstants.btnText}}</button>
 
         </form>
     </div>
