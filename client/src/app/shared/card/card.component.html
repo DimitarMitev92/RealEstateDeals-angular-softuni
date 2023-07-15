@@ -1,4 +1,6 @@
-<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-sky-900">
+<div #cardElement [attr.idOffer]='offer._id' [attr.idOfferOwner]="offer._ownerId"
+    [attr.offerCreatedOn]="offer._createdOn"
+    class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-sky-900">
     <img class="rounded-t-lg" src={{offer.imageUrl}} alt={{offer.title}} />
     <div class="p-5">
         <a>
@@ -9,29 +11,3 @@
         <a class="btn btn-blue my-4" routerLink="/{{offer._id}}/details">Read More &rarr;</a>
     </div>
 </div>
-
-
-<!-- imageUrl
-: 
-"https://www.pexels.com/photo/white-and-red-wooden-house-with-fence-1029599/"
-information
-: 
-"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-location
-: 
-"USA, New York 123"
-price
-: 
-1000000
-title
-: 
-"Luxury Villa 1"
-_createdOn
-: 
-1689422532666
-_id
-: 
-"4f76c46a-6579-48c7-b91a-433e61df087b"
-_ownerId
-: 
-"35c62d76-8152-4626-8712-eeb96381bea8" -->

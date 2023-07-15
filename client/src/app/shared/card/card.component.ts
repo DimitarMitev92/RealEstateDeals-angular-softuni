@@ -8,4 +8,7 @@ import { IOfferReturnData } from 'src/app/interfaces/offertInterfaces';
 })
 export class CardComponent {
   @Input() offer!: IOfferReturnData;
+  idOffer!: string;
+  idOfferOwner!: string;
+  offerCreatedOn!: number;
 }
