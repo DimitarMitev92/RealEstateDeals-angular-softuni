@@ -21,7 +21,6 @@ export class CatalogComponent implements OnInit {
     this.userCRUD.getAllOffers().subscribe({
       next: (response) => {
         this.allOffers = response;
-        console.log(this.allOffers);
       },
       error: (msg) => {
         alert(msg);

@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
@@ -17,6 +16,10 @@ export class UserCRUDService {
 
   getAllOffers() {
     return this.http.get<IOfferReturnData[]>(serverUrl.offers);
+  }
+
+  getOfferById(id: string | null) {
+    return this.http.get<IOfferReturnData>(`${serverUrl.offers}/${id}`);
   }
 
   createOffer(
