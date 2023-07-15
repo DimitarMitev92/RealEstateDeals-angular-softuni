@@ -8,6 +8,7 @@ import { CreateComponent } from './create/create.component';
 import { DetailsComponent } from './details/details.component';
 import { EditComponent } from './edit/edit.component';
 import { ProfileComponent } from './profile/profile.component';
+import { CatalogComponent } from './catalog/catalog.component';
 
 @NgModule({
   declarations: [
@@ -15,8 +16,15 @@ import { ProfileComponent } from './profile/profile.component';
     EditComponent,
     ProfileComponent,
     DetailsComponent,
+    CatalogComponent,
   ],
   imports: [CommonModule, RouterModule, SharedModule, ReactiveFormsModule],
-  exports: [CreateComponent, EditComponent, ProfileComponent, DetailsComponent],
+  exports: [
+    CreateComponent,
+    EditComponent,
+    ProfileComponent,
+    DetailsComponent,
+    CatalogComponent,
+  ],
 })
 export class UserModule {}

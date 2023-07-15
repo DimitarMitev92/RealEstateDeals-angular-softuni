@@ -6,7 +6,6 @@ import { SharedModule } from '../shared/shared.module';
 
 import { HeaderComponent } from './header/header.component';
 import { HeroSectionComponent } from './hero-section/hero-section.component';
-import { CatalogComponent } from './catalog/catalog.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { FooterComponent } from './footer/footer.component';
 import { GlobalLoaderComponent } from './global-loader/global-loader.component';
@@ -15,7 +14,6 @@ import { GlobalLoaderComponent } from './global-loader/global-loader.component';
   declarations: [
     HeaderComponent,
     HeroSectionComponent,
-    CatalogComponent,
     ContactUsComponent,
     FooterComponent,
     GlobalLoaderComponent,
@@ -24,7 +22,6 @@ import { GlobalLoaderComponent } from './global-loader/global-loader.component';
   exports: [
     HeaderComponent,
     HeroSectionComponent,
-    CatalogComponent,
     ContactUsComponent,
     FooterComponent,
     GlobalLoaderComponent,

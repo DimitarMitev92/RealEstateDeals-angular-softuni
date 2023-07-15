@@ -15,6 +15,10 @@ import { Observable } from 'rxjs';
 export class UserCRUDService {
   constructor(private http: HttpClient) {}
 
+  getAllOffers() {
+    return this.http.get<IOfferReturnData[]>(serverUrl.offers);
+  }
+
   createOffer(
     offerData: IOfferData,
     accessToken: string | string[]

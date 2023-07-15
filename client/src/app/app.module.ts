@@ -13,7 +13,7 @@ import { UserModule } from './user/user.module';
 import { AuthGuard } from './app-routing.guard';
 
 import { HeroSectionComponent } from './core/hero-section/hero-section.component';
-import { CatalogComponent } from './core/catalog/catalog.component';
+import { CatalogComponent } from './user/catalog/catalog.component';
 import { AboutUsComponent } from './core/about-us/about-us.component';
 import { ContactUsComponent } from './core/contact-us/contact-us.component';
 import { LoginComponent } from './auth/login/login.component';
