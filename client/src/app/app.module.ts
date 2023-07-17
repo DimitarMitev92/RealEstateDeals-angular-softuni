@@ -10,7 +10,8 @@ import { SharedModule } from './shared/shared.module';
 import { AuthModule } from './auth/auth.module';
 import { UserModule } from './user/user.module';
 
-import { AuthGuard } from './app-routing.guard';
+import { loginGuard } from './app-login.guard';
+import { ownerGuard } from './app-owner.guard';
 
 import { HeroSectionComponent } from './core/hero-section/hero-section.component';
 import { CatalogComponent } from './user/catalog/catalog.component';
@@ -33,14 +34,14 @@ const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: ':id/details', pathMatch: 'full', component: DetailsComponent },
-  { path: 'create', component: CreateComponent, canActivate: [AuthGuard] },
+  { path: 'create', component: CreateComponent, canActivate: [loginGuard] },
   {
     path: ':id/edit',
     pathMatch: 'full',
     component: EditComponent,
-    canActivate: [AuthGuard],
+    canActivate: [loginGuard, ownerGuard],
   },
-  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
+  { path: 'profile', component: ProfileComponent, canActivate: [loginGuard] },
   { path: '**', component: NotFoundComponent },
 ];
 
