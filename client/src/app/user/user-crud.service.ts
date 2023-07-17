@@ -33,4 +33,21 @@ export class UserCRUDService {
       }),
     });
   }
+
+  updateOffer(
+    idOffer: string,
+    offerData: IOfferData,
+    accessToken: string | string[]
+  ): Observable<IOfferReturnData> {
+    return this.http.put<IOfferReturnData>(
+      `${serverUrl.offers}/${idOffer}`,
+      offerData,
+      {
+        headers: new HttpHeaders({
+          'Content-Type': 'application/json',
+          'X-Authorization': accessToken,
+        }),
+      }
+    );
+  }
 }
