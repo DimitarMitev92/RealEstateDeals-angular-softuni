@@ -4,6 +4,7 @@ import { profileConstants } from 'src/app/constants/profileConstants';
 import { UserCRUDService } from '../user-crud.service';
 import { IOfferReturnData } from 'src/app/interfaces/offerInterfaces';
 import { IRegisterData } from 'src/app/interfaces/authInterfaces';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'app-profile',
@@ -16,10 +17,13 @@ export class ProfileComponent implements OnInit {
   userData!: IRegisterData;
   userOffers!: IOfferReturnData[];
 
-  constructor(private userCRUD: UserCRUDService) {}
+  constructor(
+    private userCRUD: UserCRUDService,
+    private authService: AuthService
+  ) {}
 
   ngOnInit(): void {
-    let userDataJSON = localStorage.getItem('userData');
+    let userDataJSON = this.authService.getUserData();
     if (userDataJSON !== null) {
       this.userData = JSON.parse(userDataJSON);
       let userID = JSON.parse(userDataJSON)._id;
