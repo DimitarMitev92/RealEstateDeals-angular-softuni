@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { AuthService } from 'src/app/auth/auth.service';
 
@@ -11,7 +12,7 @@ export class HeaderComponent {
   userData: any = null;
   isLoggedIn: boolean = false;
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   ngDoCheck(): void {
     const userDataString = this.authService.getUserData();
@@ -29,6 +30,7 @@ export class HeaderComponent {
   onLogoutHandler() {
     if (this.userData !== null) {
       this.authService.logout(this.userData.accessToken);
+      this.router.navigate(['']);
     }
   }
 }

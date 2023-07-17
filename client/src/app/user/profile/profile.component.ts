@@ -33,6 +33,9 @@ export class ProfileComponent implements OnInit {
         },
         error: (msg) => {
           console.log(msg);
+          if (msg.status === 404) {
+            this.userOffers = [];
+          }
         },
       });
     } else {

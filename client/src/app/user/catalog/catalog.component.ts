@@ -5,6 +5,7 @@ import { catalogConstant } from 'src/app/constants/catalogConstants';
 import { UserCRUDService } from '../user-crud.service';
 
 import { IOfferReturnData } from 'src/app/interfaces/offerInterfaces';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'app-catalog',
@@ -14,8 +15,12 @@ import { IOfferReturnData } from 'src/app/interfaces/offerInterfaces';
 export class CatalogComponent implements OnInit {
   catalogConstants = catalogConstant;
   allOffers: IOfferReturnData[] = [];
+  isLoggedIn: boolean = false;
 
-  constructor(private userCRUD: UserCRUDService) {}
+  constructor(
+    private userCRUD: UserCRUDService,
+    private authService: AuthService
+  ) {}
 
   ngOnInit(): void {
     this.userCRUD.getAllOffers().subscribe({
@@ -23,8 +28,9 @@ export class CatalogComponent implements OnInit {
         this.allOffers = response;
       },
       error: (msg) => {
-        alert(msg);
+        console.log(msg);
       },
     });
+    this.isLoggedIn = Boolean(this.authService.getUserData());
   }
 }
