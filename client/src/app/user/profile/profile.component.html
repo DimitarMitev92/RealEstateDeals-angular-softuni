@@ -2,16 +2,20 @@
 
     <h2 class="text-4xl font-bold text-sky-800 italic m-2">{{profileConstants.heading}}</h2>
 
-    <h2 class="text-2xl font-bold text-sky-800 italic  m-2">{{profileConstants.fullName}} Dimitar Mitev</h2>
+    <h2 class="text-2xl font-bold text-sky-800 italic  m-2">{{profileConstants.fullName}} {{userData.fullName}}</h2>
 
-    <h3 class="text-1xl font-bold text-sky-800 italic  m-2">{{profileConstants.email}} dmitev@gmail.com</h3>
+    <h3 class="text-1xl font-bold text-sky-800 italic  m-2">{{profileConstants.email}} {{userData.email}}</h3>
 
-    <h2 class="text-4xl font-bold text-sky-800 italic border-b-2 border-b-sky-600 m-2">{{profileConstants.offers}}</h2>
+    <h2 class="text-4xl font-bold text-sky-800 italic border-b-2 border-b-sky-600 m-2">{{profileConstants.offers}}:</h2>
 
     <div class="container flex justify-center items-center flex-wrap gap-10 m-10 w-4/5">
 
 
-        <app-card></app-card>
+        <app-card *ngFor="let offer of userOffers" [offer]="offer"></app-card>
+        <ng-container *ngIf='userOffers?.length === 0'>
+            <h2 class="text-2xl font-bold text-sky-800 italic   m-2">You have no offers yet.</h2>
+            <a class="btn btn-blue my-4" routerLink="/create">Create</a>
+        </ng-container>
 
     </div>
 </div>
