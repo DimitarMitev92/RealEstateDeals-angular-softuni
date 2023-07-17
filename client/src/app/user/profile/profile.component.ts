@@ -22,14 +22,12 @@ export class ProfileComponent implements OnInit {
     let userDataJSON = localStorage.getItem('userData');
     if (userDataJSON !== null) {
       this.userData = JSON.parse(userDataJSON);
-      console.log(this.userData);
       let userID = JSON.parse(userDataJSON)._id;
       this.userCRUD.getAllOffers().subscribe({
         next: (response) => {
           this.userOffers = response.filter(
             (offer) => offer._ownerId === userID
           );
-          console.log(this.userOffers);
         },
         error: (msg) => {
           console.log(msg);

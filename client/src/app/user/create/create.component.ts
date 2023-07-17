@@ -8,10 +8,6 @@ import { createConstants } from 'src/app/constants/createConstants';
 
 import { UserCRUDService } from '../user-crud.service';
 import { AuthService } from 'src/app/auth/auth.service';
-import {
-  IOfferData,
-  IOfferReturnData,
-} from 'src/app/interfaces/offerInterfaces';
 
 @Component({
   selector: 'app-create',
@@ -45,11 +41,10 @@ export class CreateComponent {
     const accessToken = this.authService.getUserAccessToken();
     this.userCRUD.createOffer(offerData, accessToken).subscribe({
       next: (response) => {
-        console.log('Current Position: ', response);
         this.router.navigate([`${response._id}/details`]);
       },
       error: (msg) => {
-        console.log('Error Getting Location: ', msg);
+        console.log(msg);
       },
     });
   }

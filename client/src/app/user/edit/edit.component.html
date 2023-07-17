@@ -2,23 +2,54 @@
     <img src="../../../assets/images/edit.jpg" alt="background" class="object-cover object-center h-screen w-7/12">
     <div class="bg-white flex flex-col justify-center items-center w-5/12 shadow-lg">
         <h1 class="text-4xl font-bold text-sky-800 mb-4">{{editConstants.heading}}</h1>
-        <form class="w-2/3 text-center">
+        <form [formGroup]="editForm" (ngSubmit)="onSubmit()" class="w-2/3 text-center">
             <label for="edit-title" class="text-sky-800 self-start text-lg">{{editConstants.title}}</label>
-            <input id="edit-title" type="text" name="title" autocomplete="off"
+            <input id="edit-title" type="text" formControlName="title" autocomplete="off"
                 class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 ">
+
+            <p *ngIf="editForm.get('title')?.invalid && 
+                (editForm.get('title')?.dirty || 
+                editForm.get('title')?.touched || 
+                isSubmitted)" class="text-red-500 text-xs italic">{{editConstants.titleInvalidText}}</p>
+
             <label for="edit-location" class="text-sky-800 self-start text-lg">{{editConstants.location}}</label>
-            <input id="edit-location" type="text" name="location" autocomplete="off"
+            <input id="edit-location" type="text" formControlName="location" autocomplete="off"
                 class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 ">
-            <label for="edit-imageLink" class="text-sky-800 self-start text-lg">{{editConstants.image}}</label>
-            <input id="edit-imageLink" type="text" name="imageUrl" autocomplete="off"
+
+            <p *ngIf="editForm.get('location')?.invalid && 
+                (editForm.get('location')?.dirty || 
+                editForm.get('location')?.touched || 
+                isSubmitted)" class="text-red-500 text-xs italic">{{editConstants.locationInvalidText}}</p>
+
+            <label for="edit-imageLink" class="text-sky-800 self-start text-lg">{{editConstants.imageUrl}}</label>
+            <input id="edit-imageLink" type="text" formControlName="imageUrl" autocomplete="off"
                 class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 ">
+
+            <p *ngIf="editForm.get('imageUrl')?.invalid && 
+                (editForm.get('imageUrl')?.dirty || 
+                editForm.get('imageUrl')?.touched || 
+                isSubmitted)" class="text-red-500 text-xs italic">{{editConstants.imageUrlInvalidText}}</p>
+
             <label for="edit-price" class="text-sky-800 self-start text-lg">{{editConstants.price}}</label>
-            <input id="edit-price" type="number" name="Price" autocomplete="off"
+            <input id="edit-price" type="number" formControlName="price" autocomplete="off"
                 class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 ">
+
+            <p *ngIf="editForm.get('price')?.invalid && 
+                (editForm.get('price')?.dirty || 
+                editForm.get('price')?.touched || 
+                isSubmitted)" class="text-red-500 text-xs italic">{{editConstants.priceInvalidText}}</p>
+
             <label for="edit-information" class="text-sky-800 self-start text-lg">{{editConstants.information}}</label>
-            <textarea id="edit-information" name="information" rows="4" cols="50"
+            <textarea id="edit-information" formControlName="information" rows="4" cols="50"
                 class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 "></textarea>
-            <button class="btn btn-blue my-4">{{editConstants.btnText}}</button>
+
+            <p *ngIf="editForm.get('information')?.invalid && 
+                (editForm.get('information')?.dirty || 
+                editForm.get('information')?.touched || 
+                isSubmitted)" class="text-red-500 text-xs italic">{{editConstants.informationInvalidText}}</p>
+
+            <button [disabled]="this.editForm.invalid" type="submit"
+                class="btn btn-blue my-4">{{editConstants.btnText}}</button>
         </form>
     </div>
 
