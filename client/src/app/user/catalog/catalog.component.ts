@@ -4,7 +4,7 @@ import { catalogConstant } from 'src/app/constants/catalogConstants';
 
 import { UserCRUDService } from '../user-crud.service';
 
-import { IOfferReturnData } from 'src/app/interfaces/offertInterfaces';
+import { IOfferReturnData } from 'src/app/interfaces/offerInterfaces';
 
 @Component({
   selector: 'app-catalog',

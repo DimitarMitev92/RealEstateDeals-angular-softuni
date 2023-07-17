@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { serverUrl } from '../constants/serverConstants';
 
-import { IOfferData, IOfferReturnData } from '../interfaces/offertInterfaces';
+import { IOfferData, IOfferReturnData } from '../interfaces/offerInterfaces';
 
 import { Observable } from 'rxjs';
 

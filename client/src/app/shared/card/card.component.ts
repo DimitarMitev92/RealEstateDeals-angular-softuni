@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { IOfferReturnData } from 'src/app/interfaces/offertInterfaces';
+import { IOfferReturnData } from 'src/app/interfaces/offerInterfaces';
 
 @Component({
   selector: 'app-card',

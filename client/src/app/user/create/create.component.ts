@@ -11,7 +11,7 @@ import { AuthService } from 'src/app/auth/auth.service';
 import {
   IOfferData,
   IOfferReturnData,
-} from 'src/app/interfaces/offertInterfaces';
+} from 'src/app/interfaces/offerInterfaces';
 
 @Component({
   selector: 'app-create',

@@ -1,4 +1,4 @@
-<div #cardElement [attr.idOffer]='offer._id' [attr.idOfferOwner]="offer._ownerId"
+<div #cardElement *ngIf="offer" [attr.idOffer]='offer._id' [attr.idOfferOwner]="offer._ownerId"
     [attr.offerCreatedOn]="offer._createdOn"
     class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-sky-900">
     <img class="rounded-t-lg" src={{offer.imageUrl}} alt={{offer.title}} />

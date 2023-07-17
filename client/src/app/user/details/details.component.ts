@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { UserCRUDService } from '../user-crud.service';
 
-import { IOfferReturnData } from 'src/app/interfaces/offertInterfaces';
+import { IOfferReturnData } from 'src/app/interfaces/offerInterfaces';
 
 @Component({
   selector: 'app-details',
