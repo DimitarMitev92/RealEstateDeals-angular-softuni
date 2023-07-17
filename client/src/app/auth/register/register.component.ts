@@ -54,15 +54,15 @@ export class RegisterComponent {
         email: this.registerForm.value.email,
         password: this.registerForm.value.password,
       })
-      .subscribe(
-        (response: IRegisterData): void => {
+      .subscribe({
+        next: (response) => {
           this.authService.setUserData(response);
           this.registerForm.reset();
           this.router.navigate(['']);
         },
-        (error: any): void => {
-          confirm(error.message);
-        }
-      );
+        error: (msg) => {
+          confirm(msg.message);
+        },
+      });
   }
 }

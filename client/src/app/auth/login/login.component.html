@@ -27,7 +27,7 @@
                   loginForm.get('password')?.touched ||
                    isSubmitted)" class="text-red-500 text-xs italic">{{loginConstant.passwordInvalidText}}</p>
 
-            <button [disabled]="!this.loginForm.valid" type="submit"
+            <button [disabled]="this.loginForm.invalid" type="submit"
                 class="btn btn-blue my-4">{{loginConstant.btnText}}</button>
             <p>{{loginConstant.account}} <a class="font-bold underline text-sky-800"
                     routerLink="/register">{{loginConstant.btnAccount}}</a></p>

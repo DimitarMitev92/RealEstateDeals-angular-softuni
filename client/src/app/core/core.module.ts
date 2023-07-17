@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { HeaderComponent } from './header/header.component';
 import { HeroSectionComponent } from './hero-section/hero-section.component';
@@ -18,7 +19,7 @@ import { GlobalLoaderComponent } from './global-loader/global-loader.component';
     FooterComponent,
     GlobalLoaderComponent,
   ],
-  imports: [CommonModule, SharedModule, RouterModule],
+  imports: [CommonModule, SharedModule, RouterModule, ReactiveFormsModule],
   exports: [
     HeaderComponent,
     HeroSectionComponent,

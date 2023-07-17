@@ -3,26 +3,51 @@
         class="object-cover object-center h-screen w-7/12">
     <div class="bg-white flex flex-col justify-center items-center w-5/12 shadow-lg">
         <h1 class="text-4xl font-bold text-sky-800 mb-4">{{contactUsConstants.heading}}</h1>
-        <form class="w-2/3 text-center">
+        <form [formGroup]="contactUsForm" (ngSubmit)="onSubmit()" class="w-2/3 text-center">
             <label for="contact-us-fullName"
                 class="text-sky-800 self-start text-lg">{{contactUsConstants.fullName}}</label>
-            <input id="contact-us-fullName" type="text" name="fullName"
+            <input id="contact-us-fullName" type="text" formControlName="fullName"
                 placeholder={{contactUsConstants.fullNamePlaceholder}} autocomplete="off"
                 class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 ">
+
+            <p *ngIf="contactUsForm.get('fullName')?.invalid && 
+                (contactUsForm.get('fullName')?.dirty || 
+                contactUsForm.get('fullName')?.touched || 
+                isSubmitted)" class="text-red-500 text-xs italic">{{contactUsConstants.fullNameInvalidText}}</p>
+
             <label for="contact-us-email" class="text-sky-800 self-start text-lg">{{contactUsConstants.email}}</label>
-            <input id="contact-us-email" type="email" name="email" placeholder={{contactUsConstants.emailPlaceholder}}
-                autocomplete="off"
+            <input id="contact-us-email" type="email" formControlName="email"
+                placeholder={{contactUsConstants.emailPlaceholder}} autocomplete="off"
                 class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 ">
+
+            <p *ngIf="contactUsForm.get('email')?.invalid && 
+                (contactUsForm.get('email')?.dirty || 
+                contactUsForm.get('email')?.touched || 
+                isSubmitted)" class="text-red-500 text-xs italic">{{contactUsConstants.emailInvalidText}}</p>
+
             <label for="contact-us-phone"
                 class="text-sky-800 self-start text-lg">{{contactUsConstants.phoneNumber}}</label>
-            <input id="contact-us-phone" type="text" name="phone"
+            <input id="contact-us-phone" type="text" formControlName="phone"
                 placeholder={{contactUsConstants.phoneNumberPlaceholder}} autocomplete="off"
                 class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 ">
+
+            <p *ngIf="contactUsForm.get('phone')?.invalid && 
+                (contactUsForm.get('phone')?.dirty || 
+                contactUsForm.get('phone')?.touched || 
+                isSubmitted)" class="text-red-500 text-xs italic">{{contactUsConstants.phoneNumberInvalidText}}</p>
+
             <label for="contact-us-message"
                 class="text-sky-800 self-start text-lg">{{contactUsConstants.message}}</label>
-            <textarea id="contact-us-message" name="message" rows="4" cols="50"
+            <textarea id="contact-us-message" formControlName="message" rows="4" cols="50"
                 class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 "></textarea>
-            <button class="btn btn-blue my-4">{{contactUsConstants.btnText}}</button>
+
+            <p *ngIf="contactUsForm.get('message')?.invalid && 
+                (contactUsForm.get('message')?.dirty || 
+                contactUsForm.get('message')?.touched || 
+                isSubmitted)" class="text-red-500 text-xs italic">{{contactUsConstants.messageInvalidText}}</p>
+
+            <button [disabled]="this.contactUsForm.invalid" type="submit"
+                class="btn btn-blue my-4">{{contactUsConstants.btnText}}</button>
 
         </form>
     </div>

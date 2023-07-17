@@ -4,4 +4,5 @@ export const serverUrl = {
   register: 'http://localhost:3030/users/register',
   logout: 'http://localhost:3030/users/logout',
   offers: 'http://localhost:3030/data/offers',
+  contactUs: 'http://localhost:3030/jsonstore/contact-us',
 };
