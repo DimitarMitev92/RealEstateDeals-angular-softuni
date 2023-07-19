@@ -50,4 +50,13 @@ export class UserCRUDService {
       }
     );
   }
+
+  deleteOffer(idOffer: string, accessToken: string | string[]) {
+    return this.http.delete(`${serverUrl.offers}/${idOffer}`, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'X-Authorization': accessToken,
+      }),
+    });
+  }
 }
