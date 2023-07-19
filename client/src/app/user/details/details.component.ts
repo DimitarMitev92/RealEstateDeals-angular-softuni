@@ -5,7 +5,6 @@ import { UserCRUDService } from '../user-crud.service';
 
 import { IOfferReturnData } from 'src/app/interfaces/offerInterfaces';
 import { AuthService } from 'src/app/auth/auth.service';
-import { IRegisterData } from 'src/app/interfaces/authInterfaces';
 
 @Component({
   selector: 'app-details',
@@ -34,8 +33,6 @@ export class DetailsComponent implements OnInit {
           let userId = JSON.parse(userDataJSON)._id;
           let ownerId = this.offer._ownerId;
           userId === ownerId ? (this.isOwner = true) : (this.isOwner = false);
-          console.log('Logged in user id: ', userId);
-          console.log('Owner id: ', ownerId);
         }
       });
     });

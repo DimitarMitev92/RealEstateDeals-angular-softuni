@@ -8,6 +8,7 @@ import { createConstants } from 'src/app/constants/createConstants';
 
 import { UserCRUDService } from '../user-crud.service';
 import { AuthService } from 'src/app/auth/auth.service';
+import { IOfferData } from 'src/app/interfaces/offerInterfaces';
 
 @Component({
   selector: 'app-create',
@@ -37,7 +38,13 @@ export class CreateComponent {
   onSubmit(): void {
     this.isSubmitted = true;
 
-    const offerData = this.createForm.value;
+    const offerData: IOfferData = {
+      title: this.createForm.value.title || '',
+      location: this.createForm.value.location || '',
+      imageUrl: this.createForm.value.imageUrl || '',
+      price: this.createForm.value.price || '',
+      information: this.createForm.value.information || '',
+    };
     const accessToken = this.authService.getUserAccessToken();
     this.userCRUD.createOffer(offerData, accessToken).subscribe({
       next: (response) => {

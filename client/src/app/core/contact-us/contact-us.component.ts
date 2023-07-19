@@ -39,7 +39,6 @@ export class ContactUsComponent {
       })
       .subscribe({
         next: (response) => {
-          console.log(response);
           this.router.navigate(['']);
         },
         error: (msg) => {
