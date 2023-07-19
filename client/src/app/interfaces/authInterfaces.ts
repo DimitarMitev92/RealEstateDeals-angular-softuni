@@ -1,11 +1,11 @@
 export interface ILoginData {
-  email: string | null | undefined;
-  password: string | null | undefined;
+  email: string;
+  password: string;
 }
 
 export interface IRegisterData {
-  fullName: string | null | undefined;
-  email: string | null | undefined;
-  username: string | null | undefined;
-  password: string | null | undefined;
+  fullName: string;
+  email: string;
+  username: string;
+  password: string;
 }
