@@ -23,7 +23,16 @@ export class EditComponent implements OnInit {
 
   idOffer!: string;
 
-  offer!: IOfferReturnData;
+  offer: IOfferReturnData = {
+    title: '',
+    location: '',
+    imageUrl: '',
+    price: '',
+    information: '',
+    _ownerId: '',
+    _id: '',
+    _createdOn: 0,
+  };
 
   editForm = this.fb.group({
     title: ['', [Validators.required]],
@@ -48,7 +57,6 @@ export class EditComponent implements OnInit {
       this.userCrud.getOfferById(this.idOffer).subscribe({
         next: (response) => {
           this.offer = response;
-          console.log(this.offer);
           this.editForm.patchValue({
             title: this.offer.title || '',
             location: this.offer.location || '',

@@ -32,10 +32,10 @@ export class ContactUsComponent {
     this.isSubmitted = true;
     this.coreService
       .createContact({
-        fullName: this.contactUsForm.value.fullName,
-        email: this.contactUsForm.value.email,
-        phone: this.contactUsForm.value.phone,
-        message: this.contactUsForm.value.message,
+        fullName: this.contactUsForm.value.fullName || '',
+        email: this.contactUsForm.value.email || '',
+        phone: this.contactUsForm.value.phone || '',
+        message: this.contactUsForm.value.message || '',
       })
       .subscribe({
         next: (response) => {

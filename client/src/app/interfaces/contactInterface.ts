@@ -1,6 +1,6 @@
 export interface IContactData {
-  fullName: string | null | undefined;
-  email: string | null | undefined;
-  phone: string | null | undefined;
-  message: string | null | undefined;
+  fullName: string;
+  email: string;
+  phone: string;
+  message: string;
 }
