@@ -6,6 +6,7 @@ import { UserCRUDService } from '../user-crud.service';
 
 import { IOfferReturnData } from 'src/app/interfaces/offerInterfaces';
 import { AuthService } from 'src/app/auth/auth.service';
+import { GlobalLoaderService } from 'src/app/core/global-loader/global-loader.service';
 
 @Component({
   selector: 'app-catalog',
@@ -19,13 +20,16 @@ export class CatalogComponent implements OnInit {
 
   constructor(
     private userCRUD: UserCRUDService,
-    private authService: AuthService
+    private authService: AuthService,
+    private globalLoaderService: GlobalLoaderService
   ) {}
 
   ngOnInit(): void {
+    this.globalLoaderService.showLoader();
     this.userCRUD.getAllOffers().subscribe({
       next: (response) => {
         this.allOffers = response;
+        this.globalLoaderService.hideLoader();
       },
       error: (msg) => {
         console.log(msg);

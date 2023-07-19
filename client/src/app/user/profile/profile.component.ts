@@ -5,6 +5,7 @@ import { UserCRUDService } from '../user-crud.service';
 import { IOfferReturnData } from 'src/app/interfaces/offerInterfaces';
 import { IRegisterData } from 'src/app/interfaces/authInterfaces';
 import { AuthService } from 'src/app/auth/auth.service';
+import { GlobalLoaderService } from 'src/app/core/global-loader/global-loader.service';
 
 @Component({
   selector: 'app-profile',
@@ -19,16 +20,19 @@ export class ProfileComponent implements OnInit {
 
   constructor(
     private userCRUD: UserCRUDService,
-    private authService: AuthService
+    private authService: AuthService,
+    private globalLoaderService: GlobalLoaderService
   ) {}
 
   ngOnInit(): void {
+    this.globalLoaderService.showLoader();
     let userDataJSON = this.authService.getUserData();
     if (userDataJSON !== null) {
       this.userData = JSON.parse(userDataJSON);
       let userID = JSON.parse(userDataJSON)._id;
       this.userCRUD.getAllOffers().subscribe({
         next: (response) => {
+          this.globalLoaderService.hideLoader();
           this.userOffers = response.filter(
             (offer) => offer._ownerId === userID
           );

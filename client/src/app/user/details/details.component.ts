@@ -6,6 +6,7 @@ import { UserCRUDService } from '../user-crud.service';
 import { IOfferReturnData } from 'src/app/interfaces/offerInterfaces';
 import { AuthService } from 'src/app/auth/auth.service';
 import { IPopupDelete } from 'src/app/interfaces/popupDeleteInterfaces';
+import { GlobalLoaderService } from 'src/app/core/global-loader/global-loader.service';
 
 @Component({
   selector: 'app-details',
@@ -24,13 +25,16 @@ export class DetailsComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private userCRUD: UserCRUDService,
-    private authService: AuthService
+    private authService: AuthService,
+    private globalLoaderService: GlobalLoaderService
   ) {}
 
   ngOnInit() {
+    this.globalLoaderService.showLoader();
     this.route.paramMap.subscribe((params) => {
       const idOffer = params.get('id');
       this.userCRUD.getOfferById(idOffer).subscribe((response) => {
+        this.globalLoaderService.hideLoader();
         this.offer = response;
         let userDataJSON = this.authService.getUserData();
         if (userDataJSON !== null) {
