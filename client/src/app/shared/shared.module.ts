@@ -5,9 +5,10 @@ import { RouterModule } from '@angular/router';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { CardComponent } from './card/card.component';
+import { ShortPipe } from '../pipes/short.pipe';
 
 @NgModule({
-  declarations: [SpinnerComponent, NotFoundComponent, CardComponent],
+  declarations: [SpinnerComponent, NotFoundComponent, CardComponent, ShortPipe],
   imports: [CommonModule, RouterModule],
   exports: [SpinnerComponent, NotFoundComponent, CardComponent],
 })
