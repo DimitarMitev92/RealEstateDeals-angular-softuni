@@ -52,6 +52,8 @@ export class CreateComponent {
       },
       error: (msg) => {
         console.log(msg);
+        this.authService.clearUserData();
+        this.router.navigate(['/login']);
       },
     });
   }

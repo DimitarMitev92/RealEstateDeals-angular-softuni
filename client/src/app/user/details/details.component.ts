@@ -49,17 +49,13 @@ export class DetailsComponent implements OnInit {
   }
 
   onNewEventShowDeleteHandler(value: IPopupDelete) {
-    console.log(value);
     this.isShowDeletePopup = value.isShowDeletePopup;
     if (value.isWantToDeleteOffer) {
-      console.log('Delete offer');
-      console.log(this.offer._id);
       let userDataJSON = this.authService.getUserData();
       if (userDataJSON !== null) {
         let userAccessToken = JSON.parse(userDataJSON).accessToken;
         this.userCRUD.deleteOffer(this.offer._id, userAccessToken).subscribe({
           next: (response) => {
-            console.log(response);
             this.router.navigate(['/profile']);
           },
           error: (msg) => {
