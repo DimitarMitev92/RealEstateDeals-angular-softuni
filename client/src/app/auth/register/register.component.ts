@@ -16,6 +16,9 @@ export class RegisterComponent {
 
   isSubmitted = false;
 
+  errorServer: boolean = false;
+  errorMsg: string = '';
+
   registerForm = this.fb.group(
     {
       fullName: ['', [Validators.required]],
@@ -61,7 +64,11 @@ export class RegisterComponent {
           this.router.navigate(['']);
         },
         error: (msg) => {
-          confirm(msg.message);
+          this.errorServer = true;
+          console.log(msg);
+          if (msg.status === 409) {
+            this.errorMsg = 'There is already a user with the same email.';
+          }
         },
       });
   }
