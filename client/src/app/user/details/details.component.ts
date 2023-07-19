@@ -33,15 +33,21 @@ export class DetailsComponent implements OnInit {
     this.globalLoaderService.showLoader();
     this.route.paramMap.subscribe((params) => {
       const idOffer = params.get('id');
-      this.userCRUD.getOfferById(idOffer).subscribe((response) => {
-        this.globalLoaderService.hideLoader();
-        this.offer = response;
-        let userDataJSON = this.authService.getUserData();
-        if (userDataJSON !== null) {
-          let userId = JSON.parse(userDataJSON)._id;
-          let ownerId = this.offer._ownerId;
-          userId === ownerId ? (this.isOwner = true) : (this.isOwner = false);
-        }
+      this.userCRUD.getOfferById(idOffer).subscribe({
+        next: (response) => {
+          this.globalLoaderService.hideLoader();
+          this.offer = response;
+          let userDataJSON = this.authService.getUserData();
+          if (userDataJSON !== null) {
+            let userId = JSON.parse(userDataJSON)._id;
+            let ownerId = this.offer._ownerId;
+            userId === ownerId ? (this.isOwner = true) : (this.isOwner = false);
+          }
+        },
+        error: (msg) => {
+          console.log(msg);
+          this.globalLoaderService.hideLoader();
+        },
       });
     });
 

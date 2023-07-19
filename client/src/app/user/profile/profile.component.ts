@@ -39,6 +39,7 @@ export class ProfileComponent implements OnInit {
         },
         error: (msg) => {
           console.log(msg);
+          this.globalLoaderService.hideLoader();
           if (msg.status === 404) {
             this.userOffers = [];
           }

@@ -32,6 +32,7 @@ export class CatalogComponent implements OnInit {
         this.globalLoaderService.hideLoader();
       },
       error: (msg) => {
+        this.globalLoaderService.hideLoader();
         console.log(msg);
       },
     });
