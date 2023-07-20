@@ -1,6 +1,8 @@
 export interface IOfferData {
   title: string;
   location: string;
+  quadrature: string;
+  floors: string;
   imageUrl: string;
   price: string;
   information: string;
@@ -9,6 +11,8 @@ export interface IOfferData {
 export interface IOfferReturnData {
   title: string;
   location: string;
+  quadrature: string;
+  floors: string;
   imageUrl: string;
   price: string;
   information: string;

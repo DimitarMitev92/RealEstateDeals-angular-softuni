@@ -23,6 +23,8 @@ export class CreateComponent {
   createForm = this.fb.group({
     title: ['', Validators.required],
     location: ['', Validators.required],
+    quadrature: ['', Validators.required],
+    floors: ['', Validators.required],
     imageUrl: ['', [Validators.required, httpsValidator()]],
     price: ['', [Validators.required, Validators.minLength(1)]],
     information: ['', [Validators.required, Validators.minLength(20)]],
@@ -41,6 +43,8 @@ export class CreateComponent {
     const offerData: IOfferData = {
       title: this.createForm.value.title || '',
       location: this.createForm.value.location || '',
+      quadrature: this.createForm.value.quadrature || '',
+      floors: this.createForm.value.floors || '',
       imageUrl: this.createForm.value.imageUrl || '',
       price: this.createForm.value.price || '',
       information: this.createForm.value.information || '',

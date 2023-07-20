@@ -21,6 +21,29 @@
                 editForm.get('location')?.touched || 
                 isSubmitted)" class="text-red-500 text-xs italic">{{editConstants.locationInvalidText}}</p>
 
+            <!-- QUADRATURE -->
+
+            <label for="create-quadrature" class="text-sky-800 self-start text-lg">{{editConstants.quadrature}}</label>
+            <input id="create-quadrature" type="number" formControlName="quadrature" autocomplete="off"
+                class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 ">
+
+            <p *ngIf="editForm.get('quadrature')?.invalid && 
+                (editForm.get('quadrature')?.dirty || 
+                editForm.get('quadrature')?.touched || 
+                isSubmitted)" class="text-red-500 text-xs italic">{{editConstants.quadratureInvalidText}}</p>
+
+            <!-- FLOORS -->
+
+            <label for="create-floors" class="text-sky-800 self-start text-lg">{{editConstants.price}}</label>
+            <input id="create-floors" type="number" formControlName="floors" autocomplete="off"
+                class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 ">
+
+            <p *ngIf="editForm.get('floors')?.invalid && 
+                (editForm.get('floors')?.dirty || 
+                editForm.get('floors')?.touched || 
+                isSubmitted)" class="text-red-500 text-xs italic">{{editConstants.floorsInvalidText}}</p>
+
+
             <label for="edit-imageLink" class="text-sky-800 self-start text-lg">{{editConstants.imageUrl}}</label>
             <input id="edit-imageLink" type="text" formControlName="imageUrl" autocomplete="off"
                 class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 ">

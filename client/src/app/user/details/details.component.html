@@ -9,7 +9,9 @@
                 </h2>
                 <h1 class="text-gray-900 text-3xl title-font font-medium mb-1">{{offer.title | uppercase}}</h1>
 
-                <h3 class="text-lg py-2">{{offer.location}}</h3>
+                <h3 class="text-lg py-2 font-bold">{{offer.location}}</h3>
+                <h3 class="text-lg py-2 font-bold">{{offer.quadrature}} m2</h3>
+                <h3 class="text-lg py-2 font-bold">{{offer.floors}} floors</h3>
                 <p class="leading-relaxed">{{offer.information}}</p>
                 <span class="title-font font-medium text-2xl text-gray-900 py-2">{{offer.price
                     |currency:'CAD':'symbol-narrow'}}</span>

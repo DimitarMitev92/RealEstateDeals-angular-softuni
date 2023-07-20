@@ -26,6 +26,8 @@ export class EditComponent implements OnInit {
   offer: IOfferReturnData = {
     title: '',
     location: '',
+    quadrature: '',
+    floors: '',
     imageUrl: '',
     price: '',
     information: '',
@@ -37,6 +39,8 @@ export class EditComponent implements OnInit {
   editForm = this.fb.group({
     title: ['', [Validators.required]],
     location: ['', [Validators.required]],
+    quadrature: ['', [Validators.required]],
+    floors: ['', [Validators.required]],
     imageUrl: ['', [Validators.required, httpsValidator()]],
     price: ['', [Validators.required, Validators.minLength(1)]],
     information: ['', [Validators.required, Validators.minLength(20)]],
@@ -60,6 +64,8 @@ export class EditComponent implements OnInit {
           this.editForm.patchValue({
             title: this.offer.title || '',
             location: this.offer.location || '',
+            quadrature: this.offer.quadrature || '',
+            floors: this.offer.floors || '',
             imageUrl: this.offer.imageUrl || '',
             price: this.offer.price || '',
             information: this.offer.information || '',
@@ -78,6 +84,8 @@ export class EditComponent implements OnInit {
     const offerData: IOfferData = {
       title: this.editForm.value.title || '',
       location: this.editForm.value.location || '',
+      quadrature: this.editForm.value.quadrature || '',
+      floors: this.editForm.value.floors || '',
       imageUrl: this.editForm.value.imageUrl || '',
       price: this.editForm.value.price || '',
       information: this.editForm.value.information || '',

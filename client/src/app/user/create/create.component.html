@@ -25,6 +25,31 @@
                 createForm.get('location')?.touched || 
                 isSubmitted)" class="text-red-500 text-xs italic">{{createConstants.locationInvalidText}}</p>
 
+            <!-- QUADRATURE -->
+
+            <label for="create-quadrature"
+                class="text-sky-800 self-start text-lg">{{createConstants.quadrature}}</label>
+            <input id="create-quadrature" type="number" formControlName="quadrature"
+                placeholder={{createConstants.quadraturePlaceholder}} autocomplete="off"
+                class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 ">
+
+            <p *ngIf="createForm.get('quadrature')?.invalid && 
+            (createForm.get('quadrature')?.dirty || 
+            createForm.get('quadrature')?.touched || 
+            isSubmitted)" class="text-red-500 text-xs italic">{{createConstants.quadratureInvalidText}}</p>
+
+            <!-- FLOORS -->
+
+            <label for="create-floors" class="text-sky-800 self-start text-lg">{{createConstants.floors}}</label>
+            <input id="create-floors" type="number" formControlName="floors"
+                placeholder={{createConstants.floorsPlaceholder}} autocomplete="off"
+                class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 ">
+
+            <p *ngIf="createForm.get('floors')?.invalid && 
+            (createForm.get('floors')?.dirty || 
+            createForm.get('floors')?.touched || 
+            isSubmitted)" class="text-red-500 text-xs italic">{{createConstants.floorsInvalidText}}</p>
+
             <label for="create-imageLink" class="text-sky-800 self-start text-lg">{{createConstants.imageUrl}}</label>
             <input id="create-imageLink" type="text" formControlName="imageUrl"
                 placeholder={{createConstants.imageUrlPlaceholder}} autocomplete="off"
@@ -34,6 +59,8 @@
                 (createForm.get('imageUrl')?.dirty || 
                 createForm.get('imageUrl')?.touched || 
                 isSubmitted)" class="text-red-500 text-xs italic">{{createConstants.imageUrlInvalidText}}</p>
+
+
 
             <label for="create-price" class="text-sky-800 self-start text-lg">{{createConstants.price}}</label>
             <input id="create-price" type="number" formControlName="price"
