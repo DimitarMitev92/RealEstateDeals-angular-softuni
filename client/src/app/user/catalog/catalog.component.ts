@@ -21,6 +21,9 @@ export class CatalogComponent implements OnInit {
   options: string[] = ['Newest', 'Oldest', 'Most liked'];
   selectedOption: string = '';
 
+  searchTerm: string = '';
+  filteredUsers!: any[];
+
   constructor(
     private userCRUD: UserCRUDService,
     private authService: AuthService,
@@ -32,6 +35,7 @@ export class CatalogComponent implements OnInit {
     this.userCRUD.getAllOffers().subscribe({
       next: (response) => {
         this.allOffers = response;
+        this.filteredUsers = this.allOffers;
         this.globalLoaderService.hideLoader();
       },
       error: (msg) => {
@@ -45,13 +49,20 @@ export class CatalogComponent implements OnInit {
   onRadioChange() {
     console.log('Избрана стойност: ' + this.selectedOption);
     if (this.selectedOption === 'Newest') {
-      this.allOffers = this.allOffers.sort(
+      this.filteredUsers = this.filteredUsers.sort(
         (a, b) => b._createdOn - a._createdOn
       );
     } else if (this.selectedOption === 'Oldest') {
-      this.allOffers = this.allOffers.sort(
+      this.filteredUsers = this.filteredUsers.sort(
         (a, b) => a._createdOn - b._createdOn
       );
     }
+  }
+
+  onSearch() {
+    this.filteredUsers = this.allOffers.filter((user: any) =>
+      user.title.toLowerCase().includes(this.searchTerm.toLowerCase())
+    );
+    console.log(this.filteredUsers);
   }
 }

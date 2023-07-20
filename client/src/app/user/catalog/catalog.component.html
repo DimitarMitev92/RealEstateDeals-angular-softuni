@@ -2,6 +2,9 @@
 
     <h2 class="text-4xl font-bold bg-sky-800 inline-block text-white py-4 w-full text-center">
         {{catalogConstants.heading}}</h2>
+    <input type="search" [(ngModel)]="searchTerm" (input)="onSearch()" placeholder="Search for names of offers..."
+        class="font-bold bg-sky-700 inline-block text-white placeholder-white py-4 w-full text-center border-white">
+
     <div class="container flex justify-center bg-sky-800 font-bold text-white py-4">
 
         <div *ngFor="let option of options" class="px-2">
@@ -15,10 +18,13 @@
     <div class="container flex justify-center items-center flex-wrap gap-10 m-10 w-4/5">
 
 
-        <app-card *ngFor="let offer of allOffers" [offer]="offer"></app-card>
+        <app-card *ngFor="let offer of filteredUsers" [offer]="offer"></app-card>
         <ng-container *ngIf='allOffers?.length === 0'>
             <h2 class="text-2xl font-bold text-sky-800 italic   m-2">No offers yet.</h2>
             <a *ngIf='isLoggedIn' class="btn btn-blue my-4" routerLink="/create">Create</a>
+        </ng-container>
+        <ng-container *ngIf='filteredUsers?.length === 0'>
+            <h2 class="text-2xl font-bold text-sky-800 italic   m-2">An offer with that name does not exist.</h2>
         </ng-container>
     </div>
 
