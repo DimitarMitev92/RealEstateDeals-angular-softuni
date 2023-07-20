@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { CreateComponent } from './create/create.component';
 import { DetailsComponent } from './details/details.component';
@@ -18,7 +18,13 @@ import { CatalogComponent } from './catalog/catalog.component';
     DetailsComponent,
     CatalogComponent,
   ],
-  imports: [CommonModule, RouterModule, SharedModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    RouterModule,
+    SharedModule,
+    ReactiveFormsModule,
+    FormsModule,
+  ],
   exports: [
     CreateComponent,
     EditComponent,

@@ -18,6 +18,9 @@ export class CatalogComponent implements OnInit {
   allOffers: IOfferReturnData[] = [];
   isLoggedIn: boolean = false;
 
+  options: string[] = ['Newest', 'Oldest', 'Most liked'];
+  selectedOption: string = '';
+
   constructor(
     private userCRUD: UserCRUDService,
     private authService: AuthService,
@@ -37,5 +40,18 @@ export class CatalogComponent implements OnInit {
       },
     });
     this.isLoggedIn = Boolean(this.authService.getUserData());
+  }
+
+  onRadioChange() {
+    console.log('Избрана стойност: ' + this.selectedOption);
+    if (this.selectedOption === 'Newest') {
+      this.allOffers = this.allOffers.sort(
+        (a, b) => b._createdOn - a._createdOn
+      );
+    } else if (this.selectedOption === 'Oldest') {
+      this.allOffers = this.allOffers.sort(
+        (a, b) => a._createdOn - b._createdOn
+      );
+    }
   }
 }
