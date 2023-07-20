@@ -4,19 +4,23 @@
             <img *ngIf="offer" class="lg:w-1/2 w-full object-cover object-center rounded border border-gray-200"
                 [src]="offer.imageUrl" alt={{offer.title}}>
             <div *ngIf="offer" class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0 flex flex-col justify-center ">
-                <h2 class="text-sm title-font text-gray-500 tracking-widest">{{offer._createdOn | date:
+                <h2 class="text-sm title-font text-gray-500 tracking-widest">Offer by: {{offer.ownerInfo.fullName}}
+                </h2>
+                <h2 class="text-sm title-font text-gray-500 tracking-widest">Created on: {{offer._createdOn | date:
                     'medium'}}
                 </h2>
-                <h1 class="text-gray-900 text-3xl title-font font-medium mb-1">{{offer.title | uppercase}}</h1>
+                <h1 class="text-gray-900 text-3xl title-font font-medium my-2">{{offer.title | uppercase}}</h1>
 
-                <h3 class="text-lg py-2 font-bold">{{offer.location}}</h3>
-                <h3 class="text-lg py-2 font-bold">{{offer.quadrature}} m2</h3>
-                <h3 class="text-lg py-2 font-bold">{{offer.floors}} floors</h3>
-                <p class="leading-relaxed">{{offer.information}}</p>
-                <span class="title-font font-medium text-2xl text-gray-900 py-2">{{offer.price
+                <h3 class="text-lg py-1">Location: {{offer.location}}</h3>
+                <h3 class="text-lg py-1 ">Quadrature: {{offer.quadrature}} m2</h3>
+                <h3 class="text-lg py-1 ">Floors: {{offer.floors}}</h3>
+                <p class="leading-relaxed">Information: {{offer.information}}</p>
+                <span class="title-font font-medium text-2xl text-gray-900 py-2">Price: {{offer.price
                     |currency:'CAD':'symbol-narrow'}}</span>
                 <div class="flex mt-5" *ngIf="isLoggedIn">
                     <button *ngIf="!isOwner" class="flex btn btn-blue mr-4">Buy</button>
+                    <button *ngIf="!isOwner" class="flex btn btn-blue mr-4">Follow</button>
+                    <button *ngIf="!isOwner" class="flex btn btn-blue mr-4">Contact owner</button>
                     <button *ngIf="isOwner" class="flex btn btn-blue mr-4"
                         routerLink="/{{offer._id}}/edit">Edit</button>
                     <button *ngIf="isOwner" (click)="onShowDeletePopup()" class="flex btn btn-blue mr-4">Delete</button>
