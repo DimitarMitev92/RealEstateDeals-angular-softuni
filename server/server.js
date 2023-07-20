@@ -1324,6 +1324,7 @@
                 email: "peter@abv.bg",
                 fullName: "Peter Parker",
                 username: "peter",
+                phone: '099999999',
                 hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1",
 
             },
@@ -1331,6 +1332,7 @@
                 email: "john@abv.bg",
                 fullName: "John Wick",
                 username: "john",
+                phone: '0988888888',
                 hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1"
             }
         },

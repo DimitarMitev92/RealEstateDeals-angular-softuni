@@ -2,7 +2,8 @@
 
     <h2 class="text-4xl font-bold bg-sky-800 inline-block text-white py-4 w-full text-center">
         {{catalogConstants.heading}}</h2>
-    <input type="search" [(ngModel)]="searchTerm" (input)="onSearch()" placeholder="Search for names of offers..."
+    <input type="search" [(ngModel)]="searchTerm" (input)="onSearch()"
+        placeholder={{catalogConstants.searchPlaceholder}}
         class="font-bold bg-sky-700 inline-block text-white placeholder-white py-4 w-full text-center border-white">
 
     <div class="container flex justify-center bg-sky-800 font-bold text-white py-4">
