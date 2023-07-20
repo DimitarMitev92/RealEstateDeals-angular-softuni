@@ -40,7 +40,7 @@ export class CreateComponent {
   onSubmit(): void {
     this.isSubmitted = true;
 
-    const offerData: IOfferData = {
+    let offerData: IOfferData = {
       title: this.createForm.value.title || '',
       location: this.createForm.value.location || '',
       quadrature: this.createForm.value.quadrature || '',
@@ -48,7 +48,12 @@ export class CreateComponent {
       imageUrl: this.createForm.value.imageUrl || '',
       price: this.createForm.value.price || '',
       information: this.createForm.value.information || '',
+      ownerInfo: { fullName: '', username: '', email: '', phone: '' },
     };
+    const userData = this.authService.getUserData();
+    if (userData) {
+      offerData.ownerInfo = JSON.parse(userData);
+    }
     const accessToken = this.authService.getUserAccessToken();
     this.userCRUD.createOffer(offerData, accessToken).subscribe({
       next: (response) => {

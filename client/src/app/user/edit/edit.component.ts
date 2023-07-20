@@ -34,6 +34,7 @@ export class EditComponent implements OnInit {
     _ownerId: '',
     _id: '',
     _createdOn: 0,
+    ownerInfo: { fullName: '', username: '', email: '', phone: '' },
   };
 
   editForm = this.fb.group({
@@ -89,8 +90,12 @@ export class EditComponent implements OnInit {
       imageUrl: this.editForm.value.imageUrl || '',
       price: this.editForm.value.price || '',
       information: this.editForm.value.information || '',
+      ownerInfo: { fullName: '', username: '', email: '', phone: '' },
     };
-
+    const userData = this.authService.getUserData();
+    if (userData) {
+      offerData.ownerInfo = JSON.parse(userData);
+    }
     const accessToken = this.authService.getUserAccessToken();
     this.userCrud.updateOffer(this.idOffer, offerData, accessToken).subscribe({
       next: (response) => {

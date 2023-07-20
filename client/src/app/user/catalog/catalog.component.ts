@@ -47,7 +47,6 @@ export class CatalogComponent implements OnInit {
   }
 
   onRadioChange() {
-    console.log('Избрана стойност: ' + this.selectedOption);
     if (this.selectedOption === 'Newest') {
       this.filteredUsers = this.filteredUsers.sort(
         (a, b) => b._createdOn - a._createdOn
@@ -64,6 +63,5 @@ export class CatalogComponent implements OnInit {
       user.title.toLowerCase().includes(this.searchTerm.toLowerCase())
     );
     this.selectedOption = '';
-    console.log(this.filteredUsers);
   }
 }
