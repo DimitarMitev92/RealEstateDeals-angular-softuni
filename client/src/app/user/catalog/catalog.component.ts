@@ -19,7 +19,7 @@ export class CatalogComponent implements OnInit {
   isLoggedIn: boolean = false;
 
   options: string[] = ['Newest', 'Oldest', 'Most liked'];
-  selectedOption: string = '';
+  selectedOption: string = 'Oldest';
 
   searchTerm: string = '';
   filteredUsers!: any[];
@@ -63,6 +63,7 @@ export class CatalogComponent implements OnInit {
     this.filteredUsers = this.allOffers.filter((user: any) =>
       user.title.toLowerCase().includes(this.searchTerm.toLowerCase())
     );
+    this.selectedOption = '';
     console.log(this.filteredUsers);
   }
 }

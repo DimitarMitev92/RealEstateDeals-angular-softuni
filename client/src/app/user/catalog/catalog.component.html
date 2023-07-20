@@ -9,7 +9,7 @@
 
         <div *ngFor="let option of options" class="px-2">
             <label>
-                <input [checked]="option" type="radio" name="options" [value]="option" [(ngModel)]="selectedOption"
+                <input type="radio" name="options" [value]="option" [(ngModel)]="selectedOption"
                     (change)="onRadioChange()">
                 {{ option }}
             </label>
