@@ -33,6 +33,15 @@
                 registerForm.get('email')?.touched || 
                 isSubmitted)" class="text-red-500 text-xs italic">{{registerConstants.emailInvalidText}}</p>
 
+            <label for="register-phone" class="text-sky-800 self-start text-lg">{{registerConstants.phone}}</label>
+            <input id="register-phone" type="text" formControlName="phone" autocomplete="off"
+                placeholder={{registerConstants.phonePlaceholder}}
+                class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 ">
+            <p *ngIf="registerForm.get('phone')?.invalid && 
+                    (registerForm.get('phone')?.dirty || 
+                    registerForm.get('phone')?.touched || 
+                    isSubmitted)" class="text-red-500 text-xs italic">{{registerConstants.phoneInvalidText}}</p>
+
             <label for="register-password"
                 class="text-sky-800 self-start text-lg">{{registerConstants.password}}</label>
             <input id="register-password" type="password" formControlName="password" autocomplete="off"

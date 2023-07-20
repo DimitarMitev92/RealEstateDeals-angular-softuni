@@ -3,7 +3,6 @@ import { AbstractControl, FormBuilder, Validators } from '@angular/forms';
 import { registerConstants } from 'src/app/constants/registerConstants';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
-import { IRegisterData } from 'src/app/interfaces/authInterfaces';
 
 import { emailValidator } from 'src/app/validators/emailValidator';
 @Component({
@@ -24,6 +23,7 @@ export class RegisterComponent {
       fullName: ['', [Validators.required]],
       username: ['', [Validators.required]],
       email: ['', [Validators.required, emailValidator()]],
+      phone: ['', [Validators.required, Validators.minLength(10)]],
       password: ['', [Validators.required, Validators.minLength(6)]],
       rePassword: ['', [Validators.required, Validators.minLength(6)]],
     },
@@ -55,6 +55,7 @@ export class RegisterComponent {
         fullName: this.registerForm.value.fullName,
         username: this.registerForm.value.username,
         email: this.registerForm.value.email,
+        phone: this.registerForm.value.phone,
         password: this.registerForm.value.password,
       })
       .subscribe({
