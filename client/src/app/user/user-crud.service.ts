@@ -71,14 +71,24 @@ export class UserCRUDService {
   }
 
   getAllOffersFollowers(): Observable<IFollowerReturnData> {
-    return this.http.get<IFollowerReturnData>(serverUrl.offersFollowers);
+    return this.http.get<IFollowerReturnData>(serverUrl.offersFollowersGet);
   }
 
   getOffersByFollowerId(id: string): Observable<IFollowerReturnData[]> {
     const encodedUriId = encodeURIComponent(`="${id}"`);
-    console.log(encodedUriId);
     return this.http.get<IFollowerReturnData[]>(
-      `${serverUrl.offersFollowers}${encodedUriId}`
+      `${serverUrl.offersFollowersGet}${encodedUriId}`
     );
   }
+
+  deleteOfferFollowerByOfferId(idOffer: string, accessToken: string): any {
+    return this.http.delete(`${serverUrl.offersFollowers}/${idOffer}`, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'X-Authorization': accessToken,
+      }),
+    });
+  }
 }
+
+// 1fa632b79c1fdea1a12552e0805691a2b196334ffdaa24e05b9c091d46d358f5

@@ -52,7 +52,6 @@ export class DetailsComponent implements OnInit {
             // Follow check
             this.userCRUD.getOffersByFollowerId(userId).subscribe({
               next: (response) => {
-                console.log(response);
                 if (response.length !== 0) {
                   this.isFollowed = true;
                 }
@@ -101,11 +100,10 @@ export class DetailsComponent implements OnInit {
   }
 
   onFollowOffer() {
-    console.log(this.offer);
     let userDataJSON = this.authService.getUserData();
     if (userDataJSON !== null) {
-      if (!this.isFollowed) {
-        this.isFollowed = !this.isFollowed;
+      if (this.isFollowed === false) {
+        this.isFollowed = true;
         let userAccessToken = JSON.parse(userDataJSON).accessToken;
         this.userCRUD
           .createOfferFollower(this.offer, userAccessToken)
@@ -118,26 +116,46 @@ export class DetailsComponent implements OnInit {
             },
           });
       } else {
-        console.log('Un follow offer');
-        this.isFollowed = !this.isFollowed;
+        console.log('UNFOLLOWED offer');
+        this.isFollowed = false;
+        let userDataJSON = this.authService.getUserData();
+        if (userDataJSON !== null) {
+          let userId = JSON.parse(userDataJSON)._id;
+          let userAccessToken = JSON.parse(userDataJSON).accessToken;
+          let idOfferFollower = '';
+          this.userCRUD.getOffersByFollowerId(userId).subscribe({
+            next: (response) => {
+              idOfferFollower = response[0]._id;
+              this.userCRUD
+                .deleteOfferFollowerByOfferId(idOfferFollower, userAccessToken)
+                .subscribe({
+                  next: (response: any) => {},
+                  error: (msg: any) => {
+                    console.log(response);
+                  },
+                });
+            },
+            error: (msg) => {
+              console.log(msg);
+            },
+          });
+        }
       }
     }
   }
 
   onBuyOffer() {
-    // console.log('Click Buy');
-    // let userDataJSON = this.authService.getUserData();
-    // if (userDataJSON !== null) {
-    //   let userId = JSON.parse(userDataJSON)._id;
-    //   console.log(userId);
-    //   this.userCRUD.getOffersByFollowerId(userId).subscribe({
-    //     next: (response) => {
-    //       console.log(response);
-    //     },
-    //     error: (msg) => {
-    //       console.log(msg);
-    //     },
-    //   });
-    // }
+    let userDataJSON = this.authService.getUserData();
+    if (userDataJSON !== null) {
+      let userId = JSON.parse(userDataJSON)._id;
+      this.userCRUD.getOffersByFollowerId(userId).subscribe({
+        next: (response) => {
+          console.log(response);
+        },
+        error: (msg) => {
+          console.log(msg);
+        },
+      });
+    }
   }
 }

@@ -22,7 +22,8 @@
                     <p>Email: {{offer.ownerInfo.email}}</p>
                 </div>
                 <div class="flex mt-5" *ngIf="isLoggedIn">
-                    <button *ngIf="!isOwner" (click)="onBuyOffer()" class="flex btn btn-blue mr-4">Buy</button>
+                    <button *ngIf="!isOwner" (click)="onBuyOffer()" class="flex btn btn-blue mr-4">See
+                        isOffered</button>
                     <button *ngIf="!isOwner" (click)="onFollowOffer()" class="flex btn btn-blue mr-4">{{isFollowed ?
                         'Followed' : 'Follow'}}</button>
                     <button *ngIf="!isOwner" (click)="onToggleShowContact()"
