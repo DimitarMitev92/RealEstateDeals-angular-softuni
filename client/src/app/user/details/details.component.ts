@@ -7,6 +7,8 @@ import { IOfferReturnData } from 'src/app/interfaces/offerInterfaces';
 import { AuthService } from 'src/app/auth/auth.service';
 import { IPopupDelete } from 'src/app/interfaces/popupDeleteInterfaces';
 import { GlobalLoaderService } from 'src/app/core/global-loader/global-loader.service';
+import { Observable, filter } from 'rxjs';
+import { IFollowerReturnData } from 'src/app/interfaces/followerInterface';
 
 @Component({
   selector: 'app-details',
@@ -22,6 +24,8 @@ export class DetailsComponent implements OnInit {
   isShowDeletePopup: boolean = false;
 
   isHideContact: boolean = true;
+
+  isFollowed: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -44,6 +48,20 @@ export class DetailsComponent implements OnInit {
             let userId = JSON.parse(userDataJSON)._id;
             let ownerId = this.offer._ownerId;
             userId === ownerId ? (this.isOwner = true) : (this.isOwner = false);
+
+            // Follow check
+            this.userCRUD.getOffersByFollowerId(userId).subscribe({
+              next: (response) => {
+                console.log(response);
+                if (response.length !== 0) {
+                  this.isFollowed = true;
+                }
+              },
+              error: (msg) => {
+                console.log(msg);
+                this.isFollowed = false;
+              },
+            });
           }
         },
         error: (msg) => {
@@ -83,10 +101,43 @@ export class DetailsComponent implements OnInit {
   }
 
   onFollowOffer() {
-    console.log('Click Follow');
+    console.log(this.offer);
+    let userDataJSON = this.authService.getUserData();
+    if (userDataJSON !== null) {
+      if (!this.isFollowed) {
+        this.isFollowed = !this.isFollowed;
+        let userAccessToken = JSON.parse(userDataJSON).accessToken;
+        this.userCRUD
+          .createOfferFollower(this.offer, userAccessToken)
+          .subscribe({
+            next: (response) => {
+              console.log(response);
+            },
+            error: (msg) => {
+              console.log(msg);
+            },
+          });
+      } else {
+        console.log('Un follow offer');
+        this.isFollowed = !this.isFollowed;
+      }
+    }
   }
 
   onBuyOffer() {
-    console.log('Click Buy');
+    // console.log('Click Buy');
+    // let userDataJSON = this.authService.getUserData();
+    // if (userDataJSON !== null) {
+    //   let userId = JSON.parse(userDataJSON)._id;
+    //   console.log(userId);
+    //   this.userCRUD.getOffersByFollowerId(userId).subscribe({
+    //     next: (response) => {
+    //       console.log(response);
+    //     },
+    //     error: (msg) => {
+    //       console.log(msg);
+    //     },
+    //   });
+    // }
   }
 }
