@@ -21,6 +21,8 @@ export class DetailsComponent implements OnInit {
 
   isShowDeletePopup: boolean = false;
 
+  isHideContact: boolean = true;
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -74,5 +76,17 @@ export class DetailsComponent implements OnInit {
         });
       }
     }
+  }
+
+  onToggleShowContact() {
+    this.isHideContact = !this.isHideContact;
+  }
+
+  onFollowOffer() {
+    console.log('Click Follow');
+  }
+
+  onBuyOffer() {
+    console.log('Click Buy');
   }
 }
