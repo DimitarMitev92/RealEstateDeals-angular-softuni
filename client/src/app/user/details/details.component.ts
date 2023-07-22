@@ -26,6 +26,8 @@ export class DetailsComponent implements OnInit {
 
   isFollowed: boolean = false;
 
+  isHideFullScreenImage: boolean = true;
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -87,6 +89,10 @@ export class DetailsComponent implements OnInit {
 
   onShowDeletePopup() {
     this.isShowDeletePopup = !this.isShowDeletePopup;
+  }
+
+  onToggleShowFullScreenImage() {
+    this.isHideFullScreenImage = !this.isHideFullScreenImage;
   }
 
   onNewEventShowDeleteHandler(value: IPopupDelete) {

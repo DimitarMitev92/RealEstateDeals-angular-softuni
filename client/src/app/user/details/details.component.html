@@ -1,7 +1,8 @@
 <section class="text-gray-700 body-font overflow-hidden bg-white">
-    <div *ngIf="!isShowDeletePopup" class="container px-5 py-24 mx-auto">
+    <div *ngIf="!isShowDeletePopup && isHideFullScreenImage" class="container px-5 py-24 mx-auto">
         <div class="h-4/5 mx-auto flex flex-wrap">
-            <img *ngIf="offer" class="lg:w-1/2 w-full object-cover object-center rounded border border-gray-200"
+            <img *ngIf="offer" (click)="onToggleShowFullScreenImage()"
+                class="lg:w-1/2 w-full object-cover object-center rounded border border-gray-200 cursor-pointer"
                 [src]="offer.imageUrl" alt={{offer.title}}>
             <div *ngIf="offer" class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0 flex flex-col justify-center ">
                 <h2 class="text-sm title-font text-gray-500 tracking-widest">Offer by: {{offer.ownerInfo.fullName}}
@@ -35,7 +36,13 @@
         </div>
 
     </div>
+    <div *ngIf="!isHideFullScreenImage" class="flex justify-center items-center w-full h-full bg-sky-800">
+        <img (click)="onToggleShowFullScreenImage()"
+            class="  w-9/12 h-9/12 border-2 border-white rounded-sm cursor-pointer" [src]="offer.imageUrl"
+            alt={{offer.title}}>
+    </div>
     <app-popup *ngIf="isShowDeletePopup" [isShowDeletePopup]="isShowDeletePopup"
         (newShowDeletePopup)="onNewEventShowDeleteHandler($event)" />
+
 
 </section>
