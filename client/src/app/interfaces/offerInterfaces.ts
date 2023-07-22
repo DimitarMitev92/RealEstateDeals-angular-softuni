@@ -17,6 +17,7 @@ export interface IOfferData {
 }
 
 export interface IOfferReturnData {
+  idOffer?: string;
   title: string;
   location: string;
   quadrature: string;

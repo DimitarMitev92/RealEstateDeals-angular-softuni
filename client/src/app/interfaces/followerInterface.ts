@@ -1,4 +1,5 @@
 export interface IFollowerReturnData {
+  idOffer?: string;
   _ownerId: string;
   title: string;
   location: string;
