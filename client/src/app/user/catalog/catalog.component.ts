@@ -18,7 +18,7 @@ export class CatalogComponent implements OnInit {
   allOffers: IOfferReturnData[] = [];
   isLoggedIn: boolean = false;
 
-  options: string[] = ['Newest', 'Oldest', 'Most liked'];
+  options: string[] = ['Newest', 'Oldest'];
   selectedOption: string = 'Oldest';
 
   searchTerm: string = '';

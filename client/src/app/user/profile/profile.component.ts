@@ -53,6 +53,7 @@ export class ProfileComponent implements OnInit {
           this.userFollowOffers = response;
         },
         error: (msg) => {
+          this.userFollowOffers = [];
           console.log(msg);
         },
       });
