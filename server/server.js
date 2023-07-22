@@ -1321,7 +1321,7 @@
     var protectedData = {
         users: {
             "35c62d76-8152-4626-8712-eeb96381bea8": {
-                email: "peter@abv.bg",
+                email: "peter@gmail.com",
                 fullName: "Peter Parker",
                 username: "peter",
                 phone: '099999999',
@@ -1329,7 +1329,7 @@
 
             },
             "847ec027-f659-4086-8032-5173e2f9c93a": {
-                email: "john@abv.bg",
+                email: "john@gmail.com",
                 fullName: "John Wick",
                 username: "john",
                 phone: '0988888888',

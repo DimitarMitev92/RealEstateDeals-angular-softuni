@@ -171,8 +171,4 @@ export class DetailsComponent implements OnInit {
       }
     }
   }
-
-  onBuyOffer() {
-    console.log('buy is clicked!');
-  }
 }
