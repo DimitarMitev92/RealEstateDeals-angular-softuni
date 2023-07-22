@@ -3,4 +3,9 @@ export const profileConstants = {
   fullName: 'Full name:',
   email: 'Email:',
   offers: 'Your offers',
+  offersInvalidText: 'You have no offers yet.',
+  btnOffers: 'Create',
+  followOffers: 'Followed offers',
+  followOffersInvalidText: 'You have no followed offers yet.',
+  btnFollowOffers: 'Catalog',
 };

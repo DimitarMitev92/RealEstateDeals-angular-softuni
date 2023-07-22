@@ -8,6 +8,7 @@ import { IOfferData, IOfferReturnData } from '../interfaces/offerInterfaces';
 
 import { Observable } from 'rxjs';
 import { IFollowerReturnData } from '../interfaces/followerInterface';
+import { IOfferFollowerReturnData } from '../interfaces/offerFollowerInterfaces';
 
 @Injectable({
   providedIn: 'root',
@@ -74,9 +75,9 @@ export class UserCRUDService {
     return this.http.get<IFollowerReturnData>(serverUrl.offersFollowersGet);
   }
 
-  getOffersByFollowerId(id: string): Observable<IFollowerReturnData[]> {
+  getOffersByFollowerId(id: string): Observable<IOfferFollowerReturnData[]> {
     const encodedUriId = encodeURIComponent(`="${id}"`);
-    return this.http.get<IFollowerReturnData[]>(
+    return this.http.get<IOfferFollowerReturnData[]>(
       `${serverUrl.offersFollowersGet}${encodedUriId}`
     );
   }

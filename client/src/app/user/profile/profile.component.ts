@@ -6,6 +6,8 @@ import { IOfferReturnData } from 'src/app/interfaces/offerInterfaces';
 import { IRegisterData } from 'src/app/interfaces/authInterfaces';
 import { AuthService } from 'src/app/auth/auth.service';
 import { GlobalLoaderService } from 'src/app/core/global-loader/global-loader.service';
+import { IFollowerReturnData } from 'src/app/interfaces/followerInterface';
+import { IOfferFollowerReturnData } from 'src/app/interfaces/offerFollowerInterfaces';
 
 @Component({
   selector: 'app-profile',
@@ -17,6 +19,7 @@ export class ProfileComponent implements OnInit {
 
   userData!: IRegisterData;
   userOffers!: IOfferReturnData[];
+  userFollowOffers: IOfferFollowerReturnData[] = [];
 
   constructor(
     private userCRUD: UserCRUDService,
@@ -43,6 +46,14 @@ export class ProfileComponent implements OnInit {
           if (msg.status === 404) {
             this.userOffers = [];
           }
+        },
+      });
+      this.userCRUD.getOffersByFollowerId(userID).subscribe({
+        next: (response) => {
+          this.userFollowOffers = response;
+        },
+        error: (msg) => {
+          console.log(msg);
         },
       });
     } else {

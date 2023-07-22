@@ -7,7 +7,6 @@ import { IOfferReturnData } from 'src/app/interfaces/offerInterfaces';
 import { AuthService } from 'src/app/auth/auth.service';
 import { IPopupDelete } from 'src/app/interfaces/popupDeleteInterfaces';
 import { GlobalLoaderService } from 'src/app/core/global-loader/global-loader.service';
-import { Observable, filter } from 'rxjs';
 import { IFollowerReturnData } from 'src/app/interfaces/followerInterface';
 
 @Component({
@@ -53,7 +52,16 @@ export class DetailsComponent implements OnInit {
             this.userCRUD.getOffersByFollowerId(userId).subscribe({
               next: (response) => {
                 if (response.length !== 0) {
-                  this.isFollowed = true;
+                  let currentFollowOffer = response.filter(
+                    (followed) => followed.idOffer === this.offer._id
+                  );
+                  console.log(
+                    'Initial load currentFollowOffer:',
+                    currentFollowOffer
+                  );
+                  if (currentFollowOffer.length !== 0) {
+                    this.isFollowed = true;
+                  }
                 }
               },
               error: (msg) => {
@@ -61,6 +69,10 @@ export class DetailsComponent implements OnInit {
                 this.isFollowed = false;
               },
             });
+
+            //////////////////////////////////////
+
+            /////////////////////////////////////
           }
         },
         error: (msg) => {
@@ -105,18 +117,19 @@ export class DetailsComponent implements OnInit {
       if (this.isFollowed === false) {
         this.isFollowed = true;
         let userAccessToken = JSON.parse(userDataJSON).accessToken;
+        let offerFollowerData = { ...this.offer, idOffer: this.offer._id };
         this.userCRUD
-          .createOfferFollower(this.offer, userAccessToken)
+          .createOfferFollower(offerFollowerData, userAccessToken)
           .subscribe({
             next: (response) => {
-              console.log(response);
+              console.log(`initial offer: `, offerFollowerData);
+              console.log(`response from createFollow: `, response);
             },
             error: (msg) => {
               console.log(msg);
             },
           });
       } else {
-        console.log('UNFOLLOWED offer');
         this.isFollowed = false;
         let userDataJSON = this.authService.getUserData();
         if (userDataJSON !== null) {
@@ -126,12 +139,27 @@ export class DetailsComponent implements OnInit {
           this.userCRUD.getOffersByFollowerId(userId).subscribe({
             next: (response) => {
               idOfferFollower = response[0]._id;
+              console.log('Response:', response);
+              console.log(
+                'Filtered response:',
+                response.filter(
+                  (followed) => followed.idOffer === this.offer._id
+                )
+              );
+              let currentFollowOffer = response.filter(
+                (followed) => followed.idOffer === this.offer._id
+              );
               this.userCRUD
-                .deleteOfferFollowerByOfferId(idOfferFollower, userAccessToken)
+                .deleteOfferFollowerByOfferId(
+                  currentFollowOffer[0]._id,
+                  userAccessToken
+                )
                 .subscribe({
-                  next: (response: any) => {},
-                  error: (msg: any) => {
+                  next: (response: any) => {
                     console.log(response);
+                  },
+                  error: (msg: any) => {
+                    console.log(msg);
                   },
                 });
             },
@@ -145,17 +173,6 @@ export class DetailsComponent implements OnInit {
   }
 
   onBuyOffer() {
-    let userDataJSON = this.authService.getUserData();
-    if (userDataJSON !== null) {
-      let userId = JSON.parse(userDataJSON)._id;
-      this.userCRUD.getOffersByFollowerId(userId).subscribe({
-        next: (response) => {
-          console.log(response);
-        },
-        error: (msg) => {
-          console.log(msg);
-        },
-      });
-    }
+    console.log('buy is clicked!');
   }
 }
