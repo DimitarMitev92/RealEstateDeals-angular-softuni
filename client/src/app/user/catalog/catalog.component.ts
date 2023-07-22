@@ -18,7 +18,14 @@ export class CatalogComponent implements OnInit {
   allOffers: IOfferReturnData[] = [];
   isLoggedIn: boolean = false;
 
-  options: string[] = ['Newest', 'Oldest'];
+  options: string[] = [
+    'Newest',
+    'Oldest',
+    'Cheapest',
+    'Most Expensive',
+    'Smallest quadrature',
+    'Biggest quadrature',
+  ];
   selectedOption: string = 'Oldest';
 
   searchTerm: string = '';
@@ -54,6 +61,18 @@ export class CatalogComponent implements OnInit {
     } else if (this.selectedOption === 'Oldest') {
       this.filteredUsers = this.filteredUsers.sort(
         (a, b) => a._createdOn - b._createdOn
+      );
+    } else if (this.selectedOption === 'Cheapest') {
+      this.filteredUsers = this.filteredUsers.sort((a, b) => a.price - b.price);
+    } else if (this.selectedOption === 'Most Expensive') {
+      this.filteredUsers = this.filteredUsers.sort((a, b) => b.price - a.price);
+    } else if (this.selectedOption === 'Smallest quadrature') {
+      this.filteredUsers = this.filteredUsers.sort(
+        (a, b) => a.quadrature - b.quadrature
+      );
+    } else if (this.selectedOption === 'Biggest quadrature') {
+      this.filteredUsers = this.filteredUsers.sort(
+        (a, b) => b.quadrature - a.quadrature
       );
     }
   }
