@@ -18,6 +18,8 @@ export class RegisterComponent {
   errorServer: boolean = false;
   errorMsg: string = '';
 
+  typePassword: string = 'password';
+
   registerForm = this.fb.group(
     {
       fullName: ['', [Validators.required]],
@@ -72,5 +74,13 @@ export class RegisterComponent {
           }
         },
       });
+  }
+
+  onToggleShowHandler() {
+    if (this.typePassword == 'text') {
+      this.typePassword = 'password';
+    } else {
+      this.typePassword = 'text';
+    }
   }
 }

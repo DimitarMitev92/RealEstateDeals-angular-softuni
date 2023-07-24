@@ -44,7 +44,7 @@
 
             <label for="register-password"
                 class="text-sky-800 self-start text-lg">{{registerConstants.password}}</label>
-            <input id="register-password" type="password" formControlName="password" autocomplete="off"
+            <input id="register-password" type={{typePassword}} formControlName="password" autocomplete="off"
                 placeholder={{registerConstants.passwordPlaceholder}}
                 class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 ">
             <p *ngIf="registerForm.get('password')?.invalid && 
@@ -54,7 +54,7 @@
 
             <label for="register-repeatPassword"
                 class="text-sky-800 self-start text-lg">{{registerConstants.rePassword}}</label>
-            <input id="register-repeatPassword" type="password" formControlName="rePassword"
+            <input id="register-repeatPassword" type={{typePassword}} formControlName="rePassword"
                 placeholder={{registerConstants.rePasswordPlaceholder}} autocomplete="off"
                 class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 ">
             <p *ngIf="
@@ -65,7 +65,10 @@
                isSubmitted)" class="text-red-500 text-xs italic">
                 {{registerConstants.rePasswordInvalidText}}
             </p>
-
+            <div class=" flex justify-center items-center">
+                <input (click)="onToggleShowHandler()" class="mx-2" type="checkbox" id="showPassword">
+                <label for="showPassword">Show password</label>
+            </div>
             <p>{{registerConstants.termsText}} <a class="font-medium underline text-sky-800"
                     href="#">{{registerConstants.termsTextAnch}}</a></p>
             <button [disabled]="this.registerForm.invalid" type="submit"

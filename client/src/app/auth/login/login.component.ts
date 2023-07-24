@@ -23,6 +23,8 @@ export class LoginComponent {
   errorServer: boolean = false;
   errorMsg: string = '';
 
+  typePassword: string = 'password';
+
   loginForm = this.fb.group({
     email: ['', [Validators.required, emailValidator()]],
     password: ['', [Validators.required, Validators.minLength(6)]],
@@ -55,5 +57,13 @@ export class LoginComponent {
           }
         },
       });
+  }
+
+  onToggleShowPassword() {
+    if (this.typePassword === 'text') {
+      this.typePassword = 'password';
+    } else {
+      this.typePassword = 'text';
+    }
   }
 }

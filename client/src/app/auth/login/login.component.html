@@ -19,7 +19,7 @@
             <label for="login-password" class="text-sky-800 self-start text-lg">
                 {{loginConstant.password}}
             </label>
-            <input id="login-password" type="password" formControlName="password"
+            <input id="login-password" type={{typePassword}} formControlName="password"
                 placeholder={{loginConstant.passwordPlaceholder}}
                 class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 ">
 
@@ -27,7 +27,10 @@
                  (loginForm.get('password')?.dirty ||
                   loginForm.get('password')?.touched ||
                    isSubmitted)" class="text-red-500 text-xs italic">{{loginConstant.passwordInvalidText}}</p>
-
+            <div class=" flex justify-center items-center">
+                <input (click)="onToggleShowPassword()" class="mx-2" type="checkbox" id="showPassword">
+                <label for="showPassword">Show password</label>
+            </div>
             <button [disabled]="this.loginForm.invalid" type="submit"
                 class="btn btn-blue my-4">{{loginConstant.btnText}}</button>
             <p>{{loginConstant.account}} <a class="font-bold underline text-sky-800"
