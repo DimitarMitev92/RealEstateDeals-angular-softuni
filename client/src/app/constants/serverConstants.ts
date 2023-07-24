@@ -8,4 +8,6 @@ export const serverUrl = {
   offersFollowersGet:
     'http://localhost:3030/data/offersFollowers?where=_ownerId',
   contactUs: 'http://localhost:3030/jsonstore/contact-us',
+  offerComments: 'http://localhost:3030/data/offerComments',
+  offerCommentsGet: 'http://localhost:3030/data/offerComments?where=idOffer',
 };

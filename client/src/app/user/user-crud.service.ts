@@ -9,6 +9,10 @@ import { IOfferData, IOfferReturnData } from '../interfaces/offerInterfaces';
 import { Observable } from 'rxjs';
 import { IFollowerReturnData } from '../interfaces/followerInterface';
 import { IOfferFollowerReturnData } from '../interfaces/offerFollowerInterfaces';
+import {
+  IOfferCommentData,
+  IOfferCommentReturnData,
+} from '../interfaces/commentInterfaces';
 
 @Injectable({
   providedIn: 'root',
@@ -90,6 +94,23 @@ export class UserCRUDService {
       }),
     });
   }
-}
 
-// 1fa632b79c1fdea1a12552e0805691a2b196334ffdaa24e05b9c091d46d358f5
+  createOfferComment(
+    commentData: IOfferCommentData,
+    accessToken: string | string[]
+  ) {
+    return this.http.post(serverUrl.offerComments, commentData, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'X-Authorization': accessToken,
+      }),
+    });
+  }
+
+  getCommentByOfferId(idOffer: string): Observable<IOfferCommentReturnData[]> {
+    const encodedUriId = encodeURIComponent(`="${idOffer}"`);
+    return this.http.get<IOfferCommentReturnData[]>(
+      `${serverUrl.offerCommentsGet}${encodedUriId}`
+    );
+  }
+}

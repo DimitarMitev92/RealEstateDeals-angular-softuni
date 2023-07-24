@@ -9,6 +9,7 @@ import { DetailsComponent } from './details/details.component';
 import { EditComponent } from './edit/edit.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CatalogComponent } from './catalog/catalog.component';
+import { CommentComponent } from './details/comment/comment.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { CatalogComponent } from './catalog/catalog.component';
     ProfileComponent,
     DetailsComponent,
     CatalogComponent,
+    CommentComponent,
   ],
   imports: [
     CommonModule,

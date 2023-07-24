@@ -1,13 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
+import { AuthService } from 'src/app/auth/auth.service';
 import { UserCRUDService } from '../user-crud.service';
+import { GlobalLoaderService } from 'src/app/core/global-loader/global-loader.service';
 
 import { IOfferReturnData } from 'src/app/interfaces/offerInterfaces';
-import { AuthService } from 'src/app/auth/auth.service';
 import { IPopupDelete } from 'src/app/interfaces/popupDeleteInterfaces';
-import { GlobalLoaderService } from 'src/app/core/global-loader/global-loader.service';
-import { IFollowerReturnData } from 'src/app/interfaces/followerInterface';
+import {
+  IOfferCommentData,
+  IOfferCommentReturnData,
+} from 'src/app/interfaces/commentInterfaces';
+import { FormBuilder, Validators } from '@angular/forms';
+import { ILoginData, IRegisterData } from 'src/app/interfaces/authInterfaces';
 
 @Component({
   selector: 'app-details',
@@ -16,6 +21,10 @@ import { IFollowerReturnData } from 'src/app/interfaces/followerInterface';
 })
 export class DetailsComponent implements OnInit {
   offer!: IOfferReturnData;
+  userData!: IRegisterData;
+  comments!: IOfferCommentReturnData[];
+
+  comment!: IOfferCommentData;
 
   isLoggedIn: boolean = false;
   isOwner: boolean = false;
@@ -28,13 +37,33 @@ export class DetailsComponent implements OnInit {
 
   isHideFullScreenImage: boolean = true;
 
+  isSubmitted = false;
+
+  commentForm = this.fb.group({
+    comment: ['', [Validators.required, Validators.minLength(10)]],
+  });
+
   constructor(
+    private fb: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
     private userCRUD: UserCRUDService,
     private authService: AuthService,
     private globalLoaderService: GlobalLoaderService
   ) {}
+
+  onFetchComments() {
+    if (this.offer._id) {
+      this.userCRUD.getCommentByOfferId(this.offer._id).subscribe({
+        next: (response) => {
+          this.comments = response;
+        },
+        error: (msg) => {
+          console.log(msg);
+        },
+      });
+    }
+  }
 
   ngOnInit() {
     this.globalLoaderService.showLoader();
@@ -44,6 +73,7 @@ export class DetailsComponent implements OnInit {
         next: (response) => {
           this.globalLoaderService.hideLoader();
           this.offer = response;
+          this.onFetchComments();
           let userDataJSON = this.authService.getUserData();
           if (userDataJSON !== null) {
             let userId = JSON.parse(userDataJSON)._id;
@@ -71,10 +101,6 @@ export class DetailsComponent implements OnInit {
                 this.isFollowed = false;
               },
             });
-
-            //////////////////////////////////////
-
-            /////////////////////////////////////
           }
         },
         error: (msg) => {
@@ -127,10 +153,7 @@ export class DetailsComponent implements OnInit {
         this.userCRUD
           .createOfferFollower(offerFollowerData, userAccessToken)
           .subscribe({
-            next: (response) => {
-              console.log(`initial offer: `, offerFollowerData);
-              console.log(`response from createFollow: `, response);
-            },
+            next: (response) => {},
             error: (msg) => {
               console.log(msg);
             },
@@ -145,13 +168,6 @@ export class DetailsComponent implements OnInit {
           this.userCRUD.getOffersByFollowerId(userId).subscribe({
             next: (response) => {
               idOfferFollower = response[0]._id;
-              console.log('Response:', response);
-              console.log(
-                'Filtered response:',
-                response.filter(
-                  (followed) => followed.idOffer === this.offer._id
-                )
-              );
               let currentFollowOffer = response.filter(
                 (followed) => followed.idOffer === this.offer._id
               );
@@ -176,5 +192,32 @@ export class DetailsComponent implements OnInit {
         }
       }
     }
+  }
+
+  osSubmitComment(): void {
+    this.isSubmitted = true;
+
+    const userDataJSON = this.authService.getUserData();
+    if (userDataJSON) {
+      this.userData = JSON.parse(userDataJSON);
+    }
+
+    const commentData: IOfferCommentData = {
+      userFullName: this.userData.fullName || '',
+      comment: this.commentForm.value.comment || '',
+      idOffer: this.offer._id || '',
+    };
+    const accessToken = this.authService.getUserAccessToken();
+
+    this.userCRUD.createOfferComment(commentData, accessToken).subscribe({
+      next: (response) => {
+        this.onFetchComments();
+        this.isSubmitted = false;
+        this.commentForm.reset();
+      },
+      error: (msg) => {
+        console.log(msg);
+      },
+    });
   }
 }
