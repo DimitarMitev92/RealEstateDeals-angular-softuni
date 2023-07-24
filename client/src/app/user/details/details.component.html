@@ -50,7 +50,7 @@
             <app-comment *ngFor="let comment of comments" [comment]="comment"
                 class="flex flex-col justify-betwen my-5 w-6/12 lg:w-9/12 md:w-10/12 sm:w-10/12" />
 
-            <form (ngSubmit)="osSubmitComment()" [formGroup]="commentForm" class="flex mb-5 ">
+            <form *ngIf="isLoggedIn" (ngSubmit)="osSubmitComment()" [formGroup]="commentForm" class="flex mb-5 ">
                 <textarea formControlName="comment"
                     class=" shadow-sm border w-full h-12 mx-2 text-sky-800 focus:outline focus:border-sky-800"
                     name="comment" id="comment" cols="100" rows="5"></textarea>
