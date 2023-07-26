@@ -11,6 +11,8 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { FooterComponent } from './footer/footer.component';
 import { GlobalLoaderComponent } from './global-loader/global-loader.component';
 
+import { NavbarMenuTracker } from '../directives/navbar-menu.directive';
+
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -18,6 +20,7 @@ import { GlobalLoaderComponent } from './global-loader/global-loader.component';
     ContactUsComponent,
     FooterComponent,
     GlobalLoaderComponent,
+    NavbarMenuTracker,
   ],
   imports: [CommonModule, SharedModule, RouterModule, ReactiveFormsModule],
   exports: [
