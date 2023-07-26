@@ -14,12 +14,9 @@ export class NavbarMenuTracker {
     if (screenWidth >= 768) {
       this.renderer.addClass(this.el.nativeElement, 'sm:block');
       this.renderer.removeClass(this.el.nativeElement, 'hidden');
-      console.log('trigger');
     } else {
       this.renderer.removeClass(this.el.nativeElement, 'sm:block');
       this.renderer.addClass(this.el.nativeElement, 'hidden');
-
-      console.log('trigger');
     }
   }
 }
