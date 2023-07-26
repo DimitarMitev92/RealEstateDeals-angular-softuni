@@ -12,6 +12,9 @@ export class HeaderComponent {
   userData: any = null;
   isLoggedIn: boolean = false;
 
+  showNavbarMenu: string = 'hidden';
+  navbarMenuIcon: string = 'fa-bars';
+
   constructor(private authService: AuthService, private router: Router) {}
 
   ngDoCheck(): void {
@@ -24,6 +27,16 @@ export class HeaderComponent {
       this.authService.setIsLoggedIn(false);
       this.isLoggedIn = this.authService.getIsLoggedIn();
       this.userData = null;
+    }
+  }
+
+  onToggleNavbarMenu() {
+    if (this.showNavbarMenu === 'hidden') {
+      this.showNavbarMenu = 'sm:block';
+      this.navbarMenuIcon = 'fa-x';
+    } else {
+      this.showNavbarMenu = 'hidden';
+      this.navbarMenuIcon = 'fa-bars';
     }
   }
 

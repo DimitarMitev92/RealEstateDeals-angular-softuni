@@ -1,31 +1,39 @@
 <header class="container mx-auto flex flex-col justify-center text-center bg-sky-800 text-white">
+    <div class="flex justify-between items-center px-4 md:flex md:justify-center">
 
-    <h2 class="md:text-3xl sm:text-2xl text-2xl font-bold my-1 italic"><span class="text-amber-300">Real</span> Estate
-        <span class="text-amber-300">Deals</span>
-    </h2>
+        <h2 class="md:text-3xl sm:text-2xl text-2xl font-bold my-1 italic"><span class="text-amber-300">Real</span>
+            Estate
+            <span class="text-amber-300">Deals</span>
+        </h2>
+        <a class="inline md:hidden" (click)="onToggleNavbarMenu()"><i class="fa-solid {{navbarMenuIcon}}"></i></a>
+    </div>
 
 
+    <div class="{{showNavbarMenu}}">
 
-    <div class="md:flex md:flex-row md:justify-between md:mt-1 md:mb-2 md:px-10 sm:flex sm:flex-col">
-        <div
-            class="md:flex md:flex-row md:justify-between md:gap-6 md:mx-5 sm:flex sm:flex-col sm:m-0.5 sm:gap-0 flex flex-col m-0.5 gap-0">
-            <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
-                class="hover:text-amber-300">Home</a>
-            <a *ngIf="isLoggedIn" routerLink="/create" routerLinkActive="active" class="hover:text-amber-300">Create</a>
-            <a *ngIf="isLoggedIn" routerLink="/profile" routerLinkActive="active"
-                class="hover:text-amber-300">Profile</a>
-            <a routerLink="/catalog" routerLinkActive="active" class="hover:text-amber-300">Catalog</a>
-            <a routerLink="/about-us" routerLinkActive="active" class="hover:text-amber-300">About
-                Us</a>
-            <a routerLink="/contact-us" routerLinkActive="active" class="hover:text-amber-300">Contact Us</a>
-        </div>
-        <div
-            class="md:flex md:flex-row md:justify-between md:gap-6 md:mx-5 sm:flex sm:flex-col sm:m-0.5 sm:gap-0 flex flex-col m-0.5 gap-0">
-            <a *ngIf="!isLoggedIn" routerLink="register" routerLinkActive="active"
-                class="hover:text-amber-300">Register</a>
-            <a *ngIf="!isLoggedIn" routerLink="login" routerLinkActive="active" class="hover:text-amber-300">Login</a>
-            <a *ngIf="isLoggedIn" (click)="onLogoutHandler()" routerLinkActive="active"
-                class="hover:text-amber-300 cursor-pointer">Logout</a>
+        <div class="md:flex md:flex-row md:justify-between md:mt-1 md:mb-2 md:px-10 sm:flex sm:flex-col">
+            <div
+                class="md:flex md:flex-row md:justify-between md:gap-6 md:mx-5 sm:flex sm:flex-col sm:m-0.5 sm:gap-0 flex flex-col m-0.5 gap-0">
+                <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+                    class="hover:text-amber-300">Home</a>
+                <a *ngIf="isLoggedIn" routerLink="/create" routerLinkActive="active"
+                    class="hover:text-amber-300">Create</a>
+                <a *ngIf="isLoggedIn" routerLink="/profile" routerLinkActive="active"
+                    class="hover:text-amber-300">Profile</a>
+                <a routerLink="/catalog" routerLinkActive="active" class="hover:text-amber-300">Catalog</a>
+                <a routerLink="/about-us" routerLinkActive="active" class="hover:text-amber-300">About
+                    Us</a>
+                <a routerLink="/contact-us" routerLinkActive="active" class="hover:text-amber-300">Contact Us</a>
+            </div>
+            <div
+                class="md:flex md:flex-row md:justify-between md:gap-6 md:mx-5 sm:flex sm:flex-col sm:m-0.5 sm:gap-0 flex flex-col m-0.5 gap-0">
+                <a *ngIf="!isLoggedIn" routerLink="register" routerLinkActive="active"
+                    class="hover:text-amber-300">Register</a>
+                <a *ngIf="!isLoggedIn" routerLink="login" routerLinkActive="active"
+                    class="hover:text-amber-300">Login</a>
+                <a *ngIf="isLoggedIn" (click)="onLogoutHandler()" routerLinkActive="active"
+                    class="hover:text-amber-300 cursor-pointer">Logout</a>
+            </div>
         </div>
     </div>
 
