@@ -1,6 +1,8 @@
 <div class="w-full h-screen flex">
-    <img src="../../../assets/images/register.png" alt="background" class="object-cover object-center h-screen w-7/12">
-    <div class="bg-white flex flex-col justify-center items-center w-5/12 shadow-lg">
+    <img src="../../../assets/images/register.png" alt="background"
+        class="object-cover object-center h-screen w-7/12 lg:block sm:hidden md:hidden">
+    <div
+        class="bg-white lg:flex lg:flex-col lg:justify-center lg:items-center lg:w-5/12 lg:shadow-lg md:flex md:flex-col md:justify-center md:items-center md:w-full sm:flex sm:flex-col sm:justify-center sm:items-center sm:w-full">
         <h1 class="text-4xl font-bold text-sky-800 mb-4">{{registerConstants.heading}}</h1>
         <h2 class="text-lg font-bold text-rose-600 mb-4">{{errorMsg}}</h2>
         <form [formGroup]=" registerForm" (ngSubmit)="onSubmit()" class="w-2/3 text-center">
