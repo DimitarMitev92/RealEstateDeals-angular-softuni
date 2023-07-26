@@ -12,8 +12,8 @@ export class HeaderComponent {
   userData: any = null;
   isLoggedIn: boolean = false;
 
-  showNavbarMenu: string = 'hidden';
-  navbarMenuIcon: string = 'fa-bars';
+  showNavbarMenu: string = 'sm:block';
+  navbarMenuIcon: string = 'fa-x';
 
   constructor(private authService: AuthService, private router: Router) {}
 
@@ -31,6 +31,8 @@ export class HeaderComponent {
   }
 
   onToggleNavbarMenu() {
+    console.log('trigger');
+    console.log(this.showNavbarMenu);
     if (this.showNavbarMenu === 'hidden') {
       this.showNavbarMenu = 'sm:block';
       this.navbarMenuIcon = 'fa-x';

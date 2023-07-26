@@ -16,7 +16,6 @@ export class NavbarMenuTracker {
       this.renderer.removeClass(this.el.nativeElement, 'hidden');
     } else {
       this.renderer.removeClass(this.el.nativeElement, 'sm:block');
-      this.renderer.addClass(this.el.nativeElement, 'hidden');
     }
   }
 }
