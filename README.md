@@ -1,4 +1,4 @@
-# REALESTATEDEALS - Angular Softuni Project
+# RealEstateDeals - Angular Softuni Project
 
 ---
 
