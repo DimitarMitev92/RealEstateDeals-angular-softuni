@@ -1,8 +1,8 @@
 <div class="w-full h-screen flex">
     <img src={{offer.imageUrl}} alt=" background"
-        class="object-cover object-center h-screen w-7/12 lg:block sm:hidden md:hidden">
+        class="object-cover object-center h-screen w-7/12 lg:block sm:hidden md:hidden hidden">
     <div
-        class="bg-white lg:flex lg:flex-col lg:justify-center lg:items-center lg:w-5/12 lg:shadow-lg md:flex md:flex-col md:justify-center md:items-center md:w-full sm:flex sm:flex-col sm:justify-center sm:items-center sm:w-full">
+        class="bg-white lg:flex lg:flex-col lg:justify-center lg:items-center lg:w-5/12 lg:shadow-lg md:flex md:flex-col md:justify-center md:items-center md:w-full sm:flex sm:flex-col sm:justify-center sm:items-center sm:w-full flex flex-col justify-center items-center w-full">
         <h1 class="text-4xl font-bold text-sky-800 mb-4">{{editConstants.heading}}</h1>
         <form [formGroup]="editForm" (ngSubmit)="onSubmit()" class="w-2/3 text-center">
             <label for="edit-title" class="text-sky-800 self-start text-lg">{{editConstants.title}}</label>

@@ -1,10 +1,11 @@
 <section class="text-gray-700 body-font overflow-hidden bg-white">
     <div *ngIf="!isShowDeletePopup && isHideFullScreenImage" class="container px-5 py-24 mx-auto">
-        <div class="h-4/5 mx-auto flex flex-wrap">
+        <div class="h-4/5 mx-auto flex flex-wrap ">
             <img *ngIf="offer" (click)="onToggleShowFullScreenImage()"
                 class="lg:w-1/2 w-full object-cover object-center rounded cursor-pointer border-4 border-sky-800"
                 [src]="offer.imageUrl" alt={{offer.title}}>
-            <div *ngIf="offer" class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0 flex flex-col justify-center ">
+            <div *ngIf="offer"
+                class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0 flex flex-col md:items-center lg:items-start items-center">
                 <h2 class="text-sm title-font text-gray-500 tracking-widest">Offer by: {{offer.ownerInfo.fullName}}
                 </h2>
                 <h2 class="text-sm title-font text-gray-500 tracking-widest">Created on: {{offer._createdOn | date:
@@ -44,11 +45,11 @@
 
     <div *ngIf="!isShowDeletePopup && isHideFullScreenImage" class="flex flex-col items-center  justify-center">
         <div
-            class="flex flex-col items-center w-6/12 lg:w-10/12 md:w-10/12 sm:w-10/12 bg-sky-800 p-6 rounded-lg text-white mb-5">
-            <h2 class=" text-2xl font-bold">Comments:</h2>
+            class="flex flex-col items-center w-11/12 lg:w-10/12 md:w-10/12 sm:w-10/12 bg-sky-800 p-6 rounded-lg text-white mb-5">
+            <h2 class=" md:text-2xl text-lg font-bold">Comments:</h2>
 
             <app-comment *ngFor="let comment of comments" [comment]="comment"
-                class="flex flex-col justify-betwen my-5 w-6/12 lg:w-9/12 md:w-10/12 sm:w-10/12" />
+                class="flex flex-col justify-betwen my-5 w-11/12 lg:w-9/12 md:w-10/12 sm:w-10/12" />
 
             <form *ngIf="isLoggedIn" (ngSubmit)="osSubmitComment()" [formGroup]="commentForm" class="flex mb-5 ">
                 <textarea formControlName="comment"
@@ -59,7 +60,8 @@
             <p *ngIf="commentForm.get('comment')?.invalid && 
                     (commentForm.get('comment')?.dirty || 
                     commentForm.get('comment')?.touched || 
-                    isSubmitted)" class="bg-red-500 text-md italic text-white p-2 rounded-sm">Comment must be at least
+                    isSubmitted)" class="bg-red-500 md:text-md text-sm italic text-white p-2 rounded-sm">Comment must
+                be at least
                 10 characters long.</p>
         </div>
     </div>
