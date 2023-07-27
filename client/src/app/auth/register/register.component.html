@@ -73,9 +73,13 @@
             </div>
             <p>{{registerConstants.termsText}} <a class="font-medium underline text-sky-800"
                     href="#">{{registerConstants.termsTextAnch}}</a></p>
-            <button [disabled]="this.registerForm.invalid" type="submit" class="btn btn-blue my-4"
+            <button [disabled]="this.registerForm.invalid" type="submit" class="btn btn-blue my-4 group  relative"
                 [class.cursor-not-allowed]="registerForm.invalid"
-                [class.cursor-pointer]="!registerForm.invalid">{{registerConstants.btnText}}</button>
+                [class.cursor-pointer]="!registerForm.invalid">{{registerConstants.btnText}}<span
+                    *ngIf="this.registerForm.invalid"
+                    class="opacity-0 group-hover:opacity-100 absolute flex text-red-500 whitespace-nowrap left-28 top-2">
+                    All inputs are required.
+                </span></button>
             <p>{{registerConstants.account}} <a class="font-bold underline text-sky-800"
                     routerLink="/login">{{registerConstants.btnAccount}}</a>
             </p>

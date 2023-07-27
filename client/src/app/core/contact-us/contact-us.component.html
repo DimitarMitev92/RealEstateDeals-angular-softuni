@@ -47,9 +47,13 @@
                 contactUsForm.get('message')?.touched || 
                 isSubmitted)" class="text-red-500 text-xs italic">{{contactUsConstants.messageInvalidText}}</p>
 
-            <button [disabled]="this.contactUsForm.invalid" type="submit" class="btn btn-blue my-4"
+            <button [disabled]="this.contactUsForm.invalid" type="submit" class="btn btn-blue my-4 group relative"
                 [class.cursor-not-allowed]="contactUsForm.invalid"
-                [class.cursor-pointer]="!contactUsForm.invalid">{{contactUsConstants.btnText}}</button>
+                [class.cursor-pointer]="!contactUsForm.invalid">{{contactUsConstants.btnText}}<span
+                    *ngIf="this.contactUsForm.invalid"
+                    class="opacity-0 group-hover:opacity-100 absolute flex text-red-500 whitespace-nowrap left-24 top-2">
+                    All inputs are required.
+                </span></button>
 
         </form>
     </div>
