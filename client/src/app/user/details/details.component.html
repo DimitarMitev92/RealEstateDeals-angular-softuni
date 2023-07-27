@@ -2,7 +2,7 @@
     <div *ngIf="!isShowDeletePopup && isHideFullScreenImage" class="container px-5 py-24 mx-auto">
         <div class="h-4/5 mx-auto flex flex-wrap ">
             <img *ngIf="offer" (click)="onToggleShowFullScreenImage()"
-                class="lg:w-1/2 w-full object-cover object-center rounded border-4 border-sky-800 cursor-zoom-in"
+                class="lg:w-1/2 w-full object-cover object-center rounded border-4 border-sky-800 cursor-zoom-in hover:brightness-110 hover:duration-300"
                 [src]="offer.imageUrl" alt={{offer.title}}>
             <div *ngIf="offer"
                 class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0 flex flex-col md:items-center lg:items-start items-center">
