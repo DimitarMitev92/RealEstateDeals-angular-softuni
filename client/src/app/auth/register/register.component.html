@@ -3,62 +3,62 @@
         class="object-cover object-center h-screen w-7/12 lg:block sm:hidden md:hidden hidden">
     <div
         class="bg-white lg:flex lg:flex-col lg:justify-center lg:items-center lg:w-5/12 lg:shadow-lg md:flex md:flex-col md:justify-center md:items-center md:w-full sm:flex sm:flex-col sm:justify-center sm:items-center sm:w-full flex flex-col justify-center items-center w-full">
-        <h1 class="text-4xl font-bold text-sky-800 mb-4">{{registerConstants.heading}}</h1>
+        <h1 class="text-4xl font-bold text-slate-800 mb-4">{{registerConstants.heading}}</h1>
         <h2 class="text-lg font-bold text-rose-600 mb-4">{{errorMsg}}</h2>
         <form [formGroup]=" registerForm" (ngSubmit)="onSubmit()" class="w-2/3 text-center">
             <label for="register-fullName"
-                class="text-sky-800 self-start text-lg">{{registerConstants.fullName}}</label>
+                class="text-slate-800 self-start text-lg">{{registerConstants.fullName}}</label>
             <input id="register-fullName" type="text" formControlName="fullName" autocomplete="off"
                 placeholder={{registerConstants.fullNamePlaceholder}}
-                class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 ">
+                class="shadow-sm border w-full h-12 px-3 py-2 text-slate-800 focus:outline-none focus:border-slate-800 mb-3 ">
             <p *ngIf="registerForm.get('fullName')?.invalid && 
                 (registerForm.get('fullName')?.dirty || 
                 registerForm.get('fullName')?.touched || 
                 isSubmitted)" class="text-red-500 text-xs italic">{{registerConstants.fullNameInvalidText}}</p>
 
             <label for="register-username"
-                class="text-sky-800 self-start text-lg">{{registerConstants.username}}</label>
+                class="text-slate-800 self-start text-lg">{{registerConstants.username}}</label>
             <input type="text" formControlName="username" autocomplete="off"
                 placeholder={{registerConstants.usernamePlaceholder}}
-                class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 ">
+                class="shadow-sm border w-full h-12 px-3 py-2 text-slate-800 focus:outline-none focus:border-slate-800 mb-3 ">
             <p *ngIf="registerForm.get('username')?.invalid && 
                 (registerForm.get('username')?.dirty || 
                 registerForm.get('username')?.touched || 
                 isSubmitted)" class="text-red-500 text-xs italic">{{registerConstants.usernameInvalidText}}</p>
 
-            <label for="register-email" class="text-sky-800 self-start text-lg">{{registerConstants.email}}</label>
+            <label for="register-email" class="text-slate-800 self-start text-lg">{{registerConstants.email}}</label>
             <input id="register-email" type="email" formControlName="email" autocomplete="off"
                 placeholder={{registerConstants.emailPlaceholder}}
-                class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 ">
+                class="shadow-sm border w-full h-12 px-3 py-2 text-slate-800 focus:outline-none focus:border-slate-800 mb-3 ">
             <p *ngIf="registerForm.get('email')?.invalid && 
                 (registerForm.get('email')?.dirty || 
                 registerForm.get('email')?.touched || 
                 isSubmitted)" class="text-red-500 text-xs italic">{{registerConstants.emailInvalidText}}</p>
 
-            <label for="register-phone" class="text-sky-800 self-start text-lg">{{registerConstants.phone}}</label>
+            <label for="register-phone" class="text-slate-800 self-start text-lg">{{registerConstants.phone}}</label>
             <input id="register-phone" type="text" formControlName="phone" autocomplete="off"
                 placeholder={{registerConstants.phonePlaceholder}}
-                class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 ">
+                class="shadow-sm border w-full h-12 px-3 py-2 text-slate-800 focus:outline-none focus:border-slate-800 mb-3 ">
             <p *ngIf="registerForm.get('phone')?.invalid && 
                     (registerForm.get('phone')?.dirty || 
                     registerForm.get('phone')?.touched || 
                     isSubmitted)" class="text-red-500 text-xs italic">{{registerConstants.phoneInvalidText}}</p>
 
             <label for="register-password"
-                class="text-sky-800 self-start text-lg">{{registerConstants.password}}</label>
+                class="text-slate-800 self-start text-lg">{{registerConstants.password}}</label>
             <input id="register-password" type={{typePassword}} formControlName="password" autocomplete="off"
                 placeholder={{registerConstants.passwordPlaceholder}}
-                class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 ">
+                class="shadow-sm border w-full h-12 px-3 py-2 text-slate-800 focus:outline-none focus:border-slate-800 mb-3 ">
             <p *ngIf="registerForm.get('password')?.invalid && 
                 (registerForm.get('password')?.dirty || 
                 registerForm.get('password')?.touched || 
                 isSubmitted)" class="text-red-500 text-xs italic">{{registerConstants.passwordInvalidText}}</p>
 
             <label for="register-repeatPassword"
-                class="text-sky-800 self-start text-lg">{{registerConstants.rePassword}}</label>
+                class="text-slate-800 self-start text-lg">{{registerConstants.rePassword}}</label>
             <input id="register-repeatPassword" type={{typePassword}} formControlName="rePassword"
                 placeholder={{registerConstants.rePasswordPlaceholder}} autocomplete="off"
-                class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 ">
+                class="shadow-sm border w-full h-12 px-3 py-2 text-slate-800 focus:outline-none focus:border-slate-800 mb-3 ">
             <p *ngIf="
             registerForm.hasError('passwordMismatch') &&
              ((registerForm.get('password')?.dirty ||
@@ -71,7 +71,7 @@
                 <input (click)="onToggleShowHandler()" class="mx-2" type="checkbox" id="showPassword">
                 <label for="showPassword">Show password</label>
             </div>
-            <p>{{registerConstants.termsText}} <a class="font-medium underline text-sky-800"
+            <p>{{registerConstants.termsText}} <a class="font-medium underline text-slate-800"
                     href="#">{{registerConstants.termsTextAnch}}</a></p>
             <button [disabled]="this.registerForm.invalid" type="submit" class="btn btn-blue my-4 group  relative"
                 [class.cursor-not-allowed]="registerForm.invalid"
@@ -80,7 +80,7 @@
                     class="opacity-0 group-hover:opacity-100 absolute flex text-red-500 whitespace-nowrap left-28 top-2">
                     All inputs are required.
                 </span></button>
-            <p>{{registerConstants.account}} <a class="font-bold underline text-sky-800"
+            <p>{{registerConstants.account}} <a class="font-bold underline text-slate-800"
                     routerLink="/login">{{registerConstants.btnAccount}}</a>
             </p>
         </form>

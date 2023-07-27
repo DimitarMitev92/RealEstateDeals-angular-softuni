@@ -1,4 +1,4 @@
-<div class="container flex flex-col justify-start items-center min-h-screen">
+<div class="container flex flex-col justify-start items-center min-h-screen bg-slate-700">
 
     <div class="flex items-center flex-col bg-slate-800 text-white w-full">
 
@@ -13,7 +13,7 @@
 
         <app-card *ngFor="let offer of userOffers" [offer]="offer"></app-card>
         <ng-container *ngIf='userOffers?.length === 0'>
-            <h2 class="text-2xl font-bold text-sky-800 italic   m-2">{{profileConstants.offersInvalidText}}</h2>
+            <h2 class="text-2xl font-bold text-slate-800 italic   m-2">{{profileConstants.offersInvalidText}}</h2>
             <a class="btn btn-blue my-4" routerLink="/create">{{profileConstants.btnOffers}}</a>
         </ng-container>
 
@@ -31,7 +31,7 @@
 
         <app-card *ngFor="let followOffer of userFollowOffers" [offer]="followOffer"></app-card>
         <ng-container *ngIf='userFollowOffers?.length === 0'>
-            <h2 class="text-2xl font-bold text-sky-800 italic   m-2">{{profileConstants.followOffersInvalidText}}</h2>
+            <h2 class="text-2xl font-bold text-slate-800 italic   m-2">{{profileConstants.followOffersInvalidText}}</h2>
             <a class="btn btn-blue my-4" routerLink="/catalog">{{profileConstants.btnFollowOffers}}</a>
         </ng-container>
 

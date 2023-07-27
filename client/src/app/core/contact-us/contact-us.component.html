@@ -3,23 +3,23 @@
         class="object-cover object-center h-screen w-7/12 lg:block sm:hidden md:hidden hidden">
     <div
         class="bg-white lg:flex lg:flex-col lg:justify-center lg:items-center lg:w-5/12 lg:shadow-lg md:flex md:flex-col md:justify-center md:items-center md:w-full sm:flex sm:flex-col sm:justify-center sm:items-center sm:w-full flex flex-col justify-center items-center w-full">
-        <h1 class="text-4xl font-bold text-sky-800 mb-4">{{contactUsConstants.heading}}</h1>
+        <h1 class="text-4xl font-bold text-slate-800 mb-4">{{contactUsConstants.heading}}</h1>
         <form [formGroup]="contactUsForm" (ngSubmit)="onSubmit()" class="w-2/3 text-center">
             <label for="contact-us-fullName"
-                class="text-sky-800 self-start text-lg">{{contactUsConstants.fullName}}</label>
+                class="text-slate-800 self-start text-lg">{{contactUsConstants.fullName}}</label>
             <input id="contact-us-fullName" type="text" formControlName="fullName"
                 placeholder={{contactUsConstants.fullNamePlaceholder}} autocomplete="off"
-                class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 ">
+                class="shadow-sm border w-full h-12 px-3 py-2 text-slate-800 focus:outline-none focus:border-slate-800 mb-3 ">
 
             <p *ngIf="contactUsForm.get('fullName')?.invalid && 
                 (contactUsForm.get('fullName')?.dirty || 
                 contactUsForm.get('fullName')?.touched || 
                 isSubmitted)" class="text-red-500 text-xs italic">{{contactUsConstants.fullNameInvalidText}}</p>
 
-            <label for="contact-us-email" class="text-sky-800 self-start text-lg">{{contactUsConstants.email}}</label>
+            <label for="contact-us-email" class="text-slate-800 self-start text-lg">{{contactUsConstants.email}}</label>
             <input id="contact-us-email" type="email" formControlName="email"
                 placeholder={{contactUsConstants.emailPlaceholder}} autocomplete="off"
-                class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 ">
+                class="shadow-sm border w-full h-12 px-3 py-2 text-slate-800 focus:outline-none focus:border-slate-800 mb-3 ">
 
             <p *ngIf="contactUsForm.get('email')?.invalid && 
                 (contactUsForm.get('email')?.dirty || 
@@ -27,10 +27,10 @@
                 isSubmitted)" class="text-red-500 text-xs italic">{{contactUsConstants.emailInvalidText}}</p>
 
             <label for="contact-us-phone"
-                class="text-sky-800 self-start text-lg">{{contactUsConstants.phoneNumber}}</label>
+                class="text-slate-800 self-start text-lg">{{contactUsConstants.phoneNumber}}</label>
             <input id="contact-us-phone" type="text" formControlName="phone"
                 placeholder={{contactUsConstants.phoneNumberPlaceholder}} autocomplete="off"
-                class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 ">
+                class="shadow-sm border w-full h-12 px-3 py-2 text-slate-800 focus:outline-none focus:border-slate-800 mb-3 ">
 
             <p *ngIf="contactUsForm.get('phone')?.invalid && 
                 (contactUsForm.get('phone')?.dirty || 
@@ -38,9 +38,9 @@
                 isSubmitted)" class="text-red-500 text-xs italic">{{contactUsConstants.phoneNumberInvalidText}}</p>
 
             <label for="contact-us-message"
-                class="text-sky-800 self-start text-lg">{{contactUsConstants.message}}</label>
+                class="text-slate-800 self-start text-lg">{{contactUsConstants.message}}</label>
             <textarea id="contact-us-message" formControlName="message" rows="4" cols="50"
-                class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 "></textarea>
+                class="shadow-sm border w-full h-12 px-3 py-2 text-slate-800 focus:outline-none focus:border-slate-800 mb-3 "></textarea>
 
             <p *ngIf="contactUsForm.get('message')?.invalid && 
                 (contactUsForm.get('message')?.dirty || 

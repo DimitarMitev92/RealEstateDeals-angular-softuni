@@ -2,7 +2,7 @@
     <div *ngIf="!isShowDeletePopup && isHideFullScreenImage" class="container px-5 py-24 mx-auto">
         <div class="h-4/5 mx-auto flex flex-wrap ">
             <img *ngIf="offer" (click)="onToggleShowFullScreenImage()"
-                class="lg:w-1/2 w-full object-cover object-center rounded border-4 border-sky-800 cursor-zoom-in hover:brightness-110 hover:duration-300"
+                class="lg:w-1/2 w-full object-cover object-center rounded border-4 border-slate-800 cursor-zoom-in hover:brightness-110 hover:duration-300"
                 [src]="offer.imageUrl" alt={{offer.title}}>
             <div *ngIf="offer"
                 class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0 flex flex-col md:items-center lg:items-start items-center">
@@ -53,7 +53,7 @@
 
             <form *ngIf="isLoggedIn" (ngSubmit)="osSubmitComment()" [formGroup]="commentForm" class="flex mb-5 ">
                 <textarea formControlName="comment"
-                    class=" shadow-sm border w-full h-12 mx-2 text-sky-800 focus:outline focus:border-sky-800"
+                    class=" shadow-sm border w-full h-12 mx-2 text-slate-800 focus:outline focus:border-slate-800"
                     name="comment" id="comment" cols="100" rows="5"></textarea>
                 <button [disabled]="this.commentForm.invalid" type="submit" class="btn btn-blue group relative"
                     [class.cursor-not-allowed]="commentForm.invalid"

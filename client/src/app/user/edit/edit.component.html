@@ -3,20 +3,20 @@
         class="object-cover object-center h-screen w-7/12 lg:block sm:hidden md:hidden hidden">
     <div
         class="bg-white lg:flex lg:flex-col lg:justify-center lg:items-center lg:w-5/12 lg:shadow-lg md:flex md:flex-col md:justify-center md:items-center md:w-full sm:flex sm:flex-col sm:justify-center sm:items-center sm:w-full flex flex-col justify-center items-center w-full">
-        <h1 class="text-4xl font-bold text-sky-800 mb-4">{{editConstants.heading}}</h1>
+        <h1 class="text-4xl font-bold text-slate-800 mb-4">{{editConstants.heading}}</h1>
         <form [formGroup]="editForm" (ngSubmit)="onSubmit()" class="w-2/3 text-center">
-            <label for="edit-title" class="text-sky-800 self-start text-lg">{{editConstants.title}}</label>
+            <label for="edit-title" class="text-slate-800 self-start text-lg">{{editConstants.title}}</label>
             <input id="edit-title" type="text" formControlName="title" autocomplete="off"
-                class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 ">
+                class="shadow-sm border w-full h-12 px-3 py-2 text-slate-800 focus:outline-none focus:border-slate-800 mb-3 ">
 
             <p *ngIf="editForm.get('title')?.invalid && 
                 (editForm.get('title')?.dirty || 
                 editForm.get('title')?.touched || 
                 isSubmitted)" class="text-red-500 text-xs italic">{{editConstants.titleInvalidText}}</p>
 
-            <label for="edit-location" class="text-sky-800 self-start text-lg">{{editConstants.location}}</label>
+            <label for="edit-location" class="text-slate-800 self-start text-lg">{{editConstants.location}}</label>
             <input id="edit-location" type="text" formControlName="location" autocomplete="off"
-                class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 ">
+                class="shadow-sm border w-full h-12 px-3 py-2 text-slate-800 focus:outline-none focus:border-slate-800 mb-3 ">
 
             <p *ngIf="editForm.get('location')?.invalid && 
                 (editForm.get('location')?.dirty || 
@@ -25,9 +25,10 @@
 
             <!-- QUADRATURE -->
 
-            <label for="create-quadrature" class="text-sky-800 self-start text-lg">{{editConstants.quadrature}}</label>
+            <label for="create-quadrature"
+                class="text-slate-800 self-start text-lg">{{editConstants.quadrature}}</label>
             <input id="create-quadrature" type="number" formControlName="quadrature" autocomplete="off"
-                class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 ">
+                class="shadow-sm border w-full h-12 px-3 py-2 text-slate-800 focus:outline-none focus:border-slate-800 mb-3 ">
 
             <p *ngIf="editForm.get('quadrature')?.invalid && 
                 (editForm.get('quadrature')?.dirty || 
@@ -36,9 +37,9 @@
 
             <!-- FLOORS -->
 
-            <label for="create-floors" class="text-sky-800 self-start text-lg">{{editConstants.price}}</label>
+            <label for="create-floors" class="text-slate-800 self-start text-lg">{{editConstants.price}}</label>
             <input id="create-floors" type="number" formControlName="floors" autocomplete="off"
-                class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 ">
+                class="shadow-sm border w-full h-12 px-3 py-2 text-slate-800 focus:outline-none focus:border-slate-800 mb-3 ">
 
             <p *ngIf="editForm.get('floors')?.invalid && 
                 (editForm.get('floors')?.dirty || 
@@ -46,27 +47,28 @@
                 isSubmitted)" class="text-red-500 text-xs italic">{{editConstants.floorsInvalidText}}</p>
 
 
-            <label for="edit-imageLink" class="text-sky-800 self-start text-lg">{{editConstants.imageUrl}}</label>
+            <label for="edit-imageLink" class="text-slate-800 self-start text-lg">{{editConstants.imageUrl}}</label>
             <input id="edit-imageLink" type="text" formControlName="imageUrl" autocomplete="off"
-                class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 ">
+                class="shadow-sm border w-full h-12 px-3 py-2 text-slate-800 focus:outline-none focus:border-slate-800 mb-3 ">
 
             <p *ngIf="editForm.get('imageUrl')?.invalid && 
                 (editForm.get('imageUrl')?.dirty || 
                 editForm.get('imageUrl')?.touched || 
                 isSubmitted)" class="text-red-500 text-xs italic">{{editConstants.imageUrlInvalidText}}</p>
 
-            <label for="edit-price" class="text-sky-800 self-start text-lg">{{editConstants.price}}</label>
+            <label for="edit-price" class="text-slate-800 self-start text-lg">{{editConstants.price}}</label>
             <input id="edit-price" type="number" formControlName="price" autocomplete="off"
-                class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 ">
+                class="shadow-sm border w-full h-12 px-3 py-2 text-slate-800 focus:outline-none focus:border-slate-800 mb-3 ">
 
             <p *ngIf="editForm.get('price')?.invalid && 
                 (editForm.get('price')?.dirty || 
                 editForm.get('price')?.touched || 
                 isSubmitted)" class="text-red-500 text-xs italic">{{editConstants.priceInvalidText}}</p>
 
-            <label for="edit-information" class="text-sky-800 self-start text-lg">{{editConstants.information}}</label>
+            <label for="edit-information"
+                class="text-slate-800 self-start text-lg">{{editConstants.information}}</label>
             <textarea id="edit-information" formControlName="information" rows="4" cols="50"
-                class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 "></textarea>
+                class="shadow-sm border w-full h-12 px-3 py-2 text-slate-800 focus:outline-none focus:border-slate-800 mb-3 "></textarea>
 
             <p *ngIf="editForm.get('information')?.invalid && 
                 (editForm.get('information')?.dirty || 

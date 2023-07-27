@@ -1,29 +1,29 @@
-<div class="w-full h-screen flex">
+<div class="w-full h-screen flex ">
     <img src="../../../assets/images/login.jpg" alt="background"
         class="object-cover object-center h-screen w-7/12 lg:block sm:hidden md:hidden hidden">
     <div
         class="bg-white lg:flex lg:flex-col lg:justify-center lg:items-center lg:w-5/12 lg:shadow-lg md:flex md:flex-col md:justify-center md:items-center md:w-full sm:flex sm:flex-col sm:justify-center sm:items-center sm:w-full flex flex-col justify-center items-center w-full">
-        <h1 class="text-4xl font-bold text-sky-800 mb-4">{{loginConstant.heading}}</h1>
+        <h1 class="text-4xl font-bold text-slate-800 mb-4">{{loginConstant.heading}}</h1>
         <h2 class="text-lg font-bold text-rose-600 mb-4">{{errorMsg}}</h2>
         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="w-2/3 text-center">
-            <label for="login-email" class="text-sky-800 self-start text-lg">
+            <label for="login-email" class="text-slate-800 self-start text-lg">
                 {{loginConstant.email}}
             </label>
             <input id="login-email" type="email" formControlName="email" placeholder={{loginConstant.emailPlaceholder}}
                 autocomplete="off"
-                class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 ">
+                class="shadow-sm border w-full h-12 px-3 py-2 text-slate-800 focus:outline-none focus:border-slate-800 mb-3 ">
 
             <p *ngIf="loginForm.get('email')?.invalid && 
                 (loginForm.get('email')?.dirty || 
                 loginForm.get('email')?.touched || 
                 isSubmitted)" class="text-red-500 text-xs italic">{{loginConstant.emailInvalidText}}</p>
 
-            <label for="login-password" class="text-sky-800 self-start text-lg">
+            <label for="login-password" class="text-slate-800 self-start text-lg">
                 {{loginConstant.password}}
             </label>
             <input id="login-password" type={{typePassword}} formControlName="password"
                 placeholder={{loginConstant.passwordPlaceholder}}
-                class="shadow-sm border w-full h-12 px-3 py-2 text-sky-800 focus:outline-none focus:border-sky-800 mb-3 ">
+                class="shadow-sm border w-full h-12 px-3 py-2 text-slate-800 focus:outline-none focus:border-slate-800 mb-3 ">
 
             <p *ngIf="loginForm.get('password')?.invalid &&
                  (loginForm.get('password')?.dirty ||
@@ -40,7 +40,7 @@
                     class="opacity-0 group-hover:opacity-100 absolute flex text-red-500 whitespace-nowrap left-24 top-2">
                     All inputs are required.
                 </span></button>
-            <p>{{loginConstant.account}} <a class="font-bold underline text-sky-800"
+            <p>{{loginConstant.account}} <a class="font-bold underline text-slate-800"
                     routerLink="/register">{{loginConstant.btnAccount}}</a></p>
         </form>
     </div>
