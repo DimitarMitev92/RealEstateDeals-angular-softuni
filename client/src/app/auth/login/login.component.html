@@ -33,8 +33,9 @@
                 <input (click)="onToggleShowPassword()" class="mx-2" type="checkbox" id="showPassword">
                 <label for="showPassword">Show password</label>
             </div>
-            <button [disabled]="this.loginForm.invalid" type="submit"
-                class="btn btn-blue my-4">{{loginConstant.btnText}}</button>
+            <button [disabled]="this.loginForm.invalid" type="submit" class="btn btn-blue my-4"
+                [class.cursor-not-allowed]="loginForm.invalid"
+                [class.cursor-pointer]="!loginForm.invalid">{{loginConstant.btnText}}</button>
             <p>{{loginConstant.account}} <a class="font-bold underline text-sky-800"
                     routerLink="/register">{{loginConstant.btnAccount}}</a></p>
         </form>

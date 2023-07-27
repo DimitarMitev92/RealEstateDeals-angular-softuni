@@ -47,8 +47,9 @@
                 contactUsForm.get('message')?.touched || 
                 isSubmitted)" class="text-red-500 text-xs italic">{{contactUsConstants.messageInvalidText}}</p>
 
-            <button [disabled]="this.contactUsForm.invalid" type="submit"
-                class="btn btn-blue my-4">{{contactUsConstants.btnText}}</button>
+            <button [disabled]="this.contactUsForm.invalid" type="submit" class="btn btn-blue my-4"
+                [class.cursor-not-allowed]="contactUsForm.invalid"
+                [class.cursor-pointer]="!contactUsForm.invalid">{{contactUsConstants.btnText}}</button>
 
         </form>
     </div>

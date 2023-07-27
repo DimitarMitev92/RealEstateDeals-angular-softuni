@@ -73,8 +73,9 @@
             </div>
             <p>{{registerConstants.termsText}} <a class="font-medium underline text-sky-800"
                     href="#">{{registerConstants.termsTextAnch}}</a></p>
-            <button [disabled]="this.registerForm.invalid" type="submit"
-                class="btn btn-blue my-4">{{registerConstants.btnText}}</button>
+            <button [disabled]="this.registerForm.invalid" type="submit" class="btn btn-blue my-4"
+                [class.cursor-not-allowed]="registerForm.invalid"
+                [class.cursor-pointer]="!registerForm.invalid">{{registerConstants.btnText}}</button>
             <p>{{registerConstants.account}} <a class="font-bold underline text-sky-800"
                     routerLink="/login">{{registerConstants.btnAccount}}</a>
             </p>

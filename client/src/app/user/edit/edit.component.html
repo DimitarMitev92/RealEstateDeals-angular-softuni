@@ -73,8 +73,9 @@
                 editForm.get('information')?.touched || 
                 isSubmitted)" class="text-red-500 text-xs italic">{{editConstants.informationInvalidText}}</p>
 
-            <button [disabled]="this.editForm.invalid" type="submit"
-                class="btn btn-blue my-4">{{editConstants.btnText}}</button>
+            <button [disabled]="this.editForm.invalid" type="submit" class="btn btn-blue my-4"
+                [class.cursor-not-allowed]="editForm.invalid"
+                [class.cursor-pointer]="!editForm.invalid">{{editConstants.btnText}}</button>
         </form>
     </div>
 
