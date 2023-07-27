@@ -19,7 +19,7 @@
                 <p class="leading-relaxed">Information: {{offer.information}}</p>
                 <span class="title-font font-medium text-2xl text-gray-900 py-2">Price: {{offer.price
                     |currency:'CAD':'symbol-narrow'}}</span>
-                <div *ngIf="!isHideContact" class="bg-sky-700 text-white flex justify-evenly w-2/3 p-3 rounded">
+                <div *ngIf="!isHideContact" class="bg-slate-700 text-white flex justify-evenly w-2/3 p-3 rounded">
                     <p>Phone number: {{offer.ownerInfo.phone}}</p>
                     <p>Email: {{offer.ownerInfo.email}}</p>
                 </div>
@@ -37,7 +37,7 @@
         </div>
 
     </div>
-    <div *ngIf="!isHideFullScreenImage" class="flex justify-center items-center w-full h-full bg-sky-800">
+    <div *ngIf="!isHideFullScreenImage" class="flex justify-center items-center w-full h-full bg-slate-800">
         <img (click)="onToggleShowFullScreenImage()"
             class="  w-9/12 h-9/12 border-2 border-white rounded-sm cursor-pointer" [src]="offer.imageUrl"
             alt={{offer.title}}>
@@ -45,7 +45,7 @@
 
     <div *ngIf="!isShowDeletePopup && isHideFullScreenImage" class="flex flex-col items-center  justify-center">
         <div
-            class="flex flex-col items-center w-11/12 lg:w-10/12 md:w-10/12 sm:w-10/12 bg-sky-800 p-6 rounded-lg text-white mb-5">
+            class="flex flex-col items-center w-11/12 lg:w-10/12 md:w-10/12 sm:w-10/12 bg-slate-800 p-6 rounded-lg text-white mb-5">
             <h2 class=" md:text-2xl text-lg font-bold">Comments:</h2>
 
             <app-comment *ngFor="let comment of comments" [comment]="comment"

@@ -1,13 +1,13 @@
 <div class="container flex flex-col justify-start items-center min-h-screen">
 
-    <h2 class="lg:text-4xl md:text-2xl font-bold bg-sky-800 inline-block text-white py-4 w-full text-center">
+    <h2 class="lg:text-4xl md:text-2xl font-bold bg-slate-800 inline-block text-white py-4 w-full text-center">
         {{catalogConstants.heading}}</h2>
     <input type="search" [(ngModel)]="searchTerm" (input)="onSearch()"
         placeholder={{catalogConstants.searchPlaceholder}}
-        class="font-bold bg-sky-700 inline-block text-white placeholder-white py-4 w-full text-center border-white">
+        class="font-bold bg-slate-700 inline-block text-white placeholder-white py-4 w-full text-center border-white">
 
     <div
-        class="container lg:flex lg:flex-row lg:justify-center md:flex md:flex-col md:items-center sm:flex sm:flex-col sm:items-center flex flex-col items-center bg-sky-800 font-bold text-white py-4">
+        class="container lg:flex lg:flex-row lg:justify-center md:flex md:flex-col md:items-center sm:flex sm:flex-col sm:items-center flex flex-col items-center bg-slate-800 font-bold text-white py-4">
 
         <div *ngFor="let option of options" class="px-3">
             <label>
