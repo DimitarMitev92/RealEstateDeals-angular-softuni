@@ -14,7 +14,7 @@
             <p *ngIf="contactUsForm.get('fullName')?.invalid && 
                 (contactUsForm.get('fullName')?.dirty || 
                 contactUsForm.get('fullName')?.touched || 
-                isSubmitted)" class="text-red-500 text-xs italic">{{contactUsConstants.fullNameInvalidText}}</p>
+                isSubmitted)" class="text-red-500 text-xs ">{{contactUsConstants.fullNameInvalidText}}</p>
 
             <label for="contact-us-email" class="text-slate-800 self-start text-lg">{{contactUsConstants.email}}</label>
             <input id="contact-us-email" type="email" formControlName="email"
@@ -24,7 +24,7 @@
             <p *ngIf="contactUsForm.get('email')?.invalid && 
                 (contactUsForm.get('email')?.dirty || 
                 contactUsForm.get('email')?.touched || 
-                isSubmitted)" class="text-red-500 text-xs italic">{{contactUsConstants.emailInvalidText}}</p>
+                isSubmitted)" class="text-red-500 text-xs ">{{contactUsConstants.emailInvalidText}}</p>
 
             <label for="contact-us-phone"
                 class="text-slate-800 self-start text-lg">{{contactUsConstants.phoneNumber}}</label>
@@ -35,7 +35,7 @@
             <p *ngIf="contactUsForm.get('phone')?.invalid && 
                 (contactUsForm.get('phone')?.dirty || 
                 contactUsForm.get('phone')?.touched || 
-                isSubmitted)" class="text-red-500 text-xs italic">{{contactUsConstants.phoneNumberInvalidText}}</p>
+                isSubmitted)" class="text-red-500 text-xs ">{{contactUsConstants.phoneNumberInvalidText}}</p>
 
             <label for="contact-us-message"
                 class="text-slate-800 self-start text-lg">{{contactUsConstants.message}}</label>
@@ -45,7 +45,7 @@
             <p *ngIf="contactUsForm.get('message')?.invalid && 
                 (contactUsForm.get('message')?.dirty || 
                 contactUsForm.get('message')?.touched || 
-                isSubmitted)" class="text-red-500 text-xs italic">{{contactUsConstants.messageInvalidText}}</p>
+                isSubmitted)" class="text-red-500 text-xs ">{{contactUsConstants.messageInvalidText}}</p>
 
             <button [disabled]="this.contactUsForm.invalid" type="submit" class="btn btn-blue my-4 group relative"
                 [class.cursor-not-allowed]="contactUsForm.invalid"

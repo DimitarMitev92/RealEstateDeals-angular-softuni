@@ -14,7 +14,7 @@
             <p *ngIf="registerForm.get('fullName')?.invalid && 
                 (registerForm.get('fullName')?.dirty || 
                 registerForm.get('fullName')?.touched || 
-                isSubmitted)" class="text-red-500 text-xs italic">{{registerConstants.fullNameInvalidText}}</p>
+                isSubmitted)" class="text-red-500 text-xs ">{{registerConstants.fullNameInvalidText}}</p>
 
             <label for="register-username"
                 class="text-slate-800 self-start text-lg">{{registerConstants.username}}</label>
@@ -24,7 +24,7 @@
             <p *ngIf="registerForm.get('username')?.invalid && 
                 (registerForm.get('username')?.dirty || 
                 registerForm.get('username')?.touched || 
-                isSubmitted)" class="text-red-500 text-xs italic">{{registerConstants.usernameInvalidText}}</p>
+                isSubmitted)" class="text-red-500 text-xs ">{{registerConstants.usernameInvalidText}}</p>
 
             <label for="register-email" class="text-slate-800 self-start text-lg">{{registerConstants.email}}</label>
             <input id="register-email" type="email" formControlName="email" autocomplete="off"
@@ -33,7 +33,7 @@
             <p *ngIf="registerForm.get('email')?.invalid && 
                 (registerForm.get('email')?.dirty || 
                 registerForm.get('email')?.touched || 
-                isSubmitted)" class="text-red-500 text-xs italic">{{registerConstants.emailInvalidText}}</p>
+                isSubmitted)" class="text-red-500 text-xs ">{{registerConstants.emailInvalidText}}</p>
 
             <label for="register-phone" class="text-slate-800 self-start text-lg">{{registerConstants.phone}}</label>
             <input id="register-phone" type="text" formControlName="phone" autocomplete="off"
@@ -42,7 +42,7 @@
             <p *ngIf="registerForm.get('phone')?.invalid && 
                     (registerForm.get('phone')?.dirty || 
                     registerForm.get('phone')?.touched || 
-                    isSubmitted)" class="text-red-500 text-xs italic">{{registerConstants.phoneInvalidText}}</p>
+                    isSubmitted)" class="text-red-500 text-xs ">{{registerConstants.phoneInvalidText}}</p>
 
             <label for="register-password"
                 class="text-slate-800 self-start text-lg">{{registerConstants.password}}</label>
@@ -52,7 +52,7 @@
             <p *ngIf="registerForm.get('password')?.invalid && 
                 (registerForm.get('password')?.dirty || 
                 registerForm.get('password')?.touched || 
-                isSubmitted)" class="text-red-500 text-xs italic">{{registerConstants.passwordInvalidText}}</p>
+                isSubmitted)" class="text-red-500 text-xs ">{{registerConstants.passwordInvalidText}}</p>
 
             <label for="register-repeatPassword"
                 class="text-slate-800 self-start text-lg">{{registerConstants.rePassword}}</label>
@@ -64,7 +64,7 @@
              ((registerForm.get('password')?.dirty ||
               registerForm.get('rePassword')?.dirty) ||
                registerForm.get('rePassword')?.touched || 
-               isSubmitted)" class="text-red-500 text-xs italic">
+               isSubmitted)" class="text-red-500 text-xs ">
                 {{registerConstants.rePasswordInvalidText}}
             </p>
             <div class=" flex justify-center items-center">

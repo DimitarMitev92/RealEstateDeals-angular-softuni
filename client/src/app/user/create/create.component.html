@@ -14,7 +14,7 @@
             <p *ngIf="createForm.get('title')?.invalid && 
                 (createForm.get('title')?.dirty || 
                 createForm.get('title')?.touched || 
-                isSubmitted)" class="text-red-500 text-xs italic">{{createConstants.titleInvalidText}}</p>
+                isSubmitted)" class="text-red-500 text-xs ">{{createConstants.titleInvalidText}}</p>
 
 
             <label for="create-location" class="text-slate-800 self-start text-lg">{{createConstants.location}}</label>
@@ -25,7 +25,7 @@
             <p *ngIf="createForm.get('location')?.invalid && 
                 (createForm.get('location')?.dirty || 
                 createForm.get('location')?.touched || 
-                isSubmitted)" class="text-red-500 text-xs italic">{{createConstants.locationInvalidText}}</p>
+                isSubmitted)" class="text-red-500 text-xs ">{{createConstants.locationInvalidText}}</p>
 
             <!-- QUADRATURE -->
 
@@ -38,7 +38,7 @@
             <p *ngIf="createForm.get('quadrature')?.invalid && 
             (createForm.get('quadrature')?.dirty || 
             createForm.get('quadrature')?.touched || 
-            isSubmitted)" class="text-red-500 text-xs italic">{{createConstants.quadratureInvalidText}}</p>
+            isSubmitted)" class="text-red-500 text-xs ">{{createConstants.quadratureInvalidText}}</p>
 
             <!-- FLOORS -->
 
@@ -50,7 +50,7 @@
             <p *ngIf="createForm.get('floors')?.invalid && 
             (createForm.get('floors')?.dirty || 
             createForm.get('floors')?.touched || 
-            isSubmitted)" class="text-red-500 text-xs italic">{{createConstants.floorsInvalidText}}</p>
+            isSubmitted)" class="text-red-500 text-xs ">{{createConstants.floorsInvalidText}}</p>
 
             <label for="create-imageLink" class="text-slate-800 self-start text-lg">{{createConstants.imageUrl}}</label>
             <input id="create-imageLink" type="text" formControlName="imageUrl"
@@ -60,7 +60,7 @@
             <p *ngIf="createForm.get('imageUrl')?.invalid && 
                 (createForm.get('imageUrl')?.dirty || 
                 createForm.get('imageUrl')?.touched || 
-                isSubmitted)" class="text-red-500 text-xs italic">{{createConstants.imageUrlInvalidText}}</p>
+                isSubmitted)" class="text-red-500 text-xs ">{{createConstants.imageUrlInvalidText}}</p>
 
 
 
@@ -72,7 +72,7 @@
             <p *ngIf="createForm.get('price')?.invalid && 
                 (createForm.get('price')?.dirty || 
                 createForm.get('price')?.touched || 
-                isSubmitted)" class="text-red-500 text-xs italic">{{createConstants.priceInvalidText}}</p>
+                isSubmitted)" class="text-red-500 text-xs ">{{createConstants.priceInvalidText}}</p>
 
             <label for="create-information"
                 class="text-slate-800 self-start text-lg">{{createConstants.information}}</label>
@@ -82,7 +82,7 @@
             <p *ngIf="createForm.get('information')?.invalid && 
                 (createForm.get('information')?.dirty || 
                 createForm.get('information')?.touched || 
-                isSubmitted)" class="text-red-500 text-xs italic">{{createConstants.informationInvalidText}}</p>
+                isSubmitted)" class="text-red-500 text-xs ">{{createConstants.informationInvalidText}}</p>
 
             <button [disabled]="this.createForm.invalid" type="submit" class="btn btn-blue my-4 group  relative"
                 [class.cursor-not-allowed]="createForm.invalid"

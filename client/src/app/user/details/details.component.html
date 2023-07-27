@@ -1,23 +1,23 @@
-<section class="text-gray-700 body-font overflow-hidden bg-white">
+<section class="text-white body-font overflow-hidden bg-slate-700">
     <div *ngIf="!isShowDeletePopup && isHideFullScreenImage" class="container px-5 py-24 mx-auto">
         <div class="h-4/5 mx-auto flex flex-wrap ">
             <img *ngIf="offer" (click)="onToggleShowFullScreenImage()"
-                class="lg:w-1/2 w-full object-cover object-center rounded border-4 border-slate-800 cursor-zoom-in hover:brightness-110 hover:duration-300"
+                class="lg:w-1/2 w-full object-cover object-center rounded border-4 border-white cursor-zoom-in hover:brightness-110 hover:duration-300"
                 [src]="offer.imageUrl" alt={{offer.title}}>
             <div *ngIf="offer"
                 class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0 flex flex-col md:items-center lg:items-start items-center">
-                <h2 class="text-sm title-font text-gray-500 tracking-widest">Offer by: {{offer.ownerInfo.fullName}}
+                <h2 class="text-sm title-font text-white tracking-widest">Offer by: {{offer.ownerInfo.fullName}}
                 </h2>
-                <h2 class="text-sm title-font text-gray-500 tracking-widest">Created on: {{offer._createdOn | date:
+                <h2 class="text-sm title-font text-white tracking-widest">Created on: {{offer._createdOn | date:
                     'medium'}}
                 </h2>
-                <h1 class="text-gray-900 text-3xl title-font font-medium my-2">{{offer.title | uppercase}}</h1>
+                <h1 class="text-white text-3xl title-font font-medium my-2">{{offer.title | uppercase}}</h1>
 
                 <h3 class="text-lg py-1">Location: {{offer.location}}</h3>
                 <h3 class="text-lg py-1 ">Quadrature: {{offer.quadrature}} m2</h3>
                 <h3 class="text-lg py-1 ">Floors: {{offer.floors}}</h3>
                 <p class="leading-relaxed">Information: {{offer.information}}</p>
-                <span class="title-font font-medium text-2xl text-gray-900 py-2">Price: {{offer.price
+                <span class="title-font font-medium text-2xl text-white py-2">Price: {{offer.price
                     |currency:'CAD':'symbol-narrow'}}</span>
                 <div *ngIf="!isHideContact" class="bg-slate-700 text-white flex justify-evenly w-2/3 p-3 rounded">
                     <p>Phone number: {{offer.ownerInfo.phone}}</p>
@@ -65,7 +65,7 @@
             <p *ngIf="commentForm.get('comment')?.invalid && 
                     (commentForm.get('comment')?.dirty || 
                     commentForm.get('comment')?.touched || 
-                    isSubmitted)" class="bg-red-500 md:text-md text-sm italic text-white p-2 rounded-sm">Comment must
+                    isSubmitted)" class="bg-red-500 md:text-md text-sm  text-white p-2 rounded-sm">Comment must
                 be at least
                 10 characters long.</p>
         </div>

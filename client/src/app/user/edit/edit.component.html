@@ -12,7 +12,7 @@
             <p *ngIf="editForm.get('title')?.invalid && 
                 (editForm.get('title')?.dirty || 
                 editForm.get('title')?.touched || 
-                isSubmitted)" class="text-red-500 text-xs italic">{{editConstants.titleInvalidText}}</p>
+                isSubmitted)" class="text-red-500 text-xs ">{{editConstants.titleInvalidText}}</p>
 
             <label for="edit-location" class="text-slate-800 self-start text-lg">{{editConstants.location}}</label>
             <input id="edit-location" type="text" formControlName="location" autocomplete="off"
@@ -21,7 +21,7 @@
             <p *ngIf="editForm.get('location')?.invalid && 
                 (editForm.get('location')?.dirty || 
                 editForm.get('location')?.touched || 
-                isSubmitted)" class="text-red-500 text-xs italic">{{editConstants.locationInvalidText}}</p>
+                isSubmitted)" class="text-red-500 text-xs ">{{editConstants.locationInvalidText}}</p>
 
             <!-- QUADRATURE -->
 
@@ -33,7 +33,7 @@
             <p *ngIf="editForm.get('quadrature')?.invalid && 
                 (editForm.get('quadrature')?.dirty || 
                 editForm.get('quadrature')?.touched || 
-                isSubmitted)" class="text-red-500 text-xs italic">{{editConstants.quadratureInvalidText}}</p>
+                isSubmitted)" class="text-red-500 text-xs ">{{editConstants.quadratureInvalidText}}</p>
 
             <!-- FLOORS -->
 
@@ -44,7 +44,7 @@
             <p *ngIf="editForm.get('floors')?.invalid && 
                 (editForm.get('floors')?.dirty || 
                 editForm.get('floors')?.touched || 
-                isSubmitted)" class="text-red-500 text-xs italic">{{editConstants.floorsInvalidText}}</p>
+                isSubmitted)" class="text-red-500 text-xs ">{{editConstants.floorsInvalidText}}</p>
 
 
             <label for="edit-imageLink" class="text-slate-800 self-start text-lg">{{editConstants.imageUrl}}</label>
@@ -54,7 +54,7 @@
             <p *ngIf="editForm.get('imageUrl')?.invalid && 
                 (editForm.get('imageUrl')?.dirty || 
                 editForm.get('imageUrl')?.touched || 
-                isSubmitted)" class="text-red-500 text-xs italic">{{editConstants.imageUrlInvalidText}}</p>
+                isSubmitted)" class="text-red-500 text-xs ">{{editConstants.imageUrlInvalidText}}</p>
 
             <label for="edit-price" class="text-slate-800 self-start text-lg">{{editConstants.price}}</label>
             <input id="edit-price" type="number" formControlName="price" autocomplete="off"
@@ -63,7 +63,7 @@
             <p *ngIf="editForm.get('price')?.invalid && 
                 (editForm.get('price')?.dirty || 
                 editForm.get('price')?.touched || 
-                isSubmitted)" class="text-red-500 text-xs italic">{{editConstants.priceInvalidText}}</p>
+                isSubmitted)" class="text-red-500 text-xs ">{{editConstants.priceInvalidText}}</p>
 
             <label for="edit-information"
                 class="text-slate-800 self-start text-lg">{{editConstants.information}}</label>
@@ -73,7 +73,7 @@
             <p *ngIf="editForm.get('information')?.invalid && 
                 (editForm.get('information')?.dirty || 
                 editForm.get('information')?.touched || 
-                isSubmitted)" class="text-red-500 text-xs italic">{{editConstants.informationInvalidText}}</p>
+                isSubmitted)" class="text-red-500 text-xs ">{{editConstants.informationInvalidText}}</p>
 
             <button [disabled]="this.editForm.invalid" type="submit" class="btn btn-blue my-4 group relative"
                 [class.cursor-not-allowed]="editForm.invalid"

@@ -16,7 +16,7 @@
             <p *ngIf="loginForm.get('email')?.invalid && 
                 (loginForm.get('email')?.dirty || 
                 loginForm.get('email')?.touched || 
-                isSubmitted)" class="text-red-500 text-xs italic">{{loginConstant.emailInvalidText}}</p>
+                isSubmitted)" class="text-red-500 text-xs ">{{loginConstant.emailInvalidText}}</p>
 
             <label for="login-password" class="text-slate-800 self-start text-lg">
                 {{loginConstant.password}}
@@ -28,7 +28,7 @@
             <p *ngIf="loginForm.get('password')?.invalid &&
                  (loginForm.get('password')?.dirty ||
                   loginForm.get('password')?.touched ||
-                   isSubmitted)" class="text-red-500 text-xs italic">{{loginConstant.passwordInvalidText}}</p>
+                   isSubmitted)" class="text-red-500 text-xs ">{{loginConstant.passwordInvalidText}}</p>
             <div class=" flex justify-center items-center">
                 <input (click)="onToggleShowPassword()" class="mx-2" type="checkbox" id="showPassword">
                 <label for="showPassword">Show password</label>

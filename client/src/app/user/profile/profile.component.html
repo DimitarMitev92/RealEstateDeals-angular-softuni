@@ -2,9 +2,9 @@
 
     <div class="flex items-center flex-col bg-slate-800 text-white w-full">
 
-        <h2 class="text-4xl font-bold text-white italic m-2">{{profileConstants.heading}}</h2>
-        <h2 class="text-2xl font-bold text-white italic  m-2">{{profileConstants.fullName}} {{userData.fullName}}</h2>
-        <h2 class="text-4xl font-bold text-white italic border-b-2 border-white  m-2">{{profileConstants.offers}}:
+        <h2 class="text-4xl font-bold text-white  m-2">{{profileConstants.heading}}</h2>
+        <h2 class="text-2xl font-bold text-white   m-2">{{profileConstants.fullName}} {{userData.fullName}}</h2>
+        <h2 class="text-4xl font-bold text-white  border-b-2 border-white  m-2">{{profileConstants.offers}}:
         </h2>
 
     </div>
@@ -13,7 +13,7 @@
 
         <app-card *ngFor="let offer of userOffers" [offer]="offer"></app-card>
         <ng-container *ngIf='userOffers?.length === 0'>
-            <h2 class="text-2xl font-bold text-slate-800 italic   m-2">{{profileConstants.offersInvalidText}}</h2>
+            <h2 class="text-2xl font-bold text-white    m-2">{{profileConstants.offersInvalidText}}</h2>
             <a class="btn btn-blue my-4" routerLink="/create">{{profileConstants.btnOffers}}</a>
         </ng-container>
 
@@ -21,7 +21,7 @@
 
     <div class="flex items-center flex-col bg-slate-800 text-white w-full">
 
-        <h2 class="text-4xl font-bold bg-slate-800 text-white italic border-b-2 border-b-white m-2">
+        <h2 class="text-4xl font-bold bg-slate-800 text-white  border-b-2 border-b-white m-2">
             {{profileConstants.followOffers}}:
         </h2>
 
@@ -31,7 +31,7 @@
 
         <app-card *ngFor="let followOffer of userFollowOffers" [offer]="followOffer"></app-card>
         <ng-container *ngIf='userFollowOffers?.length === 0'>
-            <h2 class="text-2xl font-bold text-slate-800 italic   m-2">{{profileConstants.followOffersInvalidText}}</h2>
+            <h2 class="text-2xl font-bold text-white    m-2">{{profileConstants.followOffersInvalidText}}</h2>
             <a class="btn btn-blue my-4" routerLink="/catalog">{{profileConstants.btnFollowOffers}}</a>
         </ng-container>
 
