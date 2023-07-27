@@ -25,7 +25,7 @@
             <h2 class="text-2xl font-bold text-sky-800 italic   m-2">No offers yet.</h2>
             <a *ngIf='isLoggedIn' class="btn btn-blue my-4" routerLink="/create">Create</a>
         </ng-container>
-        <ng-container *ngIf='filteredUsers?.length === 0'>
+        <ng-container *ngIf='filteredUsers?.length === 0 && allOffers?.length !== 0'>
             <h2 class="text-2xl font-bold text-sky-800 italic   m-2">An offer with that name does not exist.</h2>
         </ng-container>
     </div>
