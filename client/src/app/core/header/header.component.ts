@@ -30,7 +30,7 @@ export class HeaderComponent {
     }
   }
 
-  onToggleNavbarMenu() {
+  onToggleNavbarMenu(): void {
     console.log('trigger');
     console.log(this.showNavbarMenu);
     if (this.showNavbarMenu === 'hidden') {
@@ -42,7 +42,7 @@ export class HeaderComponent {
     }
   }
 
-  onLogoutHandler() {
+  onLogoutHandler(): void {
     if (this.userData !== null) {
       this.authService.logout(this.userData.accessToken);
       this.router.navigate(['']);

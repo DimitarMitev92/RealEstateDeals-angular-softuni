@@ -22,7 +22,7 @@ import { ILoginData, IRegisterData } from 'src/app/interfaces/authInterfaces';
 export class DetailsComponent implements OnInit {
   offer!: IOfferReturnData;
   userData!: IRegisterData;
-  comments!: IOfferCommentReturnData[];
+  comments: IOfferCommentReturnData[] = [];
 
   comment!: IOfferCommentData;
 

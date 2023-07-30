@@ -5,7 +5,7 @@ export function emailValidator(): ValidatorFn {
     const value = control.value;
 
     if (Validators.required(control)) {
-      return null; // Let the required validator handle empty values
+      return null;
     }
 
     const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;

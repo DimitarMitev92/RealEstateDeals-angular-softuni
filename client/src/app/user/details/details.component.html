@@ -51,6 +51,8 @@
             <app-comment *ngFor="let comment of comments" [comment]="comment"
                 class="flex flex-col justify-betwen my-5 w-11/12 lg:w-9/12 md:w-10/12 sm:w-10/12" />
 
+            <p *ngIf="comments.length === 0" class="p-2 ">No comments yet.</p>
+
             <form *ngIf="isLoggedIn" (ngSubmit)="osSubmitComment()" [formGroup]="commentForm" class="flex mb-5 ">
                 <textarea formControlName="comment"
                     class=" shadow-sm border w-full h-12 mx-2 text-slate-800 focus:outline focus:border-slate-800"

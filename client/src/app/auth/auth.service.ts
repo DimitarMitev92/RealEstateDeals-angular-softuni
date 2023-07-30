@@ -34,7 +34,7 @@ export class AuthService {
     this.isLoggedIn = state;
   }
 
-  clearUserData() {
+  clearUserData(): void {
     localStorage.removeItem('userData');
   }
 
