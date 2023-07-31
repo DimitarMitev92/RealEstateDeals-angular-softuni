@@ -1,6 +1,8 @@
 <section class="text-white body-font overflow-hidden bg-slate-700">
     <div *ngIf="!isShowDeletePopup && isHideFullScreenImage" class="container px-5 py-24 mx-auto">
         <div class="h-4/5 mx-auto flex flex-wrap ">
+            <h2 *ngIf="errorServer" class="text-lg font-bold text-rose-600 m-4 text-center w-full min-h-screen">
+                {{errorMsg}}</h2>
             <img *ngIf="offer" (click)="onToggleShowFullScreenImage()"
                 class="lg:w-1/2 w-full object-cover object-center rounded border-4 border-white cursor-zoom-in hover:brightness-110 hover:duration-300"
                 [src]="offer.imageUrl" alt={{offer.title}}>
@@ -44,7 +46,7 @@
     </div>
 
     <div *ngIf="!isShowDeletePopup && isHideFullScreenImage" class="flex flex-col items-center  justify-center">
-        <div
+        <div *ngIf="!errorMsg"
             class="flex flex-col items-center w-11/12 lg:w-10/12 md:w-10/12 sm:w-10/12 bg-slate-800 p-6 rounded-lg text-white mb-5">
             <h2 class=" md:text-2xl text-lg font-bold">Comments:</h2>
 
@@ -57,8 +59,8 @@
                 <textarea formControlName="comment"
                     class=" shadow-sm border w-full h-12 mx-2 text-slate-800 focus:outline focus:border-slate-800"
                     name="comment" id="comment" cols="100" rows="5"></textarea>
-                <button [disabled]="this.commentForm.invalid" type="submit" class="btn btn-blue group relative"
-                    [class.cursor-not-allowed]="commentForm.invalid"
+                <button [disabled]="this.commentForm.invalid" *ngIf="!errorServer" type="submit"
+                    class="btn btn-blue group relative" [class.cursor-not-allowed]="commentForm.invalid"
                     [class.cursor-pointer]="!commentForm.invalid">Comment<span *ngIf="this.commentForm.invalid"
                         class="opacity-0 group-hover:opacity-100 absolute flex text-red-500 whitespace-nowrap left-32 top-3">
                         Input is required.

@@ -29,6 +29,9 @@ export class DetailsComponent implements OnInit {
   isLoggedIn: boolean = false;
   isOwner: boolean = false;
 
+  errorServer: boolean = false;
+  errorMsg: string = '';
+
   isShowDeletePopup: boolean = false;
 
   isHideContact: boolean = true;
@@ -104,8 +107,16 @@ export class DetailsComponent implements OnInit {
           }
         },
         error: (msg) => {
+          console.log('Trigger');
           console.log(msg);
+          this.errorServer = true;
           this.globalLoaderService.hideLoader();
+          if (msg.status === 0) {
+            this.errorMsg =
+              'Тhe server is down. We are working on fixing the problem.';
+          }
+          console.log(this.errorMsg);
+          console.log(this.errorServer);
         },
       });
     });
