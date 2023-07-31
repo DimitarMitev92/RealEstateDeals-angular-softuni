@@ -72,6 +72,10 @@ export class RegisterComponent {
           if (msg.status === 409) {
             this.errorMsg = 'There is already a user with the same email.';
           }
+          if (msg.status === 0) {
+            this.errorMsg =
+              'Тhe server is down. We are working on fixing the problem.';
+          }
         },
       });
   }

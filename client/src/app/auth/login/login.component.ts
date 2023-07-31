@@ -55,6 +55,10 @@ export class LoginComponent {
           if (msg.status === 403) {
             this.errorMsg = 'Email or password is wrong.';
           }
+          if (msg.status === 0) {
+            this.errorMsg =
+              'Тhe server is down. We are working on fixing the problem.';
+          }
         },
       });
   }
