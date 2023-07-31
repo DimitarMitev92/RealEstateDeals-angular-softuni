@@ -15,6 +15,10 @@ import { GlobalLoaderService } from 'src/app/core/global-loader/global-loader.se
 })
 export class CatalogComponent implements OnInit {
   catalogConstants = catalogConstant;
+
+  errorServer: boolean = false;
+  errorMsg: string = '';
+
   allOffers: IOfferReturnData[] = [];
   isLoggedIn: boolean = false;
 
@@ -47,7 +51,14 @@ export class CatalogComponent implements OnInit {
       },
       error: (msg) => {
         this.globalLoaderService.hideLoader();
-        console.log(msg);
+        this.errorServer = true;
+        if (msg.status === 404) {
+          this.allOffers = [];
+        }
+        if (msg.status === 0) {
+          this.errorMsg =
+            'Тhe server is down. We are working on fixing the problem.';
+        }
       },
     });
     this.isLoggedIn = Boolean(this.authService.getUserData());

@@ -17,6 +17,7 @@
             </label>
         </div>
     </div>
+    <h2 *ngIf="errorServer" class="text-lg font-bold text-rose-600 m-4">{{errorMsg}}</h2>
     <div class="container flex justify-center items-center flex-wrap gap-10 m-10 w-4/5">
 
 
@@ -25,6 +26,7 @@
             <h2 class="text-2xl font-bold text-white   m-2">No offers yet.</h2>
             <a *ngIf='isLoggedIn' class="btn btn-blue my-4" routerLink="/create">Create</a>
         </ng-container>
+
         <ng-container *ngIf='filteredUsers?.length === 0 && allOffers?.length !== 0'>
             <h2 class="text-2xl font-bold text-white    m-2">An offer with that name does not exist.</h2>
         </ng-container>
