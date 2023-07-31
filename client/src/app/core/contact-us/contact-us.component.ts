@@ -13,6 +13,9 @@ import { Router } from '@angular/router';
 export class ContactUsComponent {
   contactUsConstants = contactUsConstants;
 
+  errorServer: boolean = false;
+  errorMsg: string = '';
+
   isSubmitted = false;
 
   contactUsForm = this.fb.group({
@@ -42,7 +45,15 @@ export class ContactUsComponent {
           this.router.navigate(['']);
         },
         error: (msg) => {
-          confirm(msg.message);
+          this.errorServer = true;
+          console.log(msg);
+          if (msg.status === 403) {
+            this.errorMsg = 'Email or password is wrong.';
+          }
+          if (msg.status === 0) {
+            this.errorMsg =
+              'Тhe server is down. We are working on fixing the problem.';
+          }
         },
       });
   }
