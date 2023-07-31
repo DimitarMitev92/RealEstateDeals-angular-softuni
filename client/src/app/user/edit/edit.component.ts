@@ -19,6 +19,9 @@ import { AuthService } from 'src/app/auth/auth.service';
 export class EditComponent implements OnInit {
   editConstants = editConstants;
 
+  errorServer: boolean = false;
+  errorMsg: string = 'Something was wrong.';
+
   isSubmitted = false;
 
   idOffer!: string;
@@ -74,6 +77,15 @@ export class EditComponent implements OnInit {
         },
         error: (msg) => {
           console.log(msg);
+          this.errorServer = true;
+          if (msg.status === 403) {
+            this.authService.clearUserData();
+            this.router.navigate(['/login']);
+          }
+          if (msg.status === 0) {
+            this.errorMsg =
+              'Тhe server is down. We are working on fixing the problem.';
+          }
         },
       });
     });
