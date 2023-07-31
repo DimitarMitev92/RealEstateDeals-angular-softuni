@@ -18,6 +18,9 @@ import { IOfferData } from 'src/app/interfaces/offerInterfaces';
 export class CreateComponent {
   createConstants = createConstants;
 
+  errorServer: boolean = false;
+  errorMsg: string = 'Something was wrong.';
+
   isSubmitted = false;
 
   createForm = this.fb.group({
@@ -61,8 +64,11 @@ export class CreateComponent {
       },
       error: (msg) => {
         console.log(msg);
-        this.authService.clearUserData();
-        this.router.navigate(['/login']);
+        this.errorServer = true;
+        if (msg.status === 0) {
+          this.errorMsg =
+            'Тhe server is down. We are working on fixing the problem.';
+        }
       },
     });
   }
