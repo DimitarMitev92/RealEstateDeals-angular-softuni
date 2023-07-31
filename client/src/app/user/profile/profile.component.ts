@@ -17,6 +17,9 @@ import { IOfferFollowerReturnData } from 'src/app/interfaces/offerFollowerInterf
 export class ProfileComponent implements OnInit {
   profileConstants = profileConstants;
 
+  errorServer: boolean = false;
+  errorMsg: string = '';
+
   userData!: IRegisterData;
   userOffers!: IOfferReturnData[];
   userFollowOffers: IOfferFollowerReturnData[] = [];
@@ -46,6 +49,11 @@ export class ProfileComponent implements OnInit {
           if (msg.status === 404) {
             this.userOffers = [];
           }
+          if (msg.status === 0) {
+            this.userOffers = [];
+            this.errorMsg =
+              'Тhe server is down. We are working on fixing the problem.';
+          }
         },
       });
       this.userCRUD.getOffersByFollowerId(userID).subscribe({
@@ -53,8 +61,15 @@ export class ProfileComponent implements OnInit {
           this.userFollowOffers = response;
         },
         error: (msg) => {
-          this.userFollowOffers = [];
           console.log(msg);
+          this.errorServer = true;
+          if (msg.status === 404) {
+            this.userFollowOffers = [];
+          }
+          if (msg.status === 0) {
+            this.errorMsg =
+              'Тhe server is down. We are working on fixing the problem.';
+          }
         },
       });
     } else {

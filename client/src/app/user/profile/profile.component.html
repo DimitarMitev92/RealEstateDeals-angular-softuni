@@ -6,11 +6,10 @@
         <h2 class="text-2xl font-bold text-white   m-2">{{profileConstants.fullName}} {{userData.fullName}}</h2>
         <h2 class="text-4xl font-bold text-white  border-b-2 border-white  m-2">{{profileConstants.offers}}:
         </h2>
-
+        <h2 *ngIf="errorServer" class="text-lg font-bold text-rose-600 mb-4">{{errorMsg}}</h2>
     </div>
 
     <div class=" flex justify-center items-center flex-wrap gap-10 m-10 w-4/5">
-
         <app-card *ngFor="let offer of userOffers" [offer]="offer"></app-card>
         <ng-container *ngIf='userOffers?.length === 0'>
             <h2 class="text-2xl font-bold text-white    m-2">{{profileConstants.offersInvalidText}}</h2>
@@ -28,7 +27,6 @@
     </div>
 
     <div class="flex justify-center items-center flex-wrap gap-10 m-10 w-4/5">
-
         <app-card *ngFor="let followOffer of userFollowOffers" [offer]="followOffer"></app-card>
         <ng-container *ngIf='userFollowOffers?.length === 0'>
             <h2 class="text-2xl font-bold text-white    m-2">{{profileConstants.followOffersInvalidText}}</h2>
