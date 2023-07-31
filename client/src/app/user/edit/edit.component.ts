@@ -82,6 +82,10 @@ export class EditComponent implements OnInit {
             this.authService.clearUserData();
             this.router.navigate(['/login']);
           }
+          if (msg.status === 404) {
+            this.router.navigate(['/catalog']);
+          }
+
           if (msg.status === 0) {
             this.errorMsg =
               'Тhe server is down. We are working on fixing the problem.';
