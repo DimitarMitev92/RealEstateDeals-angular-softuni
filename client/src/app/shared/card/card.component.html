@@ -1,6 +1,6 @@
 <div #cardElement *ngIf="offer" [attr.idOffer]='offer._id' [attr.idOfferOwner]="offer._ownerId"
     [attr.offerCreatedOn]="offer._createdOn"
-    class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-slate-900">
+    class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-slate-900 hover:scale-105  hover:duration-300">
     <img class="rounded-t-lg" src={{offer.imageUrl}} alt={{offer.title}} />
     <div class="p-5">
         <a>
