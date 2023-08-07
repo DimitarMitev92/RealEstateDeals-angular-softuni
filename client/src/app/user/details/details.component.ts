@@ -90,10 +90,6 @@ export class DetailsComponent implements OnInit {
                   let currentFollowOffer = response.filter(
                     (followed) => followed.idOffer === this.offer._id
                   );
-                  console.log(
-                    'Initial load currentFollowOffer:',
-                    currentFollowOffer
-                  );
                   if (currentFollowOffer.length !== 0) {
                     this.isFollowed = true;
                   }
@@ -107,7 +103,6 @@ export class DetailsComponent implements OnInit {
           }
         },
         error: (msg) => {
-          console.log('Trigger');
           console.log(msg);
           this.errorServer = true;
           this.globalLoaderService.hideLoader();
@@ -115,8 +110,6 @@ export class DetailsComponent implements OnInit {
             this.errorMsg =
               'Тhe server is down. We are working on fixing the problem.';
           }
-          console.log(this.errorMsg);
-          console.log(this.errorServer);
         },
       });
     });

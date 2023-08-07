@@ -23,12 +23,12 @@ export class CatalogComponent implements OnInit {
   isLoggedIn: boolean = false;
 
   options: string[] = [
-    'Newest',
-    'Oldest',
-    'Cheapest',
-    'Most Expensive',
-    'Smallest quadrature',
-    'Biggest quadrature',
+    'Most Recent',
+    'Oldest First',
+    'Lowest Cost',
+    'Highest Cost',
+    'Smallest Area First',
+    'Largest Area First',
   ];
   selectedOption: string = 'Oldest';
 
@@ -65,23 +65,23 @@ export class CatalogComponent implements OnInit {
   }
 
   onRadioChange() {
-    if (this.selectedOption === 'Newest') {
+    if (this.selectedOption === 'Most Recent') {
       this.filteredUsers = this.filteredUsers.sort(
         (a, b) => b._createdOn - a._createdOn
       );
-    } else if (this.selectedOption === 'Oldest') {
+    } else if (this.selectedOption === 'Oldest First') {
       this.filteredUsers = this.filteredUsers.sort(
         (a, b) => a._createdOn - b._createdOn
       );
-    } else if (this.selectedOption === 'Cheapest') {
+    } else if (this.selectedOption === 'Lowest Cost') {
       this.filteredUsers = this.filteredUsers.sort((a, b) => a.price - b.price);
-    } else if (this.selectedOption === 'Most Expensive') {
+    } else if (this.selectedOption === 'Highest Cost') {
       this.filteredUsers = this.filteredUsers.sort((a, b) => b.price - a.price);
-    } else if (this.selectedOption === 'Smallest quadrature') {
+    } else if (this.selectedOption === 'Smallest Area First') {
       this.filteredUsers = this.filteredUsers.sort(
         (a, b) => a.quadrature - b.quadrature
       );
-    } else if (this.selectedOption === 'Biggest quadrature') {
+    } else if (this.selectedOption === 'Largest Area First') {
       this.filteredUsers = this.filteredUsers.sort(
         (a, b) => b.quadrature - a.quadrature
       );

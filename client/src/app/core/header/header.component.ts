@@ -31,8 +31,6 @@ export class HeaderComponent {
   }
 
   onToggleNavbarMenu(): void {
-    console.log('trigger');
-    console.log(this.showNavbarMenu);
     if (this.showNavbarMenu === 'hidden') {
       this.showNavbarMenu = 'sm:block';
       this.navbarMenuIcon = 'fa-x';
