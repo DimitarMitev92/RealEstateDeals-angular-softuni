@@ -81,4 +81,11 @@ This is a Angular project for the course of _SoftUni - Angular - June 2023_. It 
 | peter@gmail.bg | 123456   |
 | john@gmail.bg  | 123456   |
 
+---
+
+## Screenshots
+
+## Home page (logout).
+
+![home-page-logout](https://raw.githubusercontent.com/DimitarMitev92/RealEstateDeals-angular-softuni/main/screenshots/home-page-logout.jpg)
 
