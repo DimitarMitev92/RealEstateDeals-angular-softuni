@@ -1,25 +1,31 @@
-<div #cardElement *ngIf="offer" [attr.idOffer]='offer._id' [attr.idOfferOwner]="offer._ownerId"
-    [attr.offerCreatedOn]="offer._createdOn"
-    class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-slate-900 hover:scale-105 hover:-translate-y-3  hover:duration-300">
-    <div class="overflow-hidden h-52 w-full flex flex-row justify-center items-center rounded-t-lg">
-        <img class="rounded-t-lg" src={{offer.imageUrl}} alt={{offer.title}} />
-    </div>
-    <div class="p-5">
-        <a>
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{offer.title | uppercase}}
-            </h5>
-        </a>
+<a routerLink="/{{offer._id}}/details">
 
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{offer._createdOn | elapsedTime}}
-        </p>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{offer.location}}
-        </p>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{offer.quadrature}} m2
-        </p>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{offer.floors}} floors
-        </p>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{offer.information | short}}</p>
-        <p class="mb-3 font-bold text-gray-700 dark:text-gray-200">{{offer.price |currency:'CAD':'symbol-narrow'}}</p>
-        <a class="btn btn-blue my-4" routerLink="/{{offer._id}}/details">Read More &rarr;</a>
+    <div #cardElement *ngIf="offer" [attr.idOffer]='offer._id' [attr.idOfferOwner]="offer._ownerId"
+        [attr.offerCreatedOn]="offer._createdOn"
+        class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-slate-900 hover:scale-105 hover:-translate-y-3  hover:duration-300">
+        <div class="overflow-hidden h-52 w-full flex flex-row justify-center items-center rounded-t-lg">
+            <img class="rounded-t-lg" src={{offer.imageUrl}} alt={{offer.title}} />
+        </div>
+        <div class="p-5">
+            <a>
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{offer.title |
+                    uppercase}}
+                </h5>
+            </a>
 
+            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{offer._createdOn | elapsedTime}}
+            </p>
+            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{offer.location}}
+            </p>
+            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{offer.quadrature}} m2
+            </p>
+            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{offer.floors}} floors
+            </p>
+            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{offer.information | short}}</p>
+            <p class="mb-3 font-bold text-gray-700 dark:text-gray-200">{{offer.price |currency:'CAD':'symbol-narrow'}}
+            </p>
+            <a class="btn btn-blue my-4" routerLink="/{{offer._id}}/details">Read More &rarr;</a>
+
+        </div>
     </div>
+</a>
