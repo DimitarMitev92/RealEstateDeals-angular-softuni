@@ -18,7 +18,7 @@
         </div>
     </div>
     <h2 *ngIf="errorServer" class="text-lg font-bold text-rose-600 m-4">{{errorMsg}}</h2>
-    <div class="container flex justify-center items-center flex-wrap gap-10 m-10 w-4/5">
+    <div class="container flex justify-center items-start flex-wrap gap-10 m-10 w-4/5">
 
 
         <app-card *ngFor="let offer of filteredUsers" [offer]="offer"></app-card>
