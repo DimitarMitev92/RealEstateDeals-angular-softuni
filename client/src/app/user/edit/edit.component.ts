@@ -20,7 +20,7 @@ export class EditComponent implements OnInit {
   editConstants = editConstants;
 
   errorServer: boolean = false;
-  errorMsg: string = 'Something was wrong.';
+  errorMsg: string = '';
 
   isSubmitted = false;
 
@@ -116,6 +116,18 @@ export class EditComponent implements OnInit {
     this.userCrud.updateOffer(this.idOffer, offerData, accessToken).subscribe({
       next: (response) => {
         this.router.navigate([`${response._id}/details`]);
+      },
+      error: (msg) => {
+        console.log(msg);
+        this.errorServer = true;
+        if (msg.status === 403) {
+          this.authService.clearUserData();
+          this.router.navigate(['/login']);
+        }
+        if (msg.status === 0) {
+          this.errorMsg =
+            'Тhe server is down. We are working on fixing the problem.';
+        }
       },
     });
   }
