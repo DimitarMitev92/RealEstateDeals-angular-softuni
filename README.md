@@ -181,9 +181,13 @@ This is a Angular project for the course of _SoftUni - Angular - June 2023_. It 
 
 ![delete](https://raw.githubusercontent.com/DimitarMitev92/RealEstateDeals-angular-softuni/main/screenshots/delete.jpg)
 
+## Details page comment (valid)
 
+![comment-valid](https://raw.githubusercontent.com/DimitarMitev92/RealEstateDeals-angular-softuni/main/screenshots/comment-valid.jpg)
 
+## Details page comment (invalid)
 
+![comment-invalid](https://raw.githubusercontent.com/DimitarMitev92/RealEstateDeals-angular-softuni/main/screenshots/comment-invalid.jpg)
 
 
 
