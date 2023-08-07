@@ -1340,38 +1340,108 @@
         }
     };
     var seedData = {
-        games: {
-            "ff436770-76c5-40e2-b231-77409eda7a61": {
+        offers: [
+            {
                 "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
-                "title": "CoverFire",
-                "category": "Action",
-                "maxLevel": "70",
-                "imageUrl": "/images/CoverFire.png",
-                "summary": "Best action shooter game, easy controls, realistic 3D graphics and fun offline missions. Get your best shooting gun and take to action!",
-                "_createdOn": 1617194128618,
+                "title": "Luxury vila",
+                "location": "Bahamas, Palm Street 123",
+                "quadrature": 250.5,
+                "floors": 2,
+                "imageUrl": "https://images.pexels.com/photos/1488327/pexels-photo-1488327.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+                "price": 2000000,
+                "information": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                "ownerInfo": {
+                    "email": "peter@gmail.com",
+                    "fullName": "Peter Parker",
+                    "username": "peter",
+                    "phone": "099999999",
+                    "_id": "35c62d76-8152-4626-8712-eeb96381bea8",
+                    "accessToken": "ac5e56ab4973ca398c839a70e1c81bf2f3c1fcfe6e81073e7ad6a489b26722ef"
+                },
+                "_createdOn": 1691406611535,
+                "_id": "6db3a37e-5d80-43ad-805a-044e400a48bd"
             },
-            "1840a313-225c-416a-817a-9954d4609f7c": {
+            {
                 "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
-                "title": "MineCraft",
-                "category": "Arcade",
-                "maxLevel": "250",
-                "imageUrl": "/images/MineCraft.png",
-                "summary": "Set in a world where fantasy creatures live side by side with humans. A human cop is forced to work with an Orc to find a weapon everyone is prepared to kill for. Set in a world where fantasy creatures live side by side with humans. A human cop is forced to work with an Orc to find a weapon everyone is prepared to kill for.",
-                "_createdOn": 1617194210928,
+                "title": "Houses in the ocean",
+                "location": "Caribian islands, Sandy Lane 456",
+                "quadrature": 125.2,
+                "floors": 1,
+                "imageUrl": "https://images.pexels.com/photos/3293192/pexels-photo-3293192.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+                "price": 1500000,
+                "information": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                "ownerInfo": {
+                    "email": "peter@gmail.com",
+                    "fullName": "Peter Parker",
+                    "username": "peter",
+                    "phone": "099999999",
+                    "_id": "35c62d76-8152-4626-8712-eeb96381bea8",
+                    "accessToken": "ac5e56ab4973ca398c839a70e1c81bf2f3c1fcfe6e81073e7ad6a489b26722ef"
+                },
+                "_createdOn": 1691406739863,
+                "_id": "f26fa5b2-57d1-4e08-b3a3-5bea856373bc"
             },
-            "126777f5-3277-42ad-b874-76d043b069cb": {
-                "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
-                "title": "Zombie Lang",
-                "category": "Vertical Shooter",
-                "maxLevel": "100",
-                "imageUrl": "/images/ZombieLang.png",
-                "summary": "With it’s own unique story, set between the events of the first movie, Zombieland: Double Tap- Road Trip is a ridiculously fun top-down twin-stick shooter featuring local co-op multiplayer for up to four players. Play as your favorite heroes from the original — Tallahassee, Columbus, Wichita and Little Rock — as well as new unlockable characters from the upcoming sequel.  The game embraces the game-like elements seen in the film by  incorporating everything from the “Rules” to “Zombie Kill of the Week”.  Use your special abilities, an arsenal of weapons and the essential Zombieland rules for survival to stay alive against huge numbers of uniquely grotesque and dangerous undead monstrosities in Zombieland: Double Tap- Road Trip’s story-based campaign mode, wave-based horde mode, and boss battles.",
-                "_createdOn": 1617194295474,
+            {
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "title": "Luxury house with pool",
+                "location": "USA, California, 789 Oak Street",
+                "quadrature": 500,
+                "floors": 2,
+                "imageUrl": "https://images.pexels.com/photos/1488267/pexels-photo-1488267.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+                "price": 500000,
+                "information": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                "ownerInfo": {
+                    "email": "peter@gmail.com",
+                    "fullName": "Peter Parker",
+                    "username": "peter",
+                    "phone": "099999999",
+                    "_id": "35c62d76-8152-4626-8712-eeb96381bea8",
+                    "accessToken": "ac5e56ab4973ca398c839a70e1c81bf2f3c1fcfe6e81073e7ad6a489b26722ef"
+                },
+                "_createdOn": 1691406831558,
+                "_id": "72bf5721-906b-4bb4-b72d-3467685fee23"
+            },
+            {
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "title": "Mansion nearby lake ",
+                "location": "USA, Chicago, Bull Street 321",
+                "quadrature": 1200,
+                "floors": 3,
+                "imageUrl": "https://images.pexels.com/photos/15334539/pexels-photo-15334539/free-photo-of-coastal-villas-in-fort-lauderdale.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+                "price": 28000000,
+                "information": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                "ownerInfo": {
+                    "email": "peter@gmail.com",
+                    "fullName": "Peter Parker",
+                    "username": "peter",
+                    "phone": "099999999",
+                    "_id": "35c62d76-8152-4626-8712-eeb96381bea8",
+                    "accessToken": "ac5e56ab4973ca398c839a70e1c81bf2f3c1fcfe6e81073e7ad6a489b26722ef"
+                },
+                "_createdOn": 1691406937189,
+                "_id": "c22cc4c8-b672-4a96-b4b2-d058b8b8ec1f"
+            },
+            {
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "title": "House in the wood",
+                "location": "Switzerland, Zurich, 23 Alpine Avenue ",
+                "quadrature": 430,
+                "floors": 2,
+                "imageUrl": "https://images.pexels.com/photos/17502001/pexels-photo-17502001/free-photo-of-luxury-wooden-house-with-big-terrace.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+                "price": 325000,
+                "information": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                "ownerInfo": {
+                    "email": "peter@gmail.com",
+                    "fullName": "Peter Parker",
+                    "username": "peter",
+                    "phone": "099999999",
+                    "_id": "35c62d76-8152-4626-8712-eeb96381bea8",
+                    "accessToken": "ac5e56ab4973ca398c839a70e1c81bf2f3c1fcfe6e81073e7ad6a489b26722ef"
+                },
+                "_createdOn": 1691407062421,
+                "_id": "539a23cc-524f-4ff8-838d-0377dc8f25eb"
             }
-        },
-        comments: {
-
-        }
+        ]
     };
     var rules$1 = {
         users: {

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { GlobalLoaderService } from './core/global-loader/global-loader.service';
 
 @Component({
   selector: 'app-root',
