@@ -89,3 +89,102 @@ This is a Angular project for the course of _SoftUni - Angular - June 2023_. It 
 
 ![home-page-logout](https://raw.githubusercontent.com/DimitarMitev92/RealEstateDeals-angular-softuni/main/screenshots/home-page-logout.jpg)
 
+## Home page (login).
+
+![home-page-login](https://raw.githubusercontent.com/DimitarMitev92/RealEstateDeals-angular-softuni/main/screenshots/home-page-login.jpg)
+
+## Register page (valid).
+
+![register-valid](https://raw.githubusercontent.com/DimitarMitev92/RealEstateDeals-angular-softuni/main/screenshots/register-valid.jpg)
+
+## Register page (invalid).
+
+![register-invalid](https://raw.githubusercontent.com/DimitarMitev92/RealEstateDeals-angular-softuni/main/screenshots/register-invalid.jpg)
+
+## Login page (valid).
+
+![login-valid](https://raw.githubusercontent.com/DimitarMitev92/RealEstateDeals-angular-softuni/main/screenshots/login-valid.jpg)
+
+## Login page (invalid).
+
+![login-invalid](https://raw.githubusercontent.com/DimitarMitev92/RealEstateDeals-angular-softuni/main/screenshots/login-invalid.jpg)
+
+## Contact us page (valid).
+
+![contact-us-valid](https://raw.githubusercontent.com/DimitarMitev92/RealEstateDeals-angular-softuni/main/screenshots/contact-us-valid.jpg)
+
+## Contact us page (invalid).
+
+![contact-us-invalid](https://raw.githubusercontent.com/DimitarMitev92/RealEstateDeals-angular-softuni/main/screenshots/contact-us-invalid.jpg)
+
+## About us page (invalid).
+
+![about-us-invalid](https://raw.githubusercontent.com/DimitarMitev92/RealEstateDeals-angular-softuni/main/screenshots/about-us.jpg)
+
+## Catalog page.
+
+![catalog-general](https://raw.githubusercontent.com/DimitarMitev92/RealEstateDeals-angular-softuni/main/screenshots/catalog-general.jpg)
+
+## Catalog page (search).
+
+![catalog-search](https://raw.githubusercontent.com/DimitarMitev92/RealEstateDeals-angular-softuni/main/screenshots/catalog-search.jpg)
+
+## Catalog page (sort).
+
+![catalog-sort](https://raw.githubusercontent.com/DimitarMitev92/RealEstateDeals-angular-softuni/main/screenshots/catalog-sort.jpg)
+
+## Profile page (created).
+
+![profile-create](https://raw.githubusercontent.com/DimitarMitev92/RealEstateDeals-angular-softuni/main/screenshots/profile-create.jpg)
+
+## Profile page (followed).
+
+![profile-follow](https://raw.githubusercontent.com/DimitarMitev92/RealEstateDeals-angular-softuni/main/screenshots/profile-follow.jpg)
+
+## Create page (valid).
+
+![create-valid](https://raw.githubusercontent.com/DimitarMitev92/RealEstateDeals-angular-softuni/main/screenshots/create-valid.jpg)
+
+## Create page (invalid).
+
+![create-invalid](https://raw.githubusercontent.com/DimitarMitev92/RealEstateDeals-angular-softuni/main/screenshots/create-invalid.jpg)
+
+## Edit page (valid).
+
+![edit-valid](https://raw.githubusercontent.com/DimitarMitev92/RealEstateDeals-angular-softuni/main/screenshots/edit-valid.jpg)
+
+## Edit page (invalid).
+
+![edit-invalid](https://raw.githubusercontent.com/DimitarMitev92/RealEstateDeals-angular-softuni/main/screenshots/edit-invalid.jpg)
+
+## Details page (owner).
+
+![details-owner](https://raw.githubusercontent.com/DimitarMitev92/RealEstateDeals-angular-softuni/main/screenshots/details-owner.jpg)
+
+## Details page (loggin).
+
+![details-loggin](https://raw.githubusercontent.com/DimitarMitev92/RealEstateDeals-angular-softuni/main/screenshots/details-loggin.jpg)
+
+## Details page (logout).
+
+![details-logout](https://raw.githubusercontent.com/DimitarMitev92/RealEstateDeals-angular-softuni/main/screenshots/details-logout.jpg)
+
+## Details page (contact/follow).
+
+![details-contact-follow](https://raw.githubusercontent.com/DimitarMitev92/RealEstateDeals-angular-softuni/main/screenshots/details-contact-follow.jpg)
+
+## Details page (fullscreen image)
+
+![fullscreen](https://raw.githubusercontent.com/DimitarMitev92/RealEstateDeals-angular-softuni/main/screenshots/fullscreen.jpg)
+
+## Details page (delete)
+
+![delete](https://raw.githubusercontent.com/DimitarMitev92/RealEstateDeals-angular-softuni/main/screenshots/delete.jpg)
+
+
+
+
+
+
+
+
