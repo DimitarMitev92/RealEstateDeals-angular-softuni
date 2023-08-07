@@ -1,7 +1,7 @@
 <div #cardElement *ngIf="offer" [attr.idOffer]='offer._id' [attr.idOfferOwner]="offer._ownerId"
     [attr.offerCreatedOn]="offer._createdOn"
     class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-slate-900 hover:scale-105 hover:-translate-y-3  hover:duration-300">
-    <div class="overflow-hidden h-52 w-full flex flex-row justify-center items-center">
+    <div class="overflow-hidden h-52 w-full flex flex-row justify-center items-center rounded-t-lg">
         <img class="rounded-t-lg" src={{offer.imageUrl}} alt={{offer.title}} />
     </div>
     <div class="p-5">
