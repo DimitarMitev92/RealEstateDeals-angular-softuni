@@ -6,8 +6,6 @@ import { loginConstants } from 'src/app/constants/loginConstants';
 
 import { AuthService } from '../auth.service';
 
-import { ILoginData } from 'src/app/interfaces/authInterfaces';
-
 import { emailValidator } from 'src/app/validators/emailValidator';
 
 @Component({

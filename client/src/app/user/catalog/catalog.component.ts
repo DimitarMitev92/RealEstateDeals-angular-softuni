@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
-import { catalogConstant } from 'src/app/constants/catalogConstants';
+import {
+  catalogConstant,
+  sortOptions,
+} from 'src/app/constants/catalogConstants';
 
 import { UserCRUDService } from '../user-crud.service';
 
@@ -22,14 +25,7 @@ export class CatalogComponent implements OnInit {
   allOffers: IOfferReturnData[] = [];
   isLoggedIn: boolean = false;
 
-  options: string[] = [
-    'Most Recent',
-    'Oldest First',
-    'Lowest Cost',
-    'Highest Cost',
-    'Smallest Area First',
-    'Largest Area First',
-  ];
+  options: string[] = sortOptions;
   selectedOption: string = 'Oldest';
 
   searchTerm: string = '';
