@@ -7,9 +7,9 @@ export const contactUsConstants = {
   emailPlaceholder: 'd.mitev@gmail.com',
   emailInvalidText: 'Email is required.',
   phoneNumber: 'Phone Number',
-  phoneNumberPlaceholder: '123 12 123 123',
+  phoneNumberPlaceholder: '0999999999',
   phoneNumberInvalidText: 'Phone number is required.',
   message: 'Your Message',
-  messageInvalidText: 'Message is required.',
+  messageInvalidText: 'Message must be at least 10 characters long.',
   btnText: 'Send',
 };

@@ -23,8 +23,8 @@ export class ContactUsComponent {
   contactUsForm = this.fb.group({
     fullName: ['', [Validators.required]],
     email: ['', [Validators.required, EmailValidator.validate()]],
-    phone: ['', [Validators.required]],
-    message: ['', [Validators.required]],
+    phone: ['', [Validators.required, Validators.minLength(10)]],
+    message: ['', [Validators.required, Validators.minLength(10)]],
   });
 
   constructor(
