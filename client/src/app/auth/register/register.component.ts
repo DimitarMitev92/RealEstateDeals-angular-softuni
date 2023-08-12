@@ -4,7 +4,7 @@ import { registerConstants } from 'src/app/constants/registerConstants';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
 
-import { emailValidator } from 'src/app/validators/emailValidator';
+import { EmailValidator } from 'src/app/validators/emailValidator';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -24,7 +24,7 @@ export class RegisterComponent {
     {
       fullName: ['', [Validators.required]],
       username: ['', [Validators.required]],
-      email: ['', [Validators.required, emailValidator()]],
+      email: ['', [Validators.required, EmailValidator.validate()]],
       phone: ['', [Validators.required, Validators.minLength(10)]],
       password: ['', [Validators.required, Validators.minLength(6)]],
       rePassword: ['', [Validators.required, Validators.minLength(6)]],

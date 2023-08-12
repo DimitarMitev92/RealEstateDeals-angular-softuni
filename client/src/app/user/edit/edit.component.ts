@@ -8,7 +8,7 @@ import {
   IOfferReturnData,
 } from 'src/app/interfaces/offerInterfaces';
 import { FormBuilder, Validators, FormControl } from '@angular/forms';
-import { httpsValidator } from 'src/app/validators/httpsValidator';
+import { HttpsValidator } from 'src/app/validators/httpsValidator';
 import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
@@ -45,7 +45,7 @@ export class EditComponent implements OnInit {
     location: ['', [Validators.required]],
     quadrature: ['', [Validators.required]],
     floors: ['', [Validators.required]],
-    imageUrl: ['', [Validators.required, httpsValidator()]],
+    imageUrl: ['', [Validators.required, HttpsValidator.validate()]],
     price: ['', [Validators.required, Validators.minLength(1)]],
     information: ['', [Validators.required, Validators.minLength(20)]],
   });

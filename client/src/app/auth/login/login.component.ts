@@ -6,7 +6,7 @@ import { loginConstants } from 'src/app/constants/loginConstants';
 
 import { AuthService } from '../auth.service';
 
-import { emailValidator } from 'src/app/validators/emailValidator';
+import { EmailValidator } from 'src/app/validators/emailValidator';
 
 @Component({
   selector: 'app-login',
@@ -24,7 +24,7 @@ export class LoginComponent {
   typePassword: string = 'password';
 
   loginForm = this.fb.group({
-    email: ['', [Validators.required, emailValidator()]],
+    email: ['', [Validators.required, EmailValidator.validate()]],
     password: ['', [Validators.required, Validators.minLength(6)]],
   });
 

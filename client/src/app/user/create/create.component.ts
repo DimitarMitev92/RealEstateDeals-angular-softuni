@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { httpsValidator } from 'src/app/validators/httpsValidator';
+import { HttpsValidator } from 'src/app/validators/httpsValidator';
 
 import { createConstants } from 'src/app/constants/createConstants';
 
@@ -28,7 +28,7 @@ export class CreateComponent {
     location: ['', Validators.required],
     quadrature: ['', Validators.required],
     floors: ['', Validators.required],
-    imageUrl: ['', [Validators.required, httpsValidator()]],
+    imageUrl: ['', [Validators.required, HttpsValidator.validate()]],
     price: ['', [Validators.required, Validators.minLength(1)]],
     information: ['', [Validators.required, Validators.minLength(20)]],
   });

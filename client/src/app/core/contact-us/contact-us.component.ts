@@ -5,6 +5,8 @@ import { contactUsConstants } from 'src/app/constants/contactUsConstants';
 import { CoreService } from '../core.service';
 import { Router } from '@angular/router';
 
+import { EmailValidator } from 'src/app/validators/emailValidator';
+
 @Component({
   selector: 'app-contact-us',
   templateUrl: './contact-us.component.html',
@@ -20,7 +22,7 @@ export class ContactUsComponent {
 
   contactUsForm = this.fb.group({
     fullName: ['', [Validators.required]],
-    email: ['', [Validators.required]],
+    email: ['', [Validators.required, EmailValidator.validate()]],
     phone: ['', [Validators.required]],
     message: ['', [Validators.required]],
   });
